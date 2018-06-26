@@ -1,4 +1,7 @@
 package com.tenth.junior.repository;
 
-public class teacherRepository {
+import com.tenth.junior.bean.Teacher;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface teacherRepository extends JpaRepository<Teacher,Integer>{
 }
