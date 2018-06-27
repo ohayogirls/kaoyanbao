@@ -4,10 +4,11 @@ import com.tenth.junior.bean.YearlyData;
 import com.tenth.junior.bean.YearlyDataPK;
 import com.tenth.junior.repository.YearlyDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class YearlyDataServiceImpl implements YearlyDataService{
     @Autowired
     private YearlyDataRepository yearlyDataRepository;

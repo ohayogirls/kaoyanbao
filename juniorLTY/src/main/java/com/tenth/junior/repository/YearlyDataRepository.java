@@ -8,6 +8,6 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface YearlyDataRepository extends JpaRepository<YearlyData,YearlyDataPK>{
-    @Query("select a from YearlyData a where a.schoolID = ?1")
+    @Query("select a from YearlyData a where a.schoolID like ?1")
     public List<YearlyData> queryBySchoolID(Integer schoolid);
 }
