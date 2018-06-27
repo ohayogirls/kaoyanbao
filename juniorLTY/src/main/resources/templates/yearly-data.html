@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
 	<title>yearly-data</title>
@@ -88,9 +88,9 @@
 			<div class="sidebar-scroll">
 				<nav>
 					<ul class="nav">
-						<li><a href="school.html" class=""><i class="lnr lnr-graduation-hat"></i> <span>School Table#学校表</span></a></li>
+						<li><a th:href="@{'/'}" class=""><i class="lnr lnr-graduation-hat"></i> <span>School Table#学校表</span></a></li>
 						<li><a href="experience.html" class=""><i class="lnr lnr-bubble"></i> <span>Experience Table#经验分享表</span></a></li>
-						<li><a href="yearly-data.html" class="active"><i class="lnr lnr-chart-bars"></i> <span>YearlyData#历年数据</span></a></li>
+						<li><a th:href="@{'/yearlydata'}" class="active"><i class="lnr lnr-chart-bars"></i> <span>YearlyData#历年数据</span></a></li>
 						<li><a href="teacher.html" class=""><i class="lnr lnr-license"></i> <span>Teacher#名师目录</span></a></li>
 						<li><a href="front-end-user.html" class=""><i class="lnr lnr-users"></i> <span>front-end user list#前端用户</span></a></li>
 						<li><a href="material.html" class=""><i class="lnr lnr-cloud-download"></i> <span>material#复习资料</span></a></li>
@@ -121,25 +121,19 @@
 										</tr>
 										</thead>
 										<tbody>
-										<tr>
-											<td>1</td>
-											<td>2017</td>
-											<td>389</td>
-											<td>38</td>
-											<td><a th:href="@{https://www.bh3.com/}" target="_blank"><i class="lnr lnr-pencil"></i></a>
-												<a th:href="@{https://www.bh3.com/}" target="_blank"><i class="lnr lnr-trash"></i></a>
-											</td>
-										</tr>
-										<tr>
-
-										</tr>
-										<tr>
-
-										</tr>
+											<tr th:each="yearlyData : ${yearlydata}">
+												<td th:text="${yearlyData.getSchoolID()}">1</td>
+												<td th:text="${yearlyData.getYearID()}">2017</td>
+												<td th:text="${yearlyData.getScore()}">389</td>
+												<td th:text="${yearlyData.getEnrollRate()}">38</td>
+												<td><a th:href="@{'/yearlydata/update/'+${yearlyData.getSchoolID()}+'/'+${yearlyData.getYearID()}}" ><i class="lnr lnr-pencil"></i></a>
+													<a th:href="@{'/yearlydata/delete/'+${yearlyData.getSchoolID()}+'/'+${yearlyData.getYearID()}}" ><i class="lnr lnr-trash"></i></a>
+												</td>
+											</tr>
 										</tbody>
 									</table>
 									<div class="plus-circle">
-										<a th:href="@{https://www.bh3.com/}" target="_blank"><i class="lnr lnr-plus-circle"></i></a>
+										<a th:href="@{'/yearlydata/add'}"><i class="lnr lnr-plus-circle"></i></a>
 									</div>
 								</div>
 							</div>

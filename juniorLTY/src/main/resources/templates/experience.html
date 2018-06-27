@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
 	<title>experience</title>
@@ -90,7 +90,7 @@
 					<ul class="nav">
 						<li><a href="school.html" class=""><i class="lnr lnr-graduation-hat"></i> <span>School Table#学校表</span></a></li>
 						<li><a href="experience.html" class="active"><i class="lnr lnr-bubble"></i> <span>Experience Table#经验分享表</span></a></li>
-						<li><a href="yearly-data.html" class=""><i class="lnr lnr-chart-bars"></i> <span>YearlyData#历年数据</span></a></li>
+						<li><a th:href="@{'/yearlydata'}" class=""><i class="lnr lnr-chart-bars"></i> <span>YearlyData#历年数据</span></a></li>
 						<li><a href="teacher.html" class=""><i class="lnr lnr-license"></i> <span>Teacher#名师目录</span></a></li>
 						<li><a href="front-end-user.html" class=""><i class="lnr lnr-users"></i> <span>front-end user list#前端用户</span></a></li>
 						<li><a href="material.html" class=""><i class="lnr lnr-cloud-download"></i> <span>material#复习资料</span></a></li>

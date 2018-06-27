@@ -40,7 +40,7 @@ public class YearlyDataServiceImpl implements YearlyDataService{
 
     @Override
     public List<YearlyData> findBySchoolID(Integer id){
-        return yearlyDataRepository.queryBySchoolID(id);
+        return null;//yearlyDataRepository.queryBySchoolID(id);
     }
 
 }

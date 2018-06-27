@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <title>yearly-data</title>
@@ -7,17 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <!-- VENDOR CSS -->
-    <link rel="stylesheet" th:href="@{assets/vendor/bootstrap/css/bootstrap.min.css}">
-    <link rel="stylesheet" th:href="@{assets/vendor/linearicons/style.css}">
+    <link rel="stylesheet" th:href="@{../assets/vendor/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{../assets/vendor/linearicons/style.css}">
     <!-- MAIN CSS -->
-    <link rel="stylesheet" th:href="@{assets/css/main.css}">
+    <link rel="stylesheet" th:href="@{../assets/css/main.css}">
     <!--CSS BY LTY-->
-    <link rel="stylesheet" th:href="@{assets/css/yearly-data.css}">
+    <link rel="stylesheet" th:href="@{../assets/css/yearly-data.css}">
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
     <!-- ICONS -->
-    <link rel="apple-touch-icon" sizes="76x76" th:href="@{assets/img/apple-icon.png}">
-    <link rel="icon" type="image/png" sizes="96x96" th:href="@{assets/img/favicon.png}">
+    <link rel="apple-touch-icon" sizes="76x76" th:href="@{../assets/img/apple-icon.png}">
+    <link rel="icon" type="image/png" sizes="96x96" th:href="@{../assets/img/favicon.png}">
 </head>
 
 <body>
@@ -88,9 +88,9 @@
         <div class="sidebar-scroll">
             <nav>
                 <ul class="nav">
-                    <li><a href="school.html" class=""><i class="lnr lnr-graduation-hat"></i> <span>School Table#学校表</span></a></li>
+                    <li><a th:href="@{'/'}" class=""><i class="lnr lnr-graduation-hat"></i> <span>School Table#学校表</span></a></li>
                     <li><a href="experience.html" class=""><i class="lnr lnr-bubble"></i> <span>Experience Table#经验分享表</span></a></li>
-                    <li><a href="yearly-data.html" class="active"><i class="lnr lnr-chart-bars"></i> <span>YearlyData#历年数据</span></a></li>
+                    <li><a th:href="@{'/yearlydata'}" class="active"><i class="lnr lnr-chart-bars"></i> <span>YearlyData#历年数据</span></a></li>
                     <li><a href="teacher.html" class=""><i class="lnr lnr-license"></i> <span>Teacher#名师目录</span></a></li>
                     <li><a href="front-end-user.html" class=""><i class="lnr lnr-users"></i> <span>front-end user list#前端用户</span></a></li>
                     <li><a href="material.html" class=""><i class="lnr lnr-cloud-download"></i> <span>material#复习资料</span></a></li>
@@ -110,23 +110,23 @@
                     <div class="col-lg-12">
                         <div class="panel">
                             <div class="panel-body">
-                                <form action="">
+                                <form method="post" th:action="@{/yearlydata/add}">
                                     <!--<input type="hidden" name="stuID" th:value="${stu.stuID}" >-->
                                     <div class="form-group">
                                         <label for="inputSchoolID">学校ID</label>
-                                        <input type="number" class="form-control" id="inputSchoolID" placeholder="">
+                                        <input type="number" class="form-control" id="inputSchoolID" name="pk.SchoolID" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputYear">年份</label>
-                                        <input type="number" class="form-control" id="inputYear" placeholder="">
+                                        <input type="number" class="form-control" id="inputYear" name="pk.YearID" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputScoure">分数线</label>
-                                        <input type="number" class="form-control" id="inputScoure" placeholder="">
+                                        <input type="number" class="form-control" id="inputScoure" name="score" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputEnrollRate">报录比</label>
-                                        <input type="text" class="form-control" id="inputEnrollRate" placeholder="">
+                                        <input type="text" class="form-control" id="inputEnrollRate" name="EnrollRate" placeholder="">
                                     </div>
 
                                     <button type="submit" class="btn btn-default">Submit</button>
@@ -149,9 +149,9 @@
 </div>
 <!-- END WRAPPER -->
 <!-- Javascript -->
-<script th:src="@{assets/vendor/jquery/jquery.min.js}"></script>
-<script th:src="@{assets/vendor/bootstrap/js/bootstrap.min.js}"></script>
-<script th:src="@{assets/scripts/klorofil-common.js}"></script>
+<script th:src="@{../assets/vendor/jquery/jquery.min.js}"></script>
+<script th:src="@{../assets/vendor/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{../assets/scripts/klorofil-common.js}"></script>
 </body>
 
 </html>
