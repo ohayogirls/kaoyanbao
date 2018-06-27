@@ -11,7 +11,7 @@ public class SchoolController {
     @GetMapping
     public String index(Model model){
 
-        return "school";
+        return "add-sch";
     }
 
 }
