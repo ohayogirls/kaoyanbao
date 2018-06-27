@@ -29,7 +29,7 @@ public class LoginTabbleController {
     @GetMapping
     public  String index(Model model){
         List<LoginTable> list = loginTableService.getAllLoginTable();
-        model.addAttribute("logTas",list);
+        model.addAttribute("logindata",list);
         return "login-table";
     }
 

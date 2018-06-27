@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("/User")
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired
@@ -26,7 +26,7 @@ public class UserController {
     @GetMapping
     public String index(Model model) {
         List<User> list = userService.getAllUser();
-        model.addAttribute("users", list);
+        model.addAttribute("userdata", list);
         return "front-end-user";
     }
 
@@ -42,23 +42,20 @@ public class UserController {
      * @param Phone
      * @return
      */
-    @PostMapping("/add")
-    public String input(User user) {
-        // Optional<Grade> grade = gradeService.getGradeByID(student.getGrade().getGID()); ;
-        // student.setGrade(grade.get());
-        userService.addUser(user);
-        return "redirect:/";
-    }
-
-    /**
-     * 显示添加页面
-     *
-     * @return
-     */
     @GetMapping("/add")
     public String addPage(Model model) {
-        model.addAttribute("allUser", userService.getAllUser());
-        return "adduser";
+        return "add-user";
+    }
+    @PostMapping("/add")
+    public String getaddpage(User user) { ;
+        userService.addUser(user);
+        return "redirect:/user";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteData(@PathVariable("id") User user) {
+        userService.deleteUser(user);
+        return "redirect:/user";
     }
 
     @GetMapping("/update/{id}")
@@ -66,13 +63,7 @@ public class UserController {
         Optional<User> user = userService.getUserByID(id);
         model.addAttribute("stu", user.get());
         model.addAttribute("allUser", userService.getAllUser());
-        return "front-end-user";
-    }
-
-    @GetMapping("/delete/{id}")
-    public String deleteData(@PathVariable("id") User user) {
-        userService.deleteUser(user);
-        return "redirect:/";
+        return "update-user";
     }
 
     /**
@@ -89,10 +80,8 @@ public class UserController {
      */
     @PostMapping("/update")
     public String updateData(User user) {
-        //Optional<Grade> grade = gradeService.getGradeByID(student.getGrade().getGID()); ;
-        //student.setGrade(grade.get());
         userService.updateUser(user);
-        return "redirect:/";
+        return "redirect:/user";
     }
 
 
