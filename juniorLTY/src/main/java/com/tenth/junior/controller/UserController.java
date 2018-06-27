@@ -76,7 +76,7 @@ public class UserController {
     }
 
     /**
-     * 添加用户信息功能
+     * 修改用户信息功能
      *
      * @param UserID
      * @param UserName
