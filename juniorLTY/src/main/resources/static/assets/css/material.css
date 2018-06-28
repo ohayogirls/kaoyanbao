@@ -17,35 +17,17 @@ table{
     padding-left: 8px;
 }
 
-.th-SchoolID{
-    width: 7%;
-}
-.th-SchoolName{
+.th-MaterialID{
     width: 10%;
 }
-.th-Area{
-    width: 5%;
-}
-.th-Province{
-    width: 7%;
-}
-.th-Outline{
+.th-Category{
     width: 10%;
 }
-.th-CatalogLink{
+.th-Type{
     width: 10%;
 }
-.th-ReferrenceBook{
+.th-Link{
     width: 10%;
-}
-.th-CutTime{
-    width: 7%;
-}
-.th-Is985{
-    width: 5%;
-}
-.th-Is211{
-    width: 5%;
 }
 .th-edit{
     width: 6%;

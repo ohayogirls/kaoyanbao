@@ -36,7 +36,7 @@ public class MaterialController {
     @PostMapping("/add")
     public String input(Material material){
         materialService.addMaterial(material);
-        return "redirect:/";
+        return "redirect:/material";
     }
 
     /**
@@ -45,7 +45,7 @@ public class MaterialController {
 
     @GetMapping("/add")
     public String addPage(){
-        return "addpage";
+        return "add-mat";
     }
 
     /**
@@ -56,7 +56,7 @@ public class MaterialController {
     public String updateMat(@PathVariable("id") Integer id, Model model){
         Optional<Material> material=materialService.findByID(id);
         model.addAttribute("mat",material);
-        return "updatematerial";
+        return "update-mat";
     }
     /**
      * 修改材料信息
