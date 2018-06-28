@@ -53,8 +53,8 @@
                             <li><a th:href="@{'/experience'}" class=""><i class="lnr lnr-bubble"></i> <span>Experience Table#经验分享表</span></a></li>
                             <li><a th:href="@{'/yearlydata'}" class=""><i class="lnr lnr-chart-bars"></i> <span>YearlyData#历年数据</span></a></li>
                             <li><a th:href="@{'/teacher'}" class=""><i class="lnr lnr-license"></i> <span>Teacher#名师目录</span></a></li>
-                            <li><a th:href="@{'/user'}" class=""><i class="lnr lnr-users"></i> <span>front-end user list#前端用户</span></a></li>
-                            <li><a th:href="@{'/material'}" class="active"><i class="lnr lnr-cloud-download"></i> <span>material#复习资料</span></a></li>
+                            <li><a th:href="@{'/user'}" class=""><i class="lnr lnr-users"></i> <span>Front-end user list#前端用户</span></a></li>
+                            <li><a th:href="@{'/material'}" class="active"><i class="lnr lnr-cloud-download"></i> <span>Material#复习资料</span></a></li>
                             <li><a th:href="@{'/logintable'}" class=""><i class="lnr lnr-database"></i> <span>LoginTable#登陆记录表</span></a></li>
                         </ul>
                     </li>
@@ -106,12 +106,12 @@
         <!-- MAIN CONTENT -->
         <div class="main-content">
             <div class="container-fluid">
-                <h3 class="page-title">YearlyData#历年数据-修改</h3>
+                <h3 class="page-title">Material#复习资料-修改</h3>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="panel">
                             <div class="panel-body">
-                                <form method="post" th:action="@{/yearlydata/update}">
+                                <form method="post" th:action="@{/material/update}">
                                     <!--<input type="hidden" name="stuID" th:value="${stu.stuID}" >-->
                                     <div class="form-group">
                                         <label for="inputSchoolID">学校ID</label>
