@@ -3,6 +3,7 @@ package com.tenth.junior.service;
 import com.tenth.junior.bean.School;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface SchoolService {
     //增
@@ -50,7 +51,20 @@ public interface SchoolService {
      */
     void deleteAllSchool();
 
+    /**
+     * 通过id删除学校
+     * @param id 学校id
+     */
+    void deleteSchoolByID(Integer id);
+
     //查
+
+    /**
+     * 通过ID查找学校
+     * @param id
+     * @return
+     */
+    Optional<School> findSchoolByID(Integer id);
 
     /**
      * 获取所有的学校信息

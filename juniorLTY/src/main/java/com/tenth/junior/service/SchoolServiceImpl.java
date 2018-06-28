@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SchoolServiceImpl implements SchoolService{
@@ -56,8 +57,18 @@ public class SchoolServiceImpl implements SchoolService{
         repository.deleteAll();
     }
 
+    @Override
+    public void deleteSchoolByID(Integer id) {
+        repository.deleteById(id);
+    }
 
     //查
+
+
+    @Override
+    public Optional<School> findSchoolByID(Integer id) {
+        return repository.findById(id);
+    }
 
     @Override
     public List<School> findAllSchool() {
