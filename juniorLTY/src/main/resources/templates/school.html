@@ -88,13 +88,13 @@
 			<div class="sidebar-scroll">
 				<nav>
 					<ul class="nav">
-						<li><a th:href="@{'/'}" class="active"><i class="lnr lnr-graduation-hat"></i> <span>School Table#学校表</span></a></li>
-						<li><a href="experience.html" class=""><i class="lnr lnr-bubble"></i> <span>Experience Table#经验分享表</span></a></li>
+						<li><a th:href="@{'/school'}" class="active"><i class="lnr lnr-graduation-hat"></i> <span>School Table#学校表</span></a></li>
+						<li><a th:href="@{'/experience'}" class=""><i class="lnr lnr-bubble"></i> <span>Experience Table#经验分享表</span></a></li>
 						<li><a th:href="@{'/yearlydata'}" class=""><i class="lnr lnr-chart-bars"></i> <span>YearlyData#历年数据</span></a></li>
-						<li><a href="teacher.html" class=""><i class="lnr lnr-license"></i> <span>Teacher#名师目录</span></a></li>
-						<li><a href="front-end-user.html" class=""><i class="lnr lnr-users"></i> <span>front-end user list#前端用户</span></a></li>
-						<li><a href="material.html" class=""><i class="lnr lnr-cloud-download"></i> <span>material#复习资料</span></a></li>
-						<li><a href="login-table.html" class=""><i class="lnr lnr-database"></i> <span>LoginTable#登陆记录表</span></a></li>
+						<li><a th:href="@{'/teacher'}" class=""><i class="lnr lnr-license"></i> <span>Teacher#名师目录</span></a></li>
+						<li><a th:href="@{'/user'}" class=""><i class="lnr lnr-users"></i> <span>front-end user list#前端用户</span></a></li>
+						<li><a th:href="@{'/material'}" class=""><i class="lnr lnr-cloud-download"></i> <span>material#复习资料</span></a></li>
+						<li><a th:href="@{'/logintable'}" class=""><i class="lnr lnr-database"></i> <span>LoginTable#登陆记录表</span></a></li>
 					</ul>
 				</nav>
 			</div>
@@ -117,66 +117,35 @@
 											<th class="th-SchoolName">SchoolName</th>
 											<th class="th-Area">Area</th>
 											<th class="th-Province">Province</th>
+											<th class="th-CutTime">CutTime</th>
 											<th class="th-Outline">Outline</th>
 											<th class="th-CatalogLink">CatalogLink</th>
 											<th class="th-ReferrenceBook">ReferrenceBook</th>
-											<th class="th-CutTime">CutTime</th>
 											<th class="th-Is985">Is985</th>
 											<th class="th-Is211">Is211</th>
 											<th class="th-edit">操作</th>
 										</tr>
 										</thead>
 										<tbody>
-										<tr>
-											<td>1</td>
-											<td>武汉大学</td>
-											<td>华中</td>
-											<td>湖北</td>
-											<td><a th:href="@{https://www.bilibili.com/}" target="_blank">https://www.bilibili.com/</a></td>
-											<td><a th:href="@{http://ai.taobao.com/}" target="_blank">http://ai.taobao.com/</a></td>
-											<td><a th:href="@{https://www.bh3.com/}" target="_blank">https://www.bh3.com/</a></td>
-											<td>2018/9/14</td>
-											<td>true</td>
-											<td>true</td>
-											<td><a th:href="@{https://www.bh3.com/}" target="_blank"><i class="lnr lnr-pencil"></i></a>
-												<a th:href="@{https://www.bh3.com/}" target="_blank"><i class="lnr lnr-trash"></i></a>
-											</td>
-
-										</tr>
-										<tr>
-											<td>2</td>
-											<td>武汉理工大学</td>
-											<td>华中</td>
-											<td>湖北</td>
-											<td><a th:href="@{https://www.bilibili.com/}" target="_blank">https://www.bilibili.com/</a></td>
-											<td><a th:href="@{http://ai.taobao.com/}" target="_blank">http://ai.taobao.com/</a></td>
-											<td><a th:href="@{https://www.bh3.com/}" target="_blank">https://www.bh3.com/</a></td>
-											<td>2018/9/28</td>
-											<td>true</td>
-											<td>true</td>
-											<td><a th:href="@{https://www.bh3.com/}" target="_blank"><i class="lnr lnr-pencil"></i></a>
-												<a th:href="@{https://www.bh3.com/}" target="_blank"><i class="lnr lnr-trash"></i></a>
-											</td>
-										</tr>
-										<tr>
-											<td>3</td>
-											<td>华中科技大学</td>
-											<td>华中</td>
-											<td>湖北</td>
-											<td><a th:href="@{https://www.bilibili.com/}" target="_blank">https://www.bilibili.com/</a></td>
-											<td><a th:href="@{http://ai.taobao.com/}" target="_blank">http://ai.taobao.com/</a></td>
-											<td><a th:href="@{https://www.bh3.com/}" target="_blank">https://www.bh3.com/</a></td>
-											<td>2018/9/18</td>
-											<td>true</td>
-											<td>true</td>
-											<td><a th:href="@{https://www.bh3.com/}" target="_blank"><i class="lnr lnr-pencil"></i></a>
-												<a th:href="@{https://www.bh3.com/}" target="_blank"><i class="lnr lnr-trash"></i></a>
+										<tr th:each="schoolData : ${school}">
+											<td th:text="${schoolData.getSchoolID()}"></td>
+											<td th:text="${schoolData.getSchoolName()}"></td>
+											<td th:text="${schoolData.getArea()}"></td>
+											<td th:text="${schoolData.getProvince()}"></td>
+											<td th:text="${schoolData.getCutTime()}"></td>
+											<td th:text="${schoolData.getOutline()}"></td>
+											<td th:text="${schoolData.getCatalogLink()}"></td>
+											<td th:text="${schoolData.getReferrenceBook()}"></td>
+											<td th:text="${schoolData.getIs985()}"></td>
+											<td th:text="${schoolData.getIs211()}"></td>
+											<td><a th:href="@{'/school/update/'+${schoolData.getSchoolID()}}" ><i class="lnr lnr-pencil"></i></a>
+												<a th:href="@{'/school/delete/'+${schoolData.getSchoolID()}}" ><i class="lnr lnr-trash"></i></a>
 											</td>
 										</tr>
 										</tbody>
 									</table>
 									<div class="plus-circle">
-										<a th:href="@{https://www.bh3.com/}" target="_blank"><i class="lnr lnr-plus-circle"></i></a>
+										<a th:href="@{'/school/add'}"><i class="lnr lnr-plus-circle"></i></a>
 									</div>
 								</div>
 							</div>

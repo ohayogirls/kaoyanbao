@@ -15,6 +15,16 @@ public class Experience {
     private String  Author;
     private Date    Time;
     private String  Text;
+
+    public String getTitle() {
+        return Title;
+    }
+
+    public void setTitle(String title) {
+        Title = title;
+    }
+
+    private String Title;
     //private String SchoolID;
     @ManyToOne
     private School school;

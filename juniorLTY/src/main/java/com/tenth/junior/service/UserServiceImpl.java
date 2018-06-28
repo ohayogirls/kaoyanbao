@@ -13,10 +13,10 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;
 
-    @Override
-    public User getUserByNandP(String username, String password){
-        return userRepository.getUserByNamAndPassword(username,password);
-    }
+//    @Override
+//    public User getUserByNandP(String username, String password){
+//        return userRepository.getUserByNamAndPassword(username,password);
+//    }
 
     @Override
     public long getUserNum(){

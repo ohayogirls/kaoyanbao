@@ -17,16 +17,28 @@ table{
     padding-left: 8px;
 }
 
-.th-SchoolID{
-    width: 15%;
+.th-TeacherID{
+    width: 7%;
 }
-.th-Year{
-    width: 15%;
+.th-Name{
+    width: 7%;
 }
-.th-Score{
-    width: 15%;
+.th-Sex{
+    width: 5%;
 }
-.th-EnrollRate{
+.th-CV{
+    width: 7%;
+}
+.th-Research{
+    width: 7%;
+}
+.th-Email{
+    width: 10%;
+}
+.th-JobTitle{
+    width: 7%;
+}
+.th-Introduction{
     width: 15%;
 }
 .th-edit{

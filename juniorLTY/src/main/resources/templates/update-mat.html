@@ -49,12 +49,13 @@
                             <span class="badge bg-danger">5</span>
                         </a>
                         <ul class="dropdown-menu notifications">
-                            <li><a href="#" class="notification-item"><span class="dot bg-warning"></span>System space is almost full</a></li>
-                            <li><a href="#" class="notification-item"><span class="dot bg-danger"></span>You have 9 unfinished tasks</a></li>
-                            <li><a href="#" class="notification-item"><span class="dot bg-success"></span>Monthly report is available</a></li>
-                            <li><a href="#" class="notification-item"><span class="dot bg-warning"></span>Weekly meeting in 1 hour</a></li>
-                            <li><a href="#" class="notification-item"><span class="dot bg-success"></span>Your request has been approved</a></li>
-                            <li><a href="#" class="more">See all notifications</a></li>
+                            <li><a th:href="@{'/school'}" class=""><i class="lnr lnr-graduation-hat"></i> <span>School Table#学校表</span></a></li>
+                            <li><a th:href="@{'/experience'}" class=""><i class="lnr lnr-bubble"></i> <span>Experience Table#经验分享表</span></a></li>
+                            <li><a th:href="@{'/yearlydata'}" class=""><i class="lnr lnr-chart-bars"></i> <span>YearlyData#历年数据</span></a></li>
+                            <li><a th:href="@{'/teacher'}" class=""><i class="lnr lnr-license"></i> <span>Teacher#名师目录</span></a></li>
+                            <li><a th:href="@{'/user'}" class=""><i class="lnr lnr-users"></i> <span>front-end user list#前端用户</span></a></li>
+                            <li><a th:href="@{'/material'}" class="active"><i class="lnr lnr-cloud-download"></i> <span>material#复习资料</span></a></li>
+                            <li><a th:href="@{'/logintable'}" class=""><i class="lnr lnr-database"></i> <span>LoginTable#登陆记录表</span></a></li>
                         </ul>
                     </li>
                     <li class="dropdown">

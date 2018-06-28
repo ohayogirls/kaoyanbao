@@ -12,16 +12,16 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
-@RequestMapping(value = "/teacher")
+@RequestMapping("/teacher")
 public class TeacherController {
     @Autowired
     private TeacherService teacherService;
 
-    @GetMapping("/")
+    @GetMapping
     public String index(Model model){
         List<Teacher> teacherList = teacherService.findAllTeacher();
-        model.addAttribute("school",teacherList);
-        return "redirect:/";
+        model.addAttribute("teacher",teacherList);
+        return "teacher";
     }
 
     @GetMapping("/add")

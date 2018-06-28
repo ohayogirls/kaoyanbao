@@ -12,11 +12,13 @@
 	<link rel="stylesheet" th:href="@{assets/vendor/linearicons/style.css}">
 	<!-- MAIN CSS -->
 	<link rel="stylesheet" th:href="@{assets/css/main.css}">
+	<!--CSS BY LTY-->
+	<link rel="stylesheet" th:href="@{assets/css/teacher.css}">
 	<!-- GOOGLE FONTS -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 	<!-- ICONS -->
 	<link rel="apple-touch-icon" sizes="76x76" th:href="@{assets/img/apple-icon.png}">
-	<link rel="icon" type="image/png" sizes="96x96" th:href="{assets/img/favicon.png}">
+	<link rel="icon" type="image/png" sizes="96x96" th:href="@{assets/img/favicon.png}">
 </head>
 
 <body>
@@ -87,13 +89,13 @@
 			<div class="sidebar-scroll">
 				<nav>
 					<ul class="nav">
-						<li><a href="school.html" class=""><i class="lnr lnr-graduation-hat"></i> <span>School Table#学校表</span></a></li>
-						<li><a href="experience.html" class=""><i class="lnr lnr-bubble"></i> <span>Experience Table#经验分享表</span></a></li>
-						<li><a href="yearly-data.html" class=""><i class="lnr lnr-chart-bars"></i> <span>YearlyData#历年数据</span></a></li>
-						<li><a href="teacher.html" class="active"><i class="lnr lnr-license"></i> <span>Teacher#名师目录</span></a></li>
-						<li><a href="front-end-user.html" class=""><i class="lnr lnr-users"></i> <span>front-end user list#前端用户</span></a></li>
-						<li><a href="material.html" class=""><i class="lnr lnr-cloud-download"></i> <span>material#复习资料</span></a></li>
-						<li><a href="login-table.html" class=""><i class="lnr lnr-database"></i> <span>LoginTable#登陆记录表</span></a></li>
+						<li><a th:href="@{'/school'}" class=""><i class="lnr lnr-graduation-hat"></i> <span>School Table#学校表</span></a></li>
+						<li><a th:href="@{'/experience'}" class=""><i class="lnr lnr-bubble"></i> <span>Experience Table#经验分享表</span></a></li>
+						<li><a th:href="@{'/yearlydata'}" class=""><i class="lnr lnr-chart-bars"></i> <span>YearlyData#历年数据</span></a></li>
+						<li><a th:href="@{'/teacher'}" class="active"><i class="lnr lnr-license"></i> <span>Teacher#名师目录</span></a></li>
+						<li><a th:href="@{'/user'}" class=""><i class="lnr lnr-users"></i> <span>front-end user list#前端用户</span></a></li>
+						<li><a th:href="@{'/material'}" class=""><i class="lnr lnr-cloud-download"></i> <span>material#复习资料</span></a></li>
+						<li><a th:href="@{'/logintable'}" class=""><i class="lnr lnr-database"></i> <span>LoginTable#登陆记录表</span></a></li>
 					</ul>
 				</nav>
 			</div>
@@ -105,7 +107,47 @@
 			<div class="main-content">
 				<div class="container-fluid">
 					<h3 class="page-title">Teacher#名师目录</h3>
-
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="panel">
+								<div class="panel-body">
+									<table class="table">
+										<thead>
+										<tr>
+											<th class="th-TeacherID">TeacherID</th>
+											<th class="th-Name">Name</th>
+											<th class="th-Sex">Sex</th>
+											<th class="th-CV">CV</th>
+											<th class="th-Research">Research</th>
+											<th class="th-Email">Email</th>
+											<th class="th-JobTitle">JobTitle</th>
+											<th class="th-Introduction">Introduction</th>
+											<th class="th-edit">操作</th>
+										</tr>
+										</thead>
+										<tbody>
+										<tr th:each="teacherData : ${teacher}">
+											<td th:text="${teacherData.getTeacherID()}"></td>
+											<td th:text="${teacherData.getName()}"></td>
+											<td th:text="${teacherData.getSex()}"></td>
+											<td th:text="${teacherData.getCV()}"></td>
+											<td th:text="${teacherData.getResearch()}"></td>
+											<td th:text="${teacherData.getEmail()}"></td>
+											<td th:text="${teacherData.getJobTitle()}"></td>
+											<td th:text="${teacherData.getIntroduction()}"></td>
+											<td><a th:href="@{'/teacher/update/'+${teacherData.getTeacherID()}" ><i class="lnr lnr-pencil"></i></a>
+												<a th:href="@{'/teacher/delete/'+${teacherData.getTeacherID()}}" ><i class="lnr lnr-trash"></i></a>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+									<div class="plus-circle">
+										<a th:href="@{'/teacher/add'}"><i class="lnr lnr-plus-circle"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<!-- END MAIN CONTENT -->
