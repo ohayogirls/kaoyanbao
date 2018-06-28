@@ -1,0 +1,49 @@
+table{
+    table-layout: fixed;
+}
+
+.table tbody tr td{
+    padding: 8px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+.panel .table > thead > tr > th:last-child,
+.panel .table > thead > tr > th:first-child,
+.panel .table > tbody > tr > td:last-child,
+.panel .table > tbody > tr > td:first-child
+{
+    padding-left: 8px;
+}
+
+.th-UserID{
+    width: 5%;
+}
+.th-UserName{
+    width: 7%;
+}
+.th-Password{
+    width: 10%;
+}
+.th-HeadPath{
+    width: 10%;
+}
+.th-Email{
+    width: 10%;
+}
+.th-Phone{
+    width: 10%;
+}
+.th-IsAdministrator{
+    width: 10%;
+}
+.th-edit{
+    width: 6%;
+}
+.plus-circle{
+    text-align: center;
+}
+.add-submit{
+    text-align: center;
+}

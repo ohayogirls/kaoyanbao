@@ -1,0 +1,58 @@
+table{
+    table-layout: fixed;
+}
+
+.table tbody tr td{
+    padding: 8px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+.panel .table > thead > tr > th:last-child,
+.panel .table > thead > tr > th:first-child,
+.panel .table > tbody > tr > td:last-child,
+.panel .table > tbody > tr > td:first-child
+{
+    padding-left: 8px;
+}
+
+.th-SchoolID{
+    width: 7%;
+}
+.th-SchoolName{
+    width: 10%;
+}
+.th-Area{
+    width: 5%;
+}
+.th-Province{
+    width: 7%;
+}
+.th-Outline{
+    width: 10%;
+}
+.th-CatalogLink{
+    width: 10%;
+}
+.th-ReferrenceBook{
+    width: 10%;
+}
+.th-CutTime{
+    width: 7%;
+}
+.th-Is985{
+    width: 5%;
+}
+.th-Is211{
+    width: 5%;
+}
+.th-edit{
+    width: 6%;
+}
+.plus-circle{
+    text-align: center;
+}
+.add-submit{
+    text-align: center;
+}
