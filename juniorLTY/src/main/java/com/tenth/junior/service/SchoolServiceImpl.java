@@ -57,8 +57,18 @@ public class SchoolServiceImpl implements SchoolService{
         repository.deleteAll();
     }
 
+    @Override
+    public void deleteSchoolByID(Integer id) {
+        repository.deleteById(id);
+    }
 
     //查
+
+
+    @Override
+    public Optional<School> findSchoolByID(Integer id) {
+        return repository.findById(id);
+    }
 
     @Override
     public List<School> findAllSchool() {

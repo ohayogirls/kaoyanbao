@@ -45,6 +45,12 @@ public interface TeacherService {
     void deleteacherList(List<Teacher> list);
 
     /**
+     * 通过id删除
+     * @param id
+     */
+    void deleteTeacherByID(Integer id);
+
+    /**
      * 删除所有老师信息
      */
     void deleteAllTeacher();

@@ -55,7 +55,7 @@ public class ExperienceController {
     @GetMapping("/add")
     public String addPage(Model model){
         //model.addAttribute("allSchool",schoolService.getAll());//待修改
-        return "addExp";
+        return "add-exp";
     }
 
     /**

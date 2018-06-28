@@ -3,10 +3,12 @@ package com.tenth.junior.service;
 import com.tenth.junior.bean.Teacher;
 import com.tenth.junior.repository.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class TeacherServiceImpl implements TeacherService {
 
     @Autowired
@@ -60,6 +62,10 @@ public class TeacherServiceImpl implements TeacherService {
         repository.deleteAll();
     }
 
+    @Override
+    public void deleteTeacherByID(Integer id) {
+        repository.deleteById(id);
+    }
 
     //查
 

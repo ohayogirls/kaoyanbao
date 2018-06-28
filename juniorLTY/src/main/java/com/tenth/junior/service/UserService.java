@@ -16,6 +16,8 @@ public interface UserService {
 
     void deleteUser(User user);
 
+//    User getUserByNandP(String username, String password);
+
     public long getUserNum();
 
 }
