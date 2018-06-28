@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("/LoginTable")
+@RequestMapping("/logintable")
 public class LoginTabbleController {
 
     @Autowired
@@ -55,7 +55,7 @@ public class LoginTabbleController {
     @GetMapping("/add")
     public String addPage(Model model){
         model.addAttribute("allUser",userService.getAllUser());
-        return "addLogTa";
+        return "add-log";
     }
 
     //@GetMapping("/ks")
