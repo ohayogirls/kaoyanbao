@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SchoolServiceImpl implements SchoolService{
@@ -124,5 +125,11 @@ public class SchoolServiceImpl implements SchoolService{
         list=findSchoolBy985(list,is985);
         list=findSchoolBy211(list,is211);
         return list;
+
+    }
+
+    @Override
+    public Optional<School> GetSchoolByID(Integer ID) {
+        return repository.findById(ID);
     }
 }

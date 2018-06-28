@@ -3,6 +3,7 @@ package com.tenth.junior.service;
 import com.tenth.junior.bean.School;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface SchoolService {
     //增
@@ -105,4 +106,5 @@ public interface SchoolService {
      */
     List<School> findSchool(List<School> aimList, String area, String province, Boolean is985, Boolean is211);
 
+    Optional<School> GetSchoolByID(Integer ID);
 }

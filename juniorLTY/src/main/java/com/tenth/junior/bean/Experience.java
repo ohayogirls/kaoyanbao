@@ -71,4 +71,12 @@ public class Experience {
     public void setSchoolID(Integer schoolID) {
          school.setSchoolID(schoolID);
     }
+
+    public School getSchool() {
+        return school;
+    }
+
+    public void setSchool(School school) {
+        this.school = school;
+    }
 }

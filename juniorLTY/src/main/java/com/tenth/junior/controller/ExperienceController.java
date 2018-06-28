@@ -22,8 +22,8 @@ import java.util.Optional;
 public class ExperienceController {
     @Autowired
     private ExperienceService experienceService;
-    //@Autowired
-    //private SchoolService schoolService;
+    @Autowired
+    private SchoolService schoolService;
 
     /**
      * 查看所有的经验贴
@@ -33,7 +33,7 @@ public class ExperienceController {
     public String index(Model model){
         List<Experience> list =experienceService.getAllExperience();
         model.addAttribute("exp",list);
-        return "experience-table";
+        return "experience";
     }
 
 
@@ -43,8 +43,8 @@ public class ExperienceController {
      */
     @PostMapping("/add")
     public String input(Experience experience){
-       // Optional<School> school;
-        //school=schoolService.getExperienceByID(experience.getSchoolID());
+        Optional<School> school=schoolService.GetSchoolByID(experience.getSchoolID());
+        experience.setSchool(school.get());
         experienceService.addExperience(experience);
         return "redirect:/";
     }
