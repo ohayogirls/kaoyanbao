@@ -33,7 +33,7 @@ public class ExperienceController {
     public String index(Model model){
         List<Experience> list =experienceService.getAllExperience();
         model.addAttribute("exp",list);
-        return "experience-table";
+        return "experience";
     }
 
 
@@ -55,7 +55,7 @@ public class ExperienceController {
     @GetMapping("/add")
     public String addPage(Model model){
         //model.addAttribute("allSchool",schoolService.getAll());//待修改
-        return "addExp";
+        return "add-exp";
     }
 
     /**

@@ -14,16 +14,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @Controller
-@RequestMapping(value = "/teacher")
+@RequestMapping("/teacher")
 public class TeacherController {
     @Autowired
     private TeacherService teacherService;
 
-    @GetMapping("/")
+    @GetMapping
     public String index(Model model){
         List<Teacher> teacherList = teacherService.findAllTeacher();
-        model.addAttribute("school",teacherList);
-        return "redirect:/";
+        model.addAttribute("teacher",teacherList);
+        return "teacher";
     }
 
     @GetMapping("/add")
@@ -50,9 +50,9 @@ public class TeacherController {
         return "redirect:/";
     }
 
-    @GetMapping(value = "/delete")
+    @GetMapping("/delete")
     public String deleteData(@RequestParam(value = "teacherid"/*,required = false,defaultValue = "0"*/)Integer teacherid ){
         teacherService.deleteTeacherByID(teacherid);
-        return "redirect:/school";
+        return "redirect:/teacher";
     }
 }
