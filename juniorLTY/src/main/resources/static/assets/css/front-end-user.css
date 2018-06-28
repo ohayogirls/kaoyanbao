@@ -17,35 +17,26 @@ table{
     padding-left: 8px;
 }
 
-.th-SchoolID{
-    width: 7%;
-}
-.th-SchoolName{
-    width: 10%;
-}
-.th-Area{
+.th-UserID{
     width: 5%;
 }
-.th-Province{
+.th-UserName{
     width: 7%;
 }
-.th-Outline{
+.th-Password{
     width: 10%;
 }
-.th-CatalogLink{
+.th-HeadPath{
     width: 10%;
 }
-.th-ReferrenceBook{
+.th-Email{
     width: 10%;
 }
-.th-CutTime{
-    width: 7%;
+.th-Phone{
+    width: 10%;
 }
-.th-Is985{
-    width: 5%;
-}
-.th-Is211{
-    width: 5%;
+.th-IsAdministrator{
+    width: 10%;
 }
 .th-edit{
     width: 6%;
