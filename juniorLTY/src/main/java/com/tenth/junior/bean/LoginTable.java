@@ -17,11 +17,18 @@ public class LoginTable {
     @ManyToOne
     private User user;
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public LoginTable() {
     }
 
     public Integer getLogID() {
-
         return LogID;
     }
 
