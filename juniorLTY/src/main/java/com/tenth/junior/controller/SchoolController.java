@@ -17,11 +17,11 @@ public class SchoolController {
     @Autowired
     private SchoolService schoolService;
 
-    @GetMapping("/")
+    @GetMapping
     public String index(Model model){
         List<School> schoolList = schoolService.findAllSchool();
         model.addAttribute("school",schoolList);
-        return "school-table";
+        return "school";
     }
 
 }
