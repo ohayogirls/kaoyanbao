@@ -24,6 +24,4 @@ public class SchoolController {
         return "school-table";
     }
 
-
-
 }

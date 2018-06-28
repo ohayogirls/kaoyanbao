@@ -17,7 +17,7 @@ public class YearlyDataController {
     @Autowired
     private YearlyDataService yearlyDataService;
 
-    @GetMapping("/")
+    @GetMapping
     public String index(Model model){
         List<YearlyData> yearlyDataList = yearlyDataService.findAllYearlyData();
         model.addAttribute("yearlydata",yearlyDataList);
@@ -26,30 +26,36 @@ public class YearlyDataController {
 
     @GetMapping("/add")
     public  String getaddpage(){
-        return "addstu";
+        return "add-yea";
     }
     @PostMapping("/add")
     public String input(YearlyData yearlyData){
         yearlyDataService.addYearlyData(yearlyData);
-        return "redirect:/";
+        return "redirect:/yearlydata";
     }
 
-    @GetMapping("/delete/{pk}")
-    public String deleteData(@PathVariable("pk") YearlyDataPK yearlyDatapk){
-        yearlyDataService.deleteYearlyData(yearlyDatapk);
-        return "redirect:/";
+    @GetMapping("/delete/{school}/{year}")
+    public String deleteData(@PathVariable("school") Integer schoolid,@PathVariable("year") Integer yearid){
+        YearlyDataPK pk = new YearlyDataPK();
+        pk.setSchoolID(schoolid);
+        pk.setYearID(yearid);
+        yearlyDataService.deleteYearlyData(pk);
+        return "redirect:/yearlydata";
     }
 
-    @GetMapping("/update/{pk}")
-    public String updatepage(@PathVariable("pk") YearlyDataPK yearlyDataPK,Model model){
-        model.addAttribute("yearlydata",yearlyDataService.findByID(yearlyDataPK).get());
-        return "update-yearly-data";
+    @GetMapping("/update/{school}/{year}")
+    public String updatepage(@PathVariable("school") Integer schoolid,@PathVariable("year") Integer yearid,Model model){
+        YearlyDataPK pk = new YearlyDataPK();
+        pk.setSchoolID(schoolid);
+        pk.setYearID(yearid);
+        model.addAttribute("yearlydata",yearlyDataService.findByID(pk).get());
+        return "update-yea";
     }
 
     @PostMapping("/update")
     public String updateData(YearlyData yearlyData){
         yearlyDataService.updateYearlyData(yearlyData);
-        return "redirect:/";
+        return "redirect:/yearlydata";
     }
 
 //    @PostMapping("/search")
