@@ -2,6 +2,7 @@ package com.tenth.junior.service;
 
 import com.tenth.junior.bean.Teacher;
 import java.util.List;
+import java.util.Optional;
 
 public interface TeacherService {
 
@@ -69,6 +70,13 @@ public interface TeacherService {
      * @return aimList
      */
     List<Teacher> findTeacherByName(List<Teacher> aimList,String name);
+
+    /**
+     * 通过id查找老师
+     * @param id
+     * @return
+     */
+    Optional<Teacher> findTeacherByID(Integer id);
 
     /**
      * 查找某学校的所有老师----这个接口是不是在SchoolService里面也要有？？？

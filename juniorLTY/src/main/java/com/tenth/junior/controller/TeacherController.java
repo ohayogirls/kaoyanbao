@@ -1,17 +1,15 @@
 package com.tenth.junior.controller;
 
-import com.tenth.junior.bean.School;
 import com.tenth.junior.bean.Teacher;
+import com.tenth.junior.bean.User;
 import com.tenth.junior.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping(value = "/teacher")
@@ -44,15 +42,28 @@ public class TeacherController {
     /**
      * 更新
      */
+
+    @GetMapping("/update/{id}")
+    public String updatePage(@PathVariable("id") Integer id, Model model) {
+        Optional<Teacher> teacher = teacherService.findTeacherByID(id);
+        model.addAttribute("stu", teacher.get());
+        model.addAttribute("allTeacher", teacherService.findAllTeacher());
+        return "update-tea";
+    }
+
     @PostMapping("/update")
     public String updateSchool(Teacher teacher){
         teacherService.addATeacher(teacher);
         return "redirect:/";
     }
 
-    @GetMapping(value = "/delete")
-    public String deleteData(@RequestParam(value = "teacherid"/*,required = false,defaultValue = "0"*/)Integer teacherid ){
-        teacherService.deleteTeacherByID(teacherid);
-        return "redirect:/school";
+    /**
+     * 删除
+     */
+
+    @GetMapping(value = "/delete/{id}")
+    public String deleteData(@PathVariable("id")Teacher teacher ){
+        teacherService.deleteTeacher(teacher);
+        return "redirect:/teacher";
     }
 }
