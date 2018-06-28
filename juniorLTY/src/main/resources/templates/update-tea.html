@@ -12,7 +12,7 @@
     <!-- MAIN CSS -->
     <link rel="stylesheet" th:href="@{../../../assets/css/main.css}">
     <!--CSS BY LTY-->
-    <link rel="stylesheet" th:href="@{../../../assets/css/yearly-data.css}">
+    <link rel="stylesheet" th:href="@{../../../assets/css/teacher.css}">
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
     <!-- ICONS -->
@@ -129,7 +129,9 @@
                                         <input type="text" th:value="${yearlydata.enrollRate}" class="form-control" id="inputEnrollRate" name="EnrollRate" placeholder="">
                                     </div>
 
-                                    <button type="submit" class="btn btn-default">Submit</button>
+                                    <div class="add-submit">
+                                        <button type="submit" class="btn btn-default">Submit</button>
+                                    </div>
                                 </form>
                             </div>
                         </div>

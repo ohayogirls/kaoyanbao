@@ -15,11 +15,14 @@ public class Experience {
     private String  Author;
     private Date    Time;
     private String  Text;
+    //private String SchoolID;
     @ManyToOne
     private School school;
 
     public Experience() {
     }
+
+
 
     public Integer getExpID() {
         return ExpID;

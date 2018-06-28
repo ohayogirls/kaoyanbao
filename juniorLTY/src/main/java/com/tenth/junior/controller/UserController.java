@@ -44,8 +44,9 @@ public class UserController {
      */
     @GetMapping("/add")
     public String addPage(Model model) {
-        return "add-user";
+        return "add-fro";
     }
+
     @PostMapping("/add")
     public String getaddpage(User user) { ;
         userService.addUser(user);
@@ -63,7 +64,7 @@ public class UserController {
         Optional<User> user = userService.getUserByID(id);
         model.addAttribute("stu", user.get());
         model.addAttribute("allUser", userService.getAllUser());
-        return "update-user";
+        return "update-fro";
     }
 
     /**

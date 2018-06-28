@@ -17,38 +17,14 @@ table{
     padding-left: 8px;
 }
 
-.th-SchoolID{
-    width: 7%;
+.th-LogID{
+    width: 20%;
 }
-.th-SchoolName{
-    width: 10%;
+.th-IP{
+    width: 20%;
 }
-.th-Area{
-    width: 5%;
-}
-.th-Province{
-    width: 7%;
-}
-.th-Outline{
-    width: 10%;
-}
-.th-CatalogLink{
-    width: 10%;
-}
-.th-ReferrenceBook{
-    width: 10%;
-}
-.th-CutTime{
-    width: 7%;
-}
-.th-Is985{
-    width: 5%;
-}
-.th-Is211{
-    width: 5%;
-}
-.th-edit{
-    width: 6%;
+.th-Time{
+    width: 20%;
 }
 .plus-circle{
     text-align: center;
