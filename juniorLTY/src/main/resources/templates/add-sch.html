@@ -144,12 +144,14 @@
                                         <input type="date" class="form-control" name="CutTime" id="inputCutTime" placeholder="">
                                     </div>
                                     <!--checkbox 传值问题-->
-                                    <div class="checkbox">
-                                        <label class="fancy-checkbox">
-                                            <input type="checkbox" name="Is985" > <span>Is985</span>
+                                    <div class="form-group">
+                                        <label class="">
+                                            <input type="checkbox" name="Is985" > <span>是否985</span>
+                                            <input type="hidden" th:value="false" name="Is985" >
                                         </label>
-                                        <label class="fancy-checkbox">
-                                            <input type="checkbox" name="Is211" > <span>Is211</span>
+                                        <label class="">
+                                            <input type="checkbox" name="Is211" > <span>是否211</span>
+                                            <input type="hidden" th:value="false" name="Is211" >
                                         </label>
                                     </div>
                                     <div class="add-submit">

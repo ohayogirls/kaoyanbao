@@ -138,8 +138,9 @@
                                     </div>
                                     <!--选中传on，不选中不传-->
                                     <div class="form-group">
-                                        <label class="fancy-checkbox">
-                                            <input type="checkbox" th:value="${userdata.administrator}" name="IsAdministrator"> <span>是否管理员</span>
+                                        <label class="">
+                                            <input type="checkbox" name="Administrator"> <span>是否管理员</span>
+                                            <input type="hidden" th:value="false" name="Administrator">
                                         </label>
                                     </div>
                                     <div class="add-submit">
