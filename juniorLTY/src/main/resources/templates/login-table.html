@@ -115,6 +115,7 @@
 										<thead>
 										<tr>
 											<th class="th-LogID">LogID</th>
+											<th class="th-UserID">UserID</th>
 											<th class="th-IP">IP</th>
 											<th class="th-Time">Time</th>
 										</tr>
@@ -122,6 +123,7 @@
 										<tbody>
 										<tr th:each="loginData : ${logindata}">
 											<td th:text="${loginData.getLogID()}"></td>
+											<td th:text="${loginData.getUserID()}"></td>
 											<td th:text="${loginData.getIP()}"></td>
 											<td th:text="${loginData.getTime()}"></td>
 											<!--<td><a th:href="@{'/yearlydata/update/'+${yearlyData.getSchoolID()}+'/'+${yearlyData.getYearID()}}" ><i class="lnr lnr-pencil"></i></a>-->
