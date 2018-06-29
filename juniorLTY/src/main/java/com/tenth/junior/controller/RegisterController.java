@@ -31,22 +31,40 @@ public class RegisterController {
      * 登录界面
      * @return
      */
-    @GetMapping
+    @GetMapping("/register")
     public String index(Model model) {
         //List<User> list = userService.getAllUser();
         //model.addAttribute("userdata", list);
         return "register";
     }
 
+   @PostMapping("/register")
+    public String Register(User user){
+
+       String password1 = userService.findByName(user.getUserName()).getPassword();
+       if(userService.findByName(user.getUserName()) != null){
+           if( user.getPassword().equalsIgnoreCase(password1)){
+               //登录成功，在LoginTable表中添加登录日志
+               LoginTable loginTable = new LoginTable();
+               loginTable.setUser(userService.findByName(user.getUserName()));
+               loginTable.setLogID(loginTableService.getLogTanumber());
+               loginTable.setTime(loginTableService.presentTime());
+               loginTable.setIP(loginTableService.getIPAddr(request));
+
+               loginTableService.addLoginTable(loginTable);
+               return "redirect:/logintable";
+           }
+           else
+               return "redirect:/register";
+       }
+        else
+            return "redirect:/register";    //用户名或密码错误，重新输入数据
+    }
+
     /**
      * 用户注册信息
-     * @param UserID
      * @param UserName
      * @param password
-     * @param HeadPath
-     * @param Email
-     * @param IsAdministrator
-     * @param Phone
      * @return
      */
     @GetMapping("/signIn")
@@ -55,34 +73,16 @@ public class RegisterController {
     }
 
     @PostMapping("/signIn")
-    public String getaddpage(User user) { ;
-        userService.addUser(user);
-        return "redirect:/";
-    }
-
-    /**
-     * 登录
-     * @param UserName
-     * @param password
-     * @return
-     */
-    @GetMapping("/register/{name}/{password}")
-    public String Register(@PathVariable("name") String username,@PathVariable("password") String userpassword){
-
-        if(userService.findByName(username).getPassword().equals(userpassword)){
-            //登录成功，在LoginTable表中添加登录日志
-            Integer userid = userService.findByName(username).getUserID();
-            LoginTable loginTable = new LoginTable();
-            loginTable.setUserID(userid);
-            loginTable.setLogID(loginTableService.getLogTanumber());
-            loginTable.setTime(loginTableService.presentTime());
-            loginTable.setIP(loginTableService.getIPAddr(request));
-            loginTableService.addLoginTable(loginTable);
-            return "school";
-        }
+    public String getaddpage(User user) {
+        if(userService.findByName(user.getUserName())!=null)
+            return "redirect:/signIn";
         else
-            return "redirect:/";    //用户名或密码错误，重新输入数据
+            userService.addUser(user);
+        return "school";
+
     }
+
+
 
 
     // @GetMapping("/delete/{id}")

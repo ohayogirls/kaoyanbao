@@ -3,6 +3,7 @@ package com.tenth.junior.bean;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.*;
 
 @Entity
 public class User {
@@ -15,6 +16,8 @@ public class User {
     private String  Email;
     private Boolean IsAdministrator;
     private String  Phone;
+
+    //private ArrayList<LoginTable> logintableArray;
 
     public Integer getUserID() {
         return UserID;
@@ -72,7 +75,22 @@ public class User {
         Phone = phone;
     }
 
-    public User() {
-
+    //public User(Integer UserID,String  UserName,String  Password) {
+    //    UserID = UserID;
+    //    UserName=UserName;
+     //   Password = Password;
+    //    logintableArray = new ArrayList<LoginTable>(3);
+    //}
+    public User(){
+     //   logintableArray = new ArrayList<LoginTable>(3);
     }
+   // public ArrayList getLoginTables(){
+   //     return logintableArray;
+   // }
+
+    //public void addLoginTableToUser(LoginTable aLoginTable){
+    //    logintableArray.add(aLoginTable);
+    //    aLoginTable.setUser(this);
+    //}
+
 }
