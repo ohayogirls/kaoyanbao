@@ -6,6 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import java.util.Date;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Entity
 public class LoginTable {
     @Id
@@ -59,4 +61,6 @@ public class LoginTable {
     public void setUserID(Integer userID) {
         user.setUserID(userID);
     }
+
+
 }

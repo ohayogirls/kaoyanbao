@@ -42,7 +42,7 @@ public class LoginTabbleController {
      */
     @PostMapping("/add")
     public  String input(LoginTable loginTable){
-        Optional<User> user = userService.getUserByID(loginTable.getUser().getUserID()); ;
+        Optional<User> user = userService.findByID(loginTable.getUser().getUserID()); ;
         loginTable.setUser(user.get());
         loginTableService.addLoginTable(loginTable);
         return "redirect:/";

@@ -10,13 +10,13 @@ public interface UserService {
 
     User addUser(User user);
 
-    Optional<User> getUserByID(Integer id);
+    Optional<User> findByID(Integer userid);
 
     User updateUser(User user);
 
     void deleteUser(User user);
 
-//    User getUserByNandP(String username, String password);
+    User findByName(String user_name);
 
     public long getUserNum();
 

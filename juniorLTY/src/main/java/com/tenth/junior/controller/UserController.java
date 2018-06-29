@@ -1,6 +1,7 @@
 package com.tenth.junior.controller;
 
 import com.tenth.junior.bean.User;
+import com.tenth.junior.bean.YearlyDataPK;
 import com.tenth.junior.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -61,15 +62,17 @@ public class UserController {
 
     @GetMapping("/update/{id}")
     public String updatePage(@PathVariable("id") Integer userid, Model model) {
+
 //        Optional<User> user = userService.getUserByID(id);
 //        model.addAttribute("stu", user.get());
 //        model.addAttribute("allUser", userService.getAllUser());
 //        return "update-fro";
         User user = new User();
         user.setUserID(userid);
-        model.addAttribute("userdata",userService.getUserByID(userid).get());
+        model.addAttribute("userdata",userService.findByID(userid).get());
         return "update-fro";
     }
+
 
     /**
      * 修改用户信息功能
