@@ -131,6 +131,7 @@
 											<td th:text="${expData.getTime()}"></td>
 											<td th:text="${expData.getTitle()}"></td>
 											<td th:text="${expData.getText()}"></td>
+											<td th:text="${expData.getSchoolID()}"></td>
 											<td><a th:href="@{'/experience/update/'+${expData.getExpID()}}" ><i class="lnr lnr-pencil"></i></a>
 												<a th:href="@{'/experience/delete/'+${expData.getExpID()}}" ><i class="lnr lnr-trash"></i></a>
 											</td>
