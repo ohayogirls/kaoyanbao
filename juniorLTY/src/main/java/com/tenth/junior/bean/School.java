@@ -14,7 +14,16 @@ public class School {
     private String  Area;
     private String  Province;
     private String  Outline;
-    private Date    CutTime;
+
+    public String getCutTime() {
+        return CutTime;
+    }
+
+    public void setCutTime(String cutTime) {
+        CutTime = cutTime;
+    }
+
+    private String  CutTime;
     private String  CatalogLink;
     private String  ReferrenceBook;
     private Boolean Is985;
@@ -61,14 +70,6 @@ public class School {
 
     public void setOutline(String outline) {
         Outline = outline;
-    }
-
-    public Date getCutTime() {
-        return CutTime;
-    }
-
-    public void setCutTime(Date cutTime) {
-        CutTime = cutTime;
     }
 
     public String getCatalogLink() {

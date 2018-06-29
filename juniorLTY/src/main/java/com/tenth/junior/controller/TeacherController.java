@@ -44,9 +44,9 @@ public class TeacherController {
 
     @GetMapping("/update/{id}")
     public String updatePage(@PathVariable("id") Integer id, Model model) {
-        Optional<Teacher> teacher = teacherService.findTeacherByID(id);
+//        Optional<Teacher> teacher = teacherService.findTeacherByID(id);
         //model.addAttribute("stu", teacher.get());
-        model.addAttribute("teacher", teacher);
+        model.addAttribute("teacher", teacherService.findTeacherByID(id).get());
         return "update-tea";
     }
 
