@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.naming.Binding;
 import javax.swing.text.html.Option;
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,8 +25,8 @@ import java.util.Optional;
 public class ExperienceController {
     @Autowired
     private ExperienceService experienceService;
-    //@Autowired
-    //private SchoolService schoolService;
+    @Autowired
+    private SchoolService schoolService;
 
     /**
      * 查看所有的经验贴
@@ -43,11 +45,11 @@ public class ExperienceController {
      * 添加界面：experience/add
      */
     @PostMapping("/add")
-    public String input(Experience experience, BindingResult bindingResult){
-       // Optional<School> school;
-        //school=schoolService.getExperienceByID(experience.getSchoolID());
+    public String input(@Valid Experience experience, BindingResult bindingResult){
+        Optional<School> school=schoolService.GetSchoolByID(experience.getSchoolID());
+        experience.setSchool(school.get());
         experienceService.addExperience(experience);
-        return "redirect:/";
+        return "redirect:/experience";
     }
     /**
      * 显示添加界面
@@ -73,13 +75,18 @@ public class ExperienceController {
     /**修改功能
      *
      */
+    @GetMapping("/update/{id}")
+    public String updataPage(@PathVariable("id") Integer id,Model model){
+        model.addAttribute("exp",experienceService.findByID(id));
+        return "update-exp";
+    }
     @PostMapping("/update")
     public String updateData(Experience experience){
 //        Optional<Experience> experience1 = experienceService.get (student.getGrade().getGID()); ;
 //        student.setGrade(grade.get());
         //experience.setSchoolID();
          experienceService.addExperience(experience);
-        return "redirect:/";
+        return "redirect:/experience";
     }
     /**
      *

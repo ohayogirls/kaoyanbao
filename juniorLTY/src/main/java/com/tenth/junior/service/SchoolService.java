@@ -119,4 +119,5 @@ public interface SchoolService {
      */
     List<School> findSchool(List<School> aimList, String area, String province, Boolean is985, Boolean is211);
 
+    Optional<School> GetSchoolByID(Integer ID);
 }
