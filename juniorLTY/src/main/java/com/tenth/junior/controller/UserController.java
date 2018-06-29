@@ -48,7 +48,7 @@ public class UserController {
     }
 
     @PostMapping("/add")
-    public String getaddpage(User user) { ;
+    public String getaddpage(User user) {
         userService.addUser(user);
         return "redirect:/user";
     }

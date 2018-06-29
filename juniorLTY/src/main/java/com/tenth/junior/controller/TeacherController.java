@@ -1,7 +1,6 @@
 package com.tenth.junior.controller;
 
 import com.tenth.junior.bean.Teacher;
-import com.tenth.junior.bean.User;
 import com.tenth.junior.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -46,8 +45,8 @@ public class TeacherController {
     @GetMapping("/update/{id}")
     public String updatePage(@PathVariable("id") Integer id, Model model) {
         Optional<Teacher> teacher = teacherService.findTeacherByID(id);
-        model.addAttribute("stu", teacher.get());
-        model.addAttribute("allTeacher", teacherService.findAllTeacher());
+        //model.addAttribute("stu", teacher.get());
+        model.addAttribute("teacher", teacher);
         return "update-tea";
     }
 
