@@ -77,7 +77,7 @@ public class ExperienceController {
      */
     @GetMapping("/update/{id}")
     public String updataPage(@PathVariable("id") Integer id,Model model){
-        model.addAttribute("exp",experienceService.findByID(id));
+        model.addAttribute("exp",experienceService.findByID(id).get());
         return "update-exp";
     }
     @PostMapping("/update")
