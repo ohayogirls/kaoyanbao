@@ -38,7 +38,7 @@ public class MaterialServiceImpl implements  MaterialService{
 
     @Override
     public List<Material> getAllMat() {
-        return null;
+        return materialrepository.findAll();
     }
 
     @Override

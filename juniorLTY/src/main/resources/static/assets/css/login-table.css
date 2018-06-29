@@ -20,6 +20,9 @@ table{
 .th-LogID{
     width: 20%;
 }
+.th-UserID{
+    width: 20%;
+}
 .th-IP{
     width: 20%;
 }

@@ -122,6 +122,7 @@
 											<th class="th-Email">Email</th>
 											<th class="th-JobTitle">JobTitle</th>
 											<th class="th-Introduction">Introduction</th>
+											<th class="th-SchoolID">SchoolID</th>
 											<th class="th-edit">操作</th>
 										</tr>
 										</thead>
@@ -135,6 +136,7 @@
 											<td th:text="${teacherData.getEmail()}"></td>
 											<td th:text="${teacherData.getJobTitle()}"></td>
 											<td th:text="${teacherData.getIntroduction()}"></td>
+											<td th:text="${teacherData.getSchoolID()}"></td>
 											<td><a th:href="@{'/teacher/update/'+${teacherData.getTeacherID()}}" ><i class="lnr lnr-pencil"></i></a>
 												<a th:href="@{'/teacher/delete/'+${teacherData.getTeacherID()}}" ><i class="lnr lnr-trash"></i></a>
 											</td>
