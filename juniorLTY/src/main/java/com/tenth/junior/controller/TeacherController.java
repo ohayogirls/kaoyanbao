@@ -1,6 +1,8 @@
 package com.tenth.junior.controller;
 
+import com.tenth.junior.bean.School;
 import com.tenth.junior.bean.Teacher;
+import com.tenth.junior.service.SchoolService;
 import com.tenth.junior.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,7 +17,8 @@ import java.util.Optional;
 public class TeacherController {
     @Autowired
     private TeacherService teacherService;
-
+    @Autowired
+    private SchoolService schoolService;
     @GetMapping
     public String index(Model model){
         List<Teacher> teacherList = teacherService.findAllTeacher();
@@ -34,6 +37,8 @@ public class TeacherController {
      */
     @PostMapping("/add")
     public String input(Teacher teacher){
+        Optional<School> school=schoolService.GetSchoolByID(teacher.getSchoolID());
+        teacher.setSchool(school.get());
         teacherService.addATeacher(teacher);
         return "redirect:/teacher";
     }
