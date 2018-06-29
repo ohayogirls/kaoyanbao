@@ -69,7 +69,7 @@ public class ExperienceController {
     public String deleteExp(@PathVariable("id") Integer id){
         Optional<Experience> experience=experienceService.findByID(id);
         experienceService.deleteExperience(experience.get());
-        return "redirect:/";
+        return "redirect:/experience";
     }
 
     /**修改功能
