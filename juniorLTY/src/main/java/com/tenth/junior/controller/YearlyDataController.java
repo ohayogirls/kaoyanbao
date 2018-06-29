@@ -1,7 +1,9 @@
 package com.tenth.junior.controller;
 
+import com.tenth.junior.bean.School;
 import com.tenth.junior.bean.YearlyData;
 import com.tenth.junior.bean.YearlyDataPK;
+import com.tenth.junior.service.SchoolService;
 import com.tenth.junior.service.YearlyDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,7 +18,8 @@ import java.util.Optional;
 public class YearlyDataController {
     @Autowired
     private YearlyDataService yearlyDataService;
-
+    @Autowired
+    private SchoolService schoolService;
     @GetMapping
     public String index(Model model){
         List<YearlyData> yearlyDataList = yearlyDataService.findAllYearlyData();
@@ -25,8 +28,11 @@ public class YearlyDataController {
     }
 
     @GetMapping("/add")
-    public  String getaddpage(){
+    public  String getaddpage(Model model) {
+        List<School> schoolList = schoolService.findAllSchool();
+        model.addAttribute("allSchool",schoolList);
         return "add-yea";
+
     }
     @PostMapping("/add")
     public String input(YearlyData yearlyData){
@@ -49,6 +55,8 @@ public class YearlyDataController {
         pk.setSchoolID(schoolid);
         pk.setYearID(yearid);
         model.addAttribute("yearlydata",yearlyDataService.findByID(pk).get());
+        List<School> schoolList = schoolService.findAllSchool();
+        model.addAttribute("allSchool",schoolList);
         return "update-yea";
     }
 
