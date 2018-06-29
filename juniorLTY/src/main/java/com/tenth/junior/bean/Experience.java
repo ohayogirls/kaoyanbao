@@ -13,16 +13,13 @@ public class Experience {
     private Integer ExpID;
     private String  Type;
     private String  Author;
-    private Date    Time;
+
+
+
+    private String    Time;
     private String  Text;
 
-    public String getTitle() {
-        return Title;
-    }
 
-    public void setTitle(String title) {
-        Title = title;
-    }
 
     private String Title;
     //private String SchoolID;
@@ -33,6 +30,13 @@ public class Experience {
     }
 
 
+    public String getTitle() {
+        return Title;
+    }
+
+    public void setTitle(String title) {
+        Title = title;
+    }
 
     public Integer getExpID() {
         return ExpID;
@@ -57,13 +61,12 @@ public class Experience {
     public void setAuthor(String author) {
         Author = author;
     }
-
-    public Date getTime() {
-        return Time;
+    public void setTime(String time) {
+        Time = time;
     }
 
-    public void setTime(Date time) {
-        Time = time;
+    public String getTime() {
+        return Time;
     }
 
     public String getText() {
@@ -80,5 +83,13 @@ public class Experience {
 
     public void setSchoolID(Integer schoolID) {
          school.setSchoolID(schoolID);
+    }
+
+    public School getSchool() {
+        return school;
+    }
+
+    public void setSchool(School school) {
+        this.school = school;
     }
 }

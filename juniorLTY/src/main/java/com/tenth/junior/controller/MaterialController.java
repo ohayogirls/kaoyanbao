@@ -55,7 +55,7 @@ public class MaterialController {
     @GetMapping("/update/{id}")
     public String updateMat(@PathVariable("id") Integer id, Model model){
         Optional<Material> material=materialService.findByID(id);
-        model.addAttribute("mat",material);
+        model.addAttribute("mat",material.get());
         return "update-mat";
     }
     /**
@@ -64,7 +64,7 @@ public class MaterialController {
     @PostMapping("/update")
     public String updatematerial(Material material){
         materialService.addMaterial(material);
-        return "redirect:/";
+        return "redirect:/material";
     }
 
     /**
@@ -74,7 +74,7 @@ public class MaterialController {
     public String deleteMat(@PathVariable("id") Integer id){
         Optional<Material> material=materialService.findByID(id);
         materialService.deleteMaterial(material.get());
-        return "redirect:/";
+        return "redirect:/material";
     }
 
 }

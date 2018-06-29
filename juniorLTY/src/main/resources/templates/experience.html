@@ -92,8 +92,8 @@
 						<li><a th:href="@{'/experience'}" class="active"><i class="lnr lnr-bubble"></i> <span>Experience Table#经验分享表</span></a></li>
 						<li><a th:href="@{'/yearlydata'}" class=""><i class="lnr lnr-chart-bars"></i> <span>YearlyData#历年数据</span></a></li>
 						<li><a th:href="@{'/teacher'}" class=""><i class="lnr lnr-license"></i> <span>Teacher#名师目录</span></a></li>
-						<li><a th:href="@{'/user'}" class=""><i class="lnr lnr-users"></i> <span>front-end user list#前端用户</span></a></li>
-						<li><a th:href="@{'/material'}" class=""><i class="lnr lnr-cloud-download"></i> <span>material#复习资料</span></a></li>
+						<li><a th:href="@{'/user'}" class=""><i class="lnr lnr-users"></i> <span>Front-end user list#前端用户</span></a></li>
+						<li><a th:href="@{'/material'}" class=""><i class="lnr lnr-cloud-download"></i> <span>Material#复习资料</span></a></li>
 						<li><a th:href="@{'/logintable'}" class=""><i class="lnr lnr-database"></i> <span>LoginTable#登陆记录表</span></a></li>
 					</ul>
 				</nav>
@@ -131,6 +131,7 @@
 											<td th:text="${expData.getTime()}"></td>
 											<td th:text="${expData.getTitle()}"></td>
 											<td th:text="${expData.getText()}"></td>
+											<td th:text="${expData.getSchoolID()}"></td>
 											<td><a th:href="@{'/experience/update/'+${expData.getExpID()}}" ><i class="lnr lnr-pencil"></i></a>
 												<a th:href="@{'/experience/delete/'+${expData.getExpID()}}" ><i class="lnr lnr-trash"></i></a>
 											</td>

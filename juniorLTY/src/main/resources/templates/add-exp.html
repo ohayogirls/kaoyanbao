@@ -92,8 +92,8 @@
                     <li><a th:href="@{'/experience'}" class="active"><i class="lnr lnr-bubble"></i> <span>Experience Table#经验分享表</span></a></li>
                     <li><a th:href="@{'/yearlydata'}" class=""><i class="lnr lnr-chart-bars"></i> <span>YearlyData#历年数据</span></a></li>
                     <li><a th:href="@{'/teacher'}" class=""><i class="lnr lnr-license"></i> <span>Teacher#名师目录</span></a></li>
-                    <li><a th:href="@{'/user'}" class=""><i class="lnr lnr-users"></i> <span>front-end user list#前端用户</span></a></li>
-                    <li><a th:href="@{'/material'}" class=""><i class="lnr lnr-cloud-download"></i> <span>material#复习资料</span></a></li>
+                    <li><a th:href="@{'/user'}" class=""><i class="lnr lnr-users"></i> <span>Front-end user list#前端用户</span></a></li>
+                    <li><a th:href="@{'/material'}" class=""><i class="lnr lnr-cloud-download"></i> <span>Material#复习资料</span></a></li>
                     <li><a th:href="@{'/logintable'}" class=""><i class="lnr lnr-database"></i> <span>LoginTable#登陆记录表</span></a></li>
                 </ul>
             </nav>
@@ -112,8 +112,8 @@
                             <div class="panel-body">
                                 <form method="post" th:action="@{/experience/add}">
                                     <div class="form-group">
-                                        <label for="inputExpID">经验ID</label>
-                                        <input type="text" class="form-control" name="ExpID" id="inputExpID" placeholder="">
+                                        <!--<label for="inputExpID">经验ID</label>-->
+                                        <input type="hidden" class="form-control" name="ExpID" id="inputExpID" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputType">经验分类</label>
@@ -136,8 +136,10 @@
                                         <input type="text" class="form-control" name="Text" id="inputText" placeholder="">
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputSchoolID">所属学校ID</label>
-                                        <input type="text" class="form-control" name="school.SchoolID" id="inputSchoolID" placeholder="">
+                                        <label for="inputSchoolID">学校</label>
+                                        <select name="school.SchoolID" id="category" class="form-control" >
+                                            <option th:each="schoolData : ${allSchool}" th:value="${schoolData.getSchoolID()}" th:text="${schoolData.getSchoolName()}" ></option>
+                                        </select>
                                     </div>
                                     <div class="add-submit">
                                         <button type="submit" class="btn btn-default">Submit</button>

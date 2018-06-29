@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping(value = "/school")
@@ -41,18 +42,25 @@ public class SchoolController {
 
     /**
      * 更新school
-     * @param school
-     * @return
      */
+
+    @GetMapping("/update/{id}")
+    public String updateSchool(@PathVariable("id")Integer id,Model model){
+//        Optional<School> school=schoolService.findSchoolByID(id);
+        //model.addAttribute("stu", school.get());
+        model.addAttribute("school", schoolService.findSchoolByID(id).get());
+        return "update-sch";
+    }
+
     @PostMapping("/update")
     public String updateSchool(School school){
         schoolService.addASchool(school);
-        return "redirect:/";
+        return "redirect:/school";
     }
 
-    @GetMapping(value = "/delete")
-    public String deleteData(@RequestParam(value = "schoolid"/*,required = false,defaultValue = "0"*/)Integer schoolid ){
-        schoolService.deleteSchoolByID(schoolid);
+    @GetMapping("/delete/{id}")
+    public String deleteData(@PathVariable("id") School school) {
+        schoolService.deleteSchool(school);
         return "redirect:/school";
     }
 

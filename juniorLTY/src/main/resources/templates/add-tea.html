@@ -92,8 +92,8 @@
                     <li><a th:href="@{'/experience'}" class=""><i class="lnr lnr-bubble"></i> <span>Experience Table#经验分享表</span></a></li>
                     <li><a th:href="@{'/yearlydata'}" class=""><i class="lnr lnr-chart-bars"></i> <span>YearlyData#历年数据</span></a></li>
                     <li><a th:href="@{'/teacher'}" class="active"><i class="lnr lnr-license"></i> <span>Teacher#名师目录</span></a></li>
-                    <li><a th:href="@{'/user'}" class=""><i class="lnr lnr-users"></i> <span>front-end user list#前端用户</span></a></li>
-                    <li><a th:href="@{'/material'}" class=""><i class="lnr lnr-cloud-download"></i> <span>material#复习资料</span></a></li>
+                    <li><a th:href="@{'/user'}" class=""><i class="lnr lnr-users"></i> <span>Front-end user list#前端用户</span></a></li>
+                    <li><a th:href="@{'/material'}" class=""><i class="lnr lnr-cloud-download"></i> <span>Material#复习资料</span></a></li>
                     <li><a th:href="@{'/logintable'}" class=""><i class="lnr lnr-database"></i> <span>LoginTable#登陆记录表</span></a></li>
                 </ul>
             </nav>
@@ -105,15 +105,15 @@
         <!-- MAIN CONTENT -->
         <div class="main-content">
             <div class="container-fluid">
-                <h3 class="page-title">YearlyData#名师目录-新增</h3>
+                <h3 class="page-title">Teacher#名师目录-新增</h3>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="panel">
                             <div class="panel-body">
                                 <form method="post" th:action="@{/teacher/add}">
                                     <div class="form-group">
-                                        <label for="inputTeacherID">老师ID</label>
-                                        <input type="number" class="form-control" id="inputTeacherID" name="TeacherID" placeholder="">
+                                        <!--<label for="inputTeacherID">老师ID</label>-->
+                                        <input type="hidden" class="form-control" id="inputTeacherID" name="TeacherID" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputName">姓名</label>
@@ -142,6 +142,12 @@
                                     <div class="form-group">
                                         <label for="inputIntroduction">个人简介</label>
                                         <input type="text" class="form-control" id="inputIntroduction" name="Introduction" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputSchoolID">所属学校</label>
+                                        <select name="school.SchoolID" id="category" class="form-control" >
+                                            <option th:each="schoolData : ${allSchool}" th:value="${schoolData.getSchoolID()}" th:text="${schoolData.getSchoolName()}" ></option>
+                                        </select>
                                     </div>
 
                                     <div class="add-submit">

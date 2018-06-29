@@ -21,6 +21,14 @@ public class Teacher {
     @ManyToOne
     private School school;
 
+    public School getSchool() {
+        return school;
+    }
+
+    public void setSchool(School school) {
+        this.school = school;
+    }
+
     public Teacher() {
     }
 
