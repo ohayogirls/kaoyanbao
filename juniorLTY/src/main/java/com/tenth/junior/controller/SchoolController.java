@@ -46,9 +46,9 @@ public class SchoolController {
 
     @GetMapping("/update/{id}")
     public String updateSchool(@PathVariable("id")Integer id,Model model){
-        Optional<School> school=schoolService.findSchoolByID(id);
+//        Optional<School> school=schoolService.findSchoolByID(id);
         //model.addAttribute("stu", school.get());
-        model.addAttribute("school", school);
+        model.addAttribute("school", schoolService.findSchoolByID(id).get());
         return "update-sch";
     }
 

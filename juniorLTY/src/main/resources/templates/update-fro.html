@@ -7,12 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <!-- VENDOR CSS -->
-    <link rel="stylesheet" th:href="@{../../../assets/vendor/bootstrap/css/bootstrap.min.css}">
-    <link rel="stylesheet" th:href="@{../../../assets/vendor/linearicons/style.css}">
+    <link rel="stylesheet" th:href="@{../../assets/vendor/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{../../assets/vendor/linearicons/style.css}">
     <!-- MAIN CSS -->
-    <link rel="stylesheet" th:href="@{../../../assets/css/main.css}">
+    <link rel="stylesheet" th:href="@{../../assets/css/main.css}">
     <!--CSS BY LTY-->
-    <link rel="stylesheet" th:href="@{../../../assets/css/front-end-user.css}">
+    <link rel="stylesheet" th:href="@{../../assets/css/front-end-user.css}">
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
     <!-- ICONS -->
@@ -115,32 +115,32 @@
                                     <!--<input type="hidden" name="stuID" th:value="${stu.stuID}" >-->
                                     <div class="form-group">
                                         <label for="inputUserID">用户ID</label>
-                                        <input type="number" th:value="userdata.UserID" class="form-control" id="inputUserID" name="UserID" placeholder="">
+                                        <input type="number" th:value="${userdata.userID}" class="form-control" id="inputUserID" name="UserID" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputUserName">用户名</label>
-                                        <input type="text" th:value="userdata.UserName" class="form-control" id="inputUserName" name="UserName" placeholder="">
+                                        <input type="text" th:value="${userdata.userName}" class="form-control" id="inputUserName" name="UserName" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputPassword">密码</label>
-                                        <input type="text" th:value="userdata.Password" class="form-control" id="inputPassword" name="Password" placeholder="">
+                                        <input type="text" th:value="${userdata.password}" class="form-control" id="inputPassword" name="Password" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputHeadPath">头像路径</label>
-                                        <input type="text" th:value="userdata.HeadPath" class="form-control" id="inputHeadPath" name="HeadPath" placeholder="">
+                                        <input type="text" th:value="${userdata.headPath}" class="form-control" id="inputHeadPath" name="HeadPath" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputEmail">邮箱</label>
-                                        <input type="text" th:value="userdata.Email" class="form-control" id="inputEmail" name="Email" placeholder="">
+                                        <input type="text" th:value="${userdata.email}" class="form-control" id="inputEmail" name="Email" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputPhone">电话</label>
-                                        <input type="text" th:value="userdata.Phone" class="form-control" id="inputPhone" name="Phone" placeholder="">
+                                        <input type="text" th:value="${userdata.phone}" class="form-control" id="inputPhone" name="Phone" placeholder="">
                                     </div>
                                     <!--选中传on，不选中不传-->
                                     <div class="form-group">
                                         <label>
-                                            <input type="checkbox" th:value="userdata.IsAdministrator" name="IsAdministrator"> 是否为管理员
+                                            <input type="checkbox" th:value="${userdata.administrator}" name="IsAdministrator"> 是否为管理员
                                         </label>
                                     </div>
 
@@ -166,9 +166,9 @@
 </div>
 <!-- END WRAPPER -->
 <!-- Javascript -->
-<script th:src="@{../../../assets/vendor/jquery/jquery.min.js}"></script>
-<script th:src="@{../../../assets/vendor/bootstrap/js/bootstrap.min.js}"></script>
-<script th:src="@{../../../assets/scripts/klorofil-common.js}"></script>
+<script th:src="@{../../assets/vendor/jquery/jquery.min.js}"></script>
+<script th:src="@{../../assets/vendor/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{../../assets/scripts/klorofil-common.js}"></script>
 </body>
 
 </html>

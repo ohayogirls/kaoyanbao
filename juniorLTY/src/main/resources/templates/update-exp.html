@@ -114,31 +114,31 @@
                                 <form method="post" th:action="@{/experience/update}">
                                     <div class="form-group">
                                         <label for="inputExpID">经验ID</label>
-                                        <input type="hidden" th:value="exp.ExpID" class="form-control" id="inputExpID" placeholder="">
+                                        <input type="hidden" th:value="${exp.expID}" class="form-control" id="inputExpID" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputType">经验分类</label>
-                                        <input type="text" th:value="exp.Type" class="form-control" id="inputType" placeholder="">
+                                        <input type="text" th:value="${exp.type}" class="form-control" id="inputType" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputAuthor">作者</label>
-                                        <input type="text" th:value="exp.Author" class="form-control" id="inputAuthor" placeholder="">
+                                        <input type="text" th:value="${exp.author}" class="form-control" id="inputAuthor" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputTime">时间</label>
-                                        <input type="date" th:value="exp.Time" class="form-control" id="inputTime" placeholder="">
+                                        <input type="date" th:value="${exp.time}" class="form-control" id="inputTime" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputTitle">标题</label>
-                                        <input type="text" th:value="exp.Title" class="form-control" id="inputTitle" placeholder="">
+                                        <input type="text" th:value="${exp.title}" class="form-control" id="inputTitle" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputText">正文</label>
-                                        <input type="text" th:value="exp.Text" class="form-control" id="inputText" placeholder="">
+                                        <input type="text" th:value="${exp.text}" class="form-control" id="inputText" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputSchool">所属学校</label>
-                                        <input type="text" th:value="exp.SchoolID" class="form-control" id="inputSchool" placeholder="">
+                                        <input type="text" th:value="${exp.schoolID}" class="form-control" id="inputSchool" placeholder="">
                                     </div>
                                     <div class="add-submit">
                                         <button type="submit" class="btn btn-default">Submit</button>

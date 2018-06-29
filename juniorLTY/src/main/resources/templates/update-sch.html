@@ -7,17 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <!-- VENDOR CSS -->
-    <link rel="stylesheet" th:href="@{assets/vendor/bootstrap/css/bootstrap.min.css}">
-    <link rel="stylesheet" th:href="@{assets/vendor/linearicons/style.css}">
+    <link rel="stylesheet" th:href="@{../../assets/vendor/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{../../assets/vendor/linearicons/style.css}">
     <!-- MAIN CSS -->
-    <link rel="stylesheet" th:href="@{assets/css/main.css}">
+    <link rel="stylesheet" th:href="@{../../assets/css/main.css}">
     <!--CSS BY LTY-->
-    <link rel="stylesheet" th:href="@{assets/css/school.css}">
+    <link rel="stylesheet" th:href="@{../../assets/css/school.css}">
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
     <!-- ICONS -->
-    <link rel="apple-touch-icon" sizes="76x76" th:href="@{assets/img/apple-icon.png}">
-    <link rel="icon" type="image/png" sizes="96x96" th:href="@{assets/img/favicon.png}">
+    <link rel="apple-touch-icon" sizes="76x76" th:href="@{../../assets/img/apple-icon.png}">
+    <link rel="icon" type="image/png" sizes="96x96" th:href="@{../../assets/img/favicon.png}">
 </head>
 
 <body>
@@ -114,43 +114,43 @@
                                 <form method="post" th:action="@{/school/update}">
                                     <div class="form-group">
                                         <label for="inputSchoolID">学校ID</label>
-                                        <input type="hidden" th:value="" class="form-control" name="SchoolID" id="inputSchoolID" placeholder="">
+                                        <input type="number" th:value="${school.schoolID}" class="form-control" name="SchoolID" id="inputSchoolID" readonly placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputSchoolName">学校名称</label>
-                                        <input type="text" th:value="" class="form-control" name="SchoolName" id="inputSchoolName" placeholder="华中科技大学">
+                                        <input type="text" th:value="${school.schoolName}" class="form-control" name="SchoolName" id="inputSchoolName" placeholder="华中科技大学">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputArea">地域</label>
-                                        <input type="text" th:value="" class="form-control" name="Area" id="inputArea" placeholder="华中">
+                                        <input type="text" th:value="${school.area}" class="form-control" name="Area" id="inputArea" placeholder="华中">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputProvince">省份</label>
-                                        <input type="text" th:value="" class="form-control" name="Province" id="inputProvince" placeholder="湖北">
+                                        <input type="text" th:value="${school.province}" class="form-control" name="Province" id="inputProvince" placeholder="湖北">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputOutline">考纲链接</label>
-                                        <input type="text" th:value="" class="form-control" name="Outline" id="inputOutline" placeholder="">
+                                        <input type="text" th:value="${school.outline}" class="form-control" name="Outline" id="inputOutline" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputCatalog">简章链接</label>
-                                        <input type="text" th:value="" class="form-control" name="CatalogLink" id="inputCatalog" placeholder="">
+                                        <input type="text" th:value="${school.catalogLink}" class="form-control" name="CatalogLink" id="inputCatalog" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputBook">参考书链接</label>
-                                        <input type="text" th:value="" class="form-control" name="ReferrenceBook" id="inputBook" placeholder="">
+                                        <input type="text" th:value="${school.referrenceBook}" class="form-control" name="ReferrenceBook" id="inputBook" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputCutTime">报名截止时间</label>
-                                        <input type="date" th:value="" class="form-control" name="CutTime" id="inputCutTime" placeholder="">
+                                        <input type="date" th:value="${school.cutTime}" class="form-control" name="CutTime" id="inputCutTime" placeholder="">
                                     </div>
                                     <!--checkbox 传值问题-->
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" th:value="" name="Is985" > Is985
+                                            <input type="checkbox" th:value="${school.is985}" name="Is985" > Is985
                                         </label>
                                         <label>
-                                            <input type="checkbox" th:value="" name="Is211" > Is211
+                                            <input type="checkbox" th:value="${school.is211}" name="Is211" > Is211
                                         </label>
                                     </div>
                                     <div class="add-submit">
@@ -176,9 +176,9 @@
 </div>
 <!-- END WRAPPER -->
 <!-- Javascript -->
-<script th:src="@{assets/vendor/jquery/jquery.min.js}"></script>
-<script th:src="@{assets/vendor/bootstrap/js/bootstrap.min.js}"></script>
-<script th:src="@{assets/scripts/klorofil-common.js}"></script>
+<script th:src="@{../../assets/vendor/jquery/jquery.min.js}"></script>
+<script th:src="@{../../assets/vendor/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{../../assets/scripts/klorofil-common.js}"></script>
 
 </body>
 

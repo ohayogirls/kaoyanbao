@@ -7,17 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <!-- VENDOR CSS -->
-    <link rel="stylesheet" th:href="@{../../../assets/vendor/bootstrap/css/bootstrap.min.css}">
-    <link rel="stylesheet" th:href="@{../../../assets/vendor/linearicons/style.css}">
+    <link rel="stylesheet" th:href="@{../../assets/vendor/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{../../assets/vendor/linearicons/style.css}">
     <!-- MAIN CSS -->
-    <link rel="stylesheet" th:href="@{../../../assets/css/main.css}">
+    <link rel="stylesheet" th:href="@{../../assets/css/main.css}">
     <!--CSS BY LTY-->
-    <link rel="stylesheet" th:href="@{../../../assets/css/teacher.css}">
+    <link rel="stylesheet" th:href="@{../../assets/css/teacher.css}">
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
     <!-- ICONS -->
-    <link rel="apple-touch-icon" sizes="76x76" th:href="@{../../../assets/img/apple-icon.png}">
-    <link rel="icon" type="image/png" sizes="96x96" th:href="@{../../../assets/img/favicon.png}">
+    <link rel="apple-touch-icon" sizes="76x76" th:href="@{../../assets/img/apple-icon.png}">
+    <link rel="icon" type="image/png" sizes="96x96" th:href="@{../../assets/img/favicon.png}">
 </head>
 
 <body>
@@ -113,35 +113,35 @@
                                 <form method="post" th:action="@{/teacher/update}">
                                     <div class="form-group">
                                         <label for="inputTeacherID">老师ID</label>
-                                        <input type="hidden" th:value="" class="form-control" id="inputTeacherID" name="TeacherID" placeholder="">
+                                        <input type="hidden" th:value="${teacher.teacherID}" class="form-control" id="inputTeacherID" name="TeacherID" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputName">姓名</label>
-                                        <input type="text" th:value="" class="form-control" id="inputName" name="Name" placeholder="">
+                                        <input type="text" th:value="${teacher.name}" class="form-control" id="inputName" name="Name" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputSex">性别</label>
-                                        <input type="text" th:value="" class="form-control" id="inputSex" name="Sex" placeholder="">
+                                        <input type="text" th:value="${teacher.sex}" class="form-control" id="inputSex" name="Sex" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputCV">个人主页</label>
-                                        <input type="text" th:value="" class="form-control" id="inputCV" name="CV" placeholder="">
+                                        <input type="text" th:value="${teacher.CV}" class="form-control" id="inputCV" name="CV" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputResearch">研究方向</label>
-                                        <input type="text" th:value="" class="form-control" id="inputResearch" name="Research" placeholder="">
+                                        <input type="text" th:value="${teacher.research}" class="form-control" id="inputResearch" name="Research" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputEmail">邮箱</label>
-                                        <input type="text" th:value="" class="form-control" id="inputEmail" name="Email" placeholder="">
+                                        <input type="text" th:value="${teacher.email}" class="form-control" id="inputEmail" name="Email" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputJobTitle">职称</label>
-                                        <input type="text" th:value="" class="form-control" id="inputJobTitle" name="JobTitle" placeholder="">
+                                        <input type="text" th:value="${teacher.jobTitle}" class="form-control" id="inputJobTitle" name="JobTitle" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputIntroduction">个人简介</label>
-                                        <input type="text" th:value="" class="form-control" id="inputIntroduction" name="Introduction" placeholder="">
+                                        <input type="text" th:value="${teacher.introduction}" class="form-control" id="inputIntroduction" name="Introduction" placeholder="">
                                     </div>
 
                                     <div class="add-submit">
@@ -166,9 +166,9 @@
 </div>
 <!-- END WRAPPER -->
 <!-- Javascript -->
-<script th:src="@{../../../assets/vendor/jquery/jquery.min.js}"></script>
-<script th:src="@{../../../assets/vendor/bootstrap/js/bootstrap.min.js}"></script>
-<script th:src="@{../../../assets/scripts/klorofil-common.js}"></script>
+<script th:src="@{../../assets/vendor/jquery/jquery.min.js}"></script>
+<script th:src="@{../../assets/vendor/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{../../assets/scripts/klorofil-common.js}"></script>
 </body>
 
 </html>

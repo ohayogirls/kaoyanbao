@@ -7,17 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <!-- VENDOR CSS -->
-    <link rel="stylesheet" th:href="@{../../../assets/vendor/bootstrap/css/bootstrap.min.css}">
-    <link rel="stylesheet" th:href="@{../../../assets/vendor/linearicons/style.css}">
+    <link rel="stylesheet" th:href="@{../../assets/vendor/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{../../assets/vendor/linearicons/style.css}">
     <!-- MAIN CSS -->
-    <link rel="stylesheet" th:href="@{../../../assets/css/main.css}">
+    <link rel="stylesheet" th:href="@{../../assets/css/main.css}">
     <!--CSS BY LTY-->
-    <link rel="stylesheet" th:href="@{../../../assets/css/material.css}">
+    <link rel="stylesheet" th:href="@{../../assets/css/material.css}">
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
     <!-- ICONS -->
-    <link rel="apple-touch-icon" sizes="76x76" th:href="@{../../../assets/img/apple-icon.png}">
-    <link rel="icon" type="image/png" sizes="96x96" th:href="@{../../../assets/img/favicon.png}">
+    <link rel="apple-touch-icon" sizes="76x76" th:href="@{../../assets/img/apple-icon.png}">
+    <link rel="icon" type="image/png" sizes="96x96" th:href="@{../../assets/img/favicon.png}">
 </head>
 
 <body>
@@ -114,19 +114,19 @@
                                 <form method="post" th:action="@{/material/update}">
                                     <div class="form-group">
                                         <label for="inputMaterialID">资料ID</label>
-                                        <input type="number" th:value="" class="form-control" id="inputMaterialID" name="MaterialID" placeholder="">
+                                        <input type="number" th:value="${mat.materialID}" class="form-control" id="inputMaterialID" name="MaterialID" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputCategory">科目</label>
-                                        <input type="text" th:value="mat.Category" class="form-control" id="inputCategory" name="Category" placeholder="">
+                                        <input type="text" th:value="${mat.category}" class="form-control" id="inputCategory" name="Category" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputType">资料分类</label>
-                                        <input type="text" th:value="mat.Type" class="form-control" id="inputType" name="Type" placeholder="">
+                                        <input type="text" th:value="${mat.type}" class="form-control" id="inputType" name="Type" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputLink">资料链接</label>
-                                        <input type="text" th:value="mat.Link" class="form-control" id="inputLink" name="Link" placeholder="">
+                                        <input type="text" th:value="${mat.link}" class="form-control" id="inputLink" name="Link" placeholder="">
                                     </div>
 
                                     <div class="add-submit">
@@ -151,9 +151,9 @@
 </div>
 <!-- END WRAPPER -->
 <!-- Javascript -->
-<script th:src="@{../../../assets/vendor/jquery/jquery.min.js}"></script>
-<script th:src="@{../../../assets/vendor/bootstrap/js/bootstrap.min.js}"></script>
-<script th:src="@{../../../assets/scripts/klorofil-common.js}"></script>
+<script th:src="@{../../assets/vendor/jquery/jquery.min.js}"></script>
+<script th:src="@{../../assets/vendor/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{../../assets/scripts/klorofil-common.js}"></script>
 </body>
 
 </html>
