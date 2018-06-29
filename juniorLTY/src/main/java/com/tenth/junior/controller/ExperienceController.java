@@ -57,7 +57,8 @@ public class ExperienceController {
      */
     @GetMapping("/add")
     public String addPage(Model model){
-        //model.addAttribute("allSchool",schoolService.getAll());//待修改
+        List<School> schoolList = schoolService.findAllSchool();
+        model.addAttribute("allSchool",schoolList);
         return "add-exp";
     }
 
@@ -78,13 +79,12 @@ public class ExperienceController {
     @GetMapping("/update/{id}")
     public String updataPage(@PathVariable("id") Integer id,Model model){
         model.addAttribute("exp",experienceService.findByID(id).get());
+        List<School> schoolList = schoolService.findAllSchool();
+        model.addAttribute("allSchool",schoolList);
         return "update-exp";
     }
     @PostMapping("/update")
     public String updateData(Experience experience){
-//        Optional<Experience> experience1 = experienceService.get (student.getGrade().getGID()); ;
-//        student.setGrade(grade.get());
-        //experience.setSchoolID();
          experienceService.addExperience(experience);
         return "redirect:/experience";
     }

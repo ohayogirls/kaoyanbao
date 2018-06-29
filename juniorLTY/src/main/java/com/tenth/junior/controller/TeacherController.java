@@ -27,7 +27,9 @@ public class TeacherController {
     }
 
     @GetMapping("/add")
-    public  String getaddpage(){
+    public  String getaddpage(Model model){
+        List<School> schoolList = schoolService.findAllSchool();
+        model.addAttribute("allSchool",schoolList);
         return "add-tea";
     }
 
@@ -49,9 +51,9 @@ public class TeacherController {
 
     @GetMapping("/update/{id}")
     public String updatePage(@PathVariable("id") Integer id, Model model) {
-//        Optional<Teacher> teacher = teacherService.findTeacherByID(id);
-        //model.addAttribute("stu", teacher.get());
         model.addAttribute("teacher", teacherService.findTeacherByID(id).get());
+        List<School> schoolList = schoolService.findAllSchool();
+        model.addAttribute("allSchool",schoolList);
         return "update-tea";
     }
 
