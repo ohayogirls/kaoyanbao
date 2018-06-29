@@ -113,8 +113,8 @@
                             <div class="panel-body">
                                 <form method="post" th:action="@{/material/update}">
                                     <div class="form-group">
-                                        <label for="inputMaterialID">资料ID</label>
-                                        <input type="number" th:value="${mat.materialID}" class="form-control" id="inputMaterialID" name="MaterialID" placeholder="">
+                                        <!--<label for="inputMaterialID">资料ID</label>-->
+                                        <input type="hidden" th:value="${mat.materialID}" class="form-control" id="inputMaterialID" name="MaterialID" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputCategory">科目</label>

@@ -113,8 +113,7 @@
                             <div class="panel-body">
                                 <form method="post" th:action="@{/experience/update}">
                                     <div class="form-group">
-                                        <label for="inputExpID">经验ID</label>
-
+                                        <!--<label for="inputExpID">经验ID</label>-->
                                         <input type="hidden" th:value="${exp.expID}" name="ExpID" class="form-control" id="inputExpID" placeholder="">
                                     </div>
                                     <div class="form-group">
@@ -139,6 +138,9 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="inputSchool">所属学校</label>
+                                        <!--<select name="school.SchoolID" id="category" class="form-control" >-->
+                                        <!--<option th:each="schoolData : ${school}" th:value="${schoolData.getSchoolID()}" th:text="${schoolData.getSchoolName()}" ></option>-->
+                                        <!--</select>-->
                                         <input type="text" th:value="${exp.schoolID}" name="school.SchoolID" class="form-control" id="inputSchool" placeholder="">
                                     </div>
                                     <div class="add-submit">

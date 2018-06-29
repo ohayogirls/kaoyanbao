@@ -112,7 +112,7 @@
                             <div class="panel-body">
                                 <form method="post" th:action="@{/teacher/update}">
                                     <div class="form-group">
-                                        <label for="inputTeacherID">老师ID</label>
+                                        <!--<label for="inputTeacherID">老师ID</label>-->
                                         <input type="hidden" th:value="${teacher.teacherID}" class="form-control" id="inputTeacherID" name="TeacherID" placeholder="">
                                     </div>
                                     <div class="form-group">
@@ -145,6 +145,9 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="inputSchoolID">所属学校</label>
+                                        <!--<select name="school.SchoolID" id="category" class="form-control" >-->
+                                        <!--<option th:each="schoolData : ${school}" th:value="${schoolData.getSchoolID()}" th:text="${schoolData.getSchoolName()}" ></option>-->
+                                        <!--</select>-->
                                         <input type="number" th:value="${teacher.schoolID}" class="form-control" id="inputSchoolID" name="school.SchoolID" placeholder="">
                                     </div>
 

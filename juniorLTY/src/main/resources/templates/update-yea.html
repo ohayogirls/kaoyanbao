@@ -114,6 +114,9 @@
                                     <!--<input type="hidden" name="stuID" th:value="${stu.stuID}" >-->
                                     <div class="form-group">
                                         <label for="inputSchoolID">学校ID</label>
+                                        <!--<select name="school.SchoolID" id="category" class="form-control" >-->
+                                            <!--<option th:each="schoolData : ${school}" th:value="${schoolData.getSchoolID()}" th:text="${schoolData.getSchoolName()}" ></option>-->
+                                        <!--</select>-->
                                         <input type="text" th:value="${yearlydata.schoolID}" class="form-control" id="inputSchoolID" name="pk.SchoolID" readonly placeholder="">
                                     </div>
                                     <div class="form-group">
