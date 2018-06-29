@@ -36,7 +36,7 @@ public class MaterialController {
     @PostMapping("/add")
     public String input(Material material){
         materialService.addMaterial(material);
-        return "redirect:/";
+        return "redirect:/material";
     }
 
     /**
@@ -74,7 +74,7 @@ public class MaterialController {
     public String deleteMat(@PathVariable("id") Integer id){
         Optional<Material> material=materialService.findByID(id);
         materialService.deleteMaterial(material.get());
-        return "redirect:/";
+        return "redirect:/material";
     }
 
 }

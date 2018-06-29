@@ -53,7 +53,7 @@ public class TeacherController {
     @PostMapping("/update")
     public String updateSchool(Teacher teacher){
         teacherService.addATeacher(teacher);
-        return "redirect:/";
+        return "redirect:/teacher";
     }
 
     /**
