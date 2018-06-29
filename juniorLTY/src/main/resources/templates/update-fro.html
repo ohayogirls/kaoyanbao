@@ -114,20 +114,34 @@
                                 <form method="post" th:action="@{/user/update}">
                                     <!--<input type="hidden" name="stuID" th:value="${stu.stuID}" >-->
                                     <div class="form-group">
-                                        <label for="inputSchoolID">学校ID</label>
-                                        <input type="text" th:value="${yearlydata.schoolID}" class="form-control" id="inputSchoolID" name="pk.SchoolID" readonly placeholder="">
+                                        <label for="inputUserID">用户ID</label>
+                                        <input type="number" th:value="userdata.UserID" class="form-control" id="inputUserID" name="UserID" placeholder="">
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputYear">年份</label>
-                                        <input type="text" th:value="${yearlydata.yearID}" class="form-control" id="inputYear" name="pk.YearID" readonly placeholder="">
+                                        <label for="inputUserName">用户名</label>
+                                        <input type="text" th:value="userdata.UserName" class="form-control" id="inputUserName" name="UserName" placeholder="">
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputScoure">分数线</label>
-                                        <input type="number" th:value="${yearlydata.score}" class="form-control" id="inputScoure" name="score" placeholder="">
+                                        <label for="inputPassword">密码</label>
+                                        <input type="text" th:value="userdata.Password" class="form-control" id="inputPassword" name="Password" placeholder="">
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputEnrollRate">报录比</label>
-                                        <input type="text" th:value="${yearlydata.enrollRate}" class="form-control" id="inputEnrollRate" name="EnrollRate" placeholder="">
+                                        <label for="inputHeadPath">头像路径</label>
+                                        <input type="text" th:value="userdata.HeadPath" class="form-control" id="inputHeadPath" name="HeadPath" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputEmail">邮箱</label>
+                                        <input type="text" th:value="userdata.Email" class="form-control" id="inputEmail" name="Email" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPhone">电话</label>
+                                        <input type="text" th:value="userdata.Phone" class="form-control" id="inputPhone" name="Phone" placeholder="">
+                                    </div>
+                                    <!--选中传on，不选中不传-->
+                                    <div class="form-group">
+                                        <label>
+                                            <input type="checkbox" th:value="userdata.IsAdministrator" name="IsAdministrator"> 是否为管理员
+                                        </label>
                                     </div>
 
                                     <div class="add-submit">

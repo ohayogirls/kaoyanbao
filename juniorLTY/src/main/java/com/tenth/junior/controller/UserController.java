@@ -60,10 +60,14 @@ public class UserController {
     }
 
     @GetMapping("/update/{id}")
-    public String updatePage(@PathVariable("id") Integer id, Model model) {
-        Optional<User> user = userService.getUserByID(id);
-        model.addAttribute("stu", user.get());
-        model.addAttribute("allUser", userService.getAllUser());
+    public String updatePage(@PathVariable("id") Integer userid, Model model) {
+//        Optional<User> user = userService.getUserByID(id);
+//        model.addAttribute("stu", user.get());
+//        model.addAttribute("allUser", userService.getAllUser());
+//        return "update-fro";
+        User user = new User();
+        user.setUserID(userid);
+        model.addAttribute("userdata",userService.getUserByID(userid).get());
         return "update-fro";
     }
 

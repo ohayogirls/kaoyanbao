@@ -8,6 +8,7 @@ import com.tenth.junior.service.SchoolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -42,7 +43,7 @@ public class ExperienceController {
      * 添加界面：experience/add
      */
     @PostMapping("/add")
-    public String input(Experience experience){
+    public String input(Experience experience, BindingResult bindingResult){
        // Optional<School> school;
         //school=schoolService.getExperienceByID(experience.getSchoolID());
         experienceService.addExperience(experience);
