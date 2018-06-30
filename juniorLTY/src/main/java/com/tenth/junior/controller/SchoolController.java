@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 @RequestMapping(value = "/school")
@@ -21,7 +20,7 @@ public class SchoolController {
     public String index(Model model){
         List<School> schoolList = schoolService.findAllSchool();
         model.addAttribute("school",schoolList);
-        return "school";
+        return "index";
     }
 
     @GetMapping("/add")

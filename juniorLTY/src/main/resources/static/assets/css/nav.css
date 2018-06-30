@@ -1,0 +1,22 @@
+.navbar-brand{
+    padding: 15px 30px;
+}
+.navbar > .container-fluid .navbar-brand{
+    margin-left: 0;
+}
+
+.navbar{
+    min-height: 30px;
+}
+
+.navbar-nav > li > a{
+    padding: 15px 30px;
+}
+
+#log-nav{
+    float: right;
+}
+#log-nav > li > a{
+    padding: 15px 10px;
+    color: #0c8ec3;
+}
