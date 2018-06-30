@@ -1,0 +1,94 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>yuanxiao</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!-- VENDOR CSS -->
+    <link rel="stylesheet" th:href="@{assets/vendor/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{assets/vendor/linearicons/style.css}">
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" th:href="@{assets/css/main.css}">
+    <!--CSS BY LTY-->
+    <link rel="stylesheet" th:href="@{assets/css/school.css}">
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+</head>
+
+<body>
+<!-- WRAPPER -->
+<div id="wrapper">
+    <!-- MAIN -->
+    <div class="main">
+        <!--MAIN CONTENT-->
+        <div class="main-content">
+            <div class="container-fluid">
+                <h3 class="page-title">School Table#学校表</h3>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel">
+                            <div class="panel-body">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th class="th-SchoolID">SchoolID</th>
+                                        <th class="th-SchoolName">SchoolName</th>
+                                        <th class="th-Area">Area</th>
+                                        <th class="th-Province">Province</th>
+                                        <th class="th-CutTime">CutTime</th>
+                                        <th class="th-Outline">Outline</th>
+                                        <th class="th-CatalogLink">CatalogLink</th>
+                                        <th class="th-ReferrenceBook">ReferrenceBook</th>
+                                        <th class="th-Is985">Is985</th>
+                                        <th class="th-Is211">Is211</th>
+                                        <th class="th-edit">操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr th:each="schoolData : ${school}">
+                                        <td th:text="${schoolData.getSchoolID()}"></td>
+                                        <td th:text="${schoolData.getSchoolName()}"></td>
+                                        <td th:text="${schoolData.getArea()}"></td>
+                                        <td th:text="${schoolData.getProvince()}"></td>
+                                        <td th:text="${schoolData.getCutTime()}"></td>
+                                        <td th:text="${schoolData.getOutline()}"></td>
+                                        <td th:text="${schoolData.getCatalogLink()}"></td>
+                                        <td th:text="${schoolData.getReferrenceBook()}"></td>
+                                        <td th:text="${schoolData.getIs985()}"></td>
+                                        <td th:text="${schoolData.getIs211()}"></td>
+                                        <td><a th:href="@{'/school/update/'+${schoolData.getSchoolID()}}" ><i class="lnr lnr-pencil"></i></a>
+                                            <a th:href="@{'/school/delete/'+${schoolData.getSchoolID()}}" ><i class="lnr lnr-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <div class="plus-circle">
+                                    <a th:href="@{'/school/add'}"><i class="lnr lnr-plus-circle"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END MAIN CONTENT -->
+    </div>
+    <!-- END MAIN -->
+    <div class="clearfix"></div>
+    <footer>
+        <div class="container-fluid">
+            <p class="copyright">考研宝-第十组</p>
+        </div>
+    </footer>
+</div>
+<!-- END WRAPPER -->
+<!-- Javascript -->
+<script th:src="@{assets/vendor/jquery/jquery.min.js}"></script>
+<script th:src="@{assets/vendor/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{assets/scripts/klorofil-common.js}"></script>
+
+</body>
+
+</html>
