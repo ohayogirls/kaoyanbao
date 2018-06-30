@@ -11,24 +11,13 @@
     <!-- MAIN CSS -->
     <link rel='stylesheet' th:href="@{assets/css/style.css}">
     <!--CSS BY LTY-->
-    <link rel="stylesheet" th:href="@{assets/css/nav.css}">
-    <link rel="stylesheet" th:href="@{assets/css/index.css}">
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
     <!--JAVASCRIPT BY SELF-->
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <script th:src="@{assets/js/jquery.min.js}"></script>
     <script th:src="@{assets/js/bootstrap.js}"></script>
     <script type="text/javascript" th:src="@{assets/js/move-top.js}"></script>
     <script type="text/javascript" th:src="@{assets/js/easing.js}"></script>
-    <script type="text/javascript">
-        jQuery(document).ready(function($) {
-            $(".scroll").click(function(event){
-                event.preventDefault();
-                $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-            });
-        });
-    </script>
 </head>
 
 <body>
