@@ -1,6 +1,7 @@
 package com.tenth.junior.controller;
 
 import com.tenth.junior.bean.User;
+import com.tenth.junior.bean.YearlyDataPK;
 import com.tenth.junior.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -59,21 +60,8 @@ public class UserController {
         return "redirect:/user";
     }
 
-    @GetMapping("/update/{id}")
-    public String updatePage(@PathVariable("id") Integer userid, Model model) {
-//        Optional<User> user = userService.getUserByID(id);
-//        model.addAttribute("stu", user.get());
-//        model.addAttribute("allUser", userService.getAllUser());
-//        return "update-fro";
-        User user = new User();
-        user.setUserID(userid);
-        model.addAttribute("userdata",userService.getUserByID(userid).get());
-        return "update-fro";
-    }
-
     /**
      * 修改用户信息功能
-     *
      * @param UserID
      * @param UserName
      * @param password
@@ -83,6 +71,15 @@ public class UserController {
      * @param Phone
      * @return
      */
+    @GetMapping("/update/{id}")
+    public String updatePage(@PathVariable("id") Integer userid, Model model) {
+
+        User user = new User();
+        user.setUserID(userid);
+        model.addAttribute("userdata",userService.findByID(userid).get());
+        return "update-fro";
+    }
+
     @PostMapping("/update")
     public String updateData(User user) {
         userService.updateUser(user);

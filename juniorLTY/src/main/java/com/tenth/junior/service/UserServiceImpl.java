@@ -8,15 +8,16 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;
 
-//    @Override
-//    public User getUserByNandP(String username, String password){
-//        return userRepository.getUserByNamAndPassword(username,password);
-//    }
+    @Override
+    public User findByName(String user_name){
+        return userRepository.getUserByName(user_name);
+    }
 
     @Override
     public long getUserNum(){
@@ -34,8 +35,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Optional<User>  getUserByID(Integer id) {
-        return userRepository.findById(id);
+    public Optional<User> findByID(Integer userid){
+        return userRepository.findById(userid);
     }
 
     @Override

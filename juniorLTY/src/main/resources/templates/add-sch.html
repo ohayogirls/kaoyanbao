@@ -144,12 +144,14 @@
                                         <input type="date" class="form-control" name="CutTime" id="inputCutTime" placeholder="">
                                     </div>
                                     <!--checkbox 传值问题-->
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" name="Is985" > Is985
+                                    <div class="form-group">
+                                        <label class="">
+                                            <input type="checkbox" name="Is985" > <span>是否985</span>
+                                            <input type="hidden" th:value="false" name="Is985" >
                                         </label>
-                                        <label>
-                                            <input type="checkbox" name="Is211" > Is211
+                                        <label class="">
+                                            <input type="checkbox" name="Is211" > <span>是否211</span>
+                                            <input type="hidden" th:value="false" name="Is211" >
                                         </label>
                                     </div>
                                     <div class="add-submit">
@@ -168,8 +170,7 @@
     <div class="clearfix"></div>
     <footer>
         <div class="container-fluid">
-            <p class="copyright">Copyright &copy; 2017.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
-
+            <p class="copyright">考研宝-第十组</p>
         </div>
     </footer>
 </div>

@@ -123,7 +123,7 @@
 										<tbody>
 										<tr th:each="loginData : ${logindata}">
 											<td th:text="${loginData.getLogID()}"></td>
-											<td th:text="${loginData.getUserID()}"></td>
+											<td th:text="${loginData.getUser().getUserID()}"></td>
 											<td th:text="${loginData.getIP()}"></td>
 											<td th:text="${loginData.getTime()}"></td>
 											<!--<td><a th:href="@{'/yearlydata/update/'+${yearlyData.getSchoolID()}+'/'+${yearlyData.getYearID()}}" ><i class="lnr lnr-pencil"></i></a>-->
@@ -147,7 +147,7 @@
 		<div class="clearfix"></div>
 		<footer>
 			<div class="container-fluid">
-				<p class="copyright">Copyright &copy; 2017.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+				<p class="copyright">考研宝-第十组</p>
 			</div>
 		</footer>
 	</div>
