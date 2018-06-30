@@ -20,7 +20,7 @@ public class SchoolController {
     public String index(Model model){
         List<School> schoolList = schoolService.findAllSchool();
         model.addAttribute("school",schoolList);
-        return "index";
+        return "school";
     }
 
     @GetMapping("/add")
