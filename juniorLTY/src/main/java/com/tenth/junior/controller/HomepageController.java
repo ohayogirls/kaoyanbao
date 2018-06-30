@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/show")
 public class HomepageController {
     @Autowired
     private SchoolService schoolService;
@@ -28,11 +28,19 @@ public class HomepageController {
     public String gethomepage(){
         return "homepage";
     }
+
     @GetMapping("/yuanxiao/{province}")
     public String getschoolindex(@PathVariable("province") String province, Model model){
         List<School> schoolList= schoolService.findSchoolByProvince(schoolService.findAllSchool(),province);
         model.addAttribute("schIndex",schoolList);
-        return "index-school";
+        return "index-yuanxiao";
+    }
+    @GetMapping("/school/{id}")
+    public String schoolpage(@PathVariable("id") Integer id,Model model){
+        model.addAttribute("school",schoolService.findSchoolByID(id).get());
+        return "";
+        //TODO:学校展示的页面
+
     }
     @GetMapping("/ziliao")
     public String getmaterial(Model model){
