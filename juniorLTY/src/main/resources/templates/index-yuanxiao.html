@@ -25,6 +25,7 @@
 <!-- WRAPPER -->
 <div id="wrapper">
     <ul id="myTab" class="nav nav-pills">
+        <li>地域</li>
         <li class="active"><a href="#huabei" data-toggle="tab">华北</a></li>
         <li><a href="#dongbei" data-toggle="tab">东北</a></li>
         <li><a href="#huadong" data-toggle="tab">华东</a></li>
@@ -35,39 +36,70 @@
     </ul>
     <div id="myTabContent" class="tab-content">
         <div class="tab-pane fade in active" id="huabei">
-            <p>
-                test1
-            </p>
+            <ul class="nav nav-pills">
+                <li>省份</li>
+                <li class="active"><a th:href="@{'../yuanxiao/' + ${'北京'}}">北京</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'天津'}}">天津</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'河北'}}">河北</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'山西'}}">山西</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'内蒙古'}}">内蒙古</a></li>
+            </ul>
         </div>
         <div class="tab-pane fade" id="dongbei">
-            <p>
-                test2
-            </p>
+            <ul class="nav nav-pills">
+                <li>省份</li>
+                <li class="active"><a th:href="@{'../yuanxiao/' + ${'黑龙江'}}">黑龙江</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'吉林'}}">吉林</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'辽宁'}}">辽宁</a></li>
+            </ul>
         </div>
         <div class="tab-pane fade" id="huadong">
-            <p>
-                test3
-            </p>
+            <ul class="nav nav-pills">
+                <li>省份</li>
+                <li class="active"><a th:href="@{'../yuanxiao/' + ${'山东'}}">山东</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'上海'}}">上海</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'江苏'}}">江苏</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'浙江'}}">浙江</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'江西'}}">江西</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'安徽'}}">安徽</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'福建'}}">福建</a></li>
+            </ul>
         </div>
         <div class="tab-pane fade" id="huazhong">
-            <p>
-                test4
-            </p>
+            <ul class="nav nav-pills">
+                <li>省份</li>
+                <li class="active"><a th:href="@{'../yuanxiao/' + ${'河南'}}">河南</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'湖北'}}">湖北</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'湖南'}}">湖南</a></li>
+            </ul>
         </div>
         <div class="tab-pane fade" id="huanan">
-            <p>
-                test5
-            </p>
+            <ul class="nav nav-pills">
+                <li>省份</li>
+                <li class="active"><a th:href="@{'../yuanxiao/' + ${'广东'}}">广东</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'广西'}}">广西</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'海南'}}">海南</a></li>
+            </ul>
         </div>
         <div class="tab-pane fade" id="xibei">
-            <p>
-                test6
-            </p>
+            <ul class="nav nav-pills">
+                <li>省份</li>
+                <li class="active"><a th:href="@{'../yuanxiao/' + ${'陕西'}}">陕西</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'甘肃'}}">甘肃</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'宁夏'}}">宁夏</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'新疆'}}">新疆</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'青海'}}">青海</a></li>
+            </ul>
         </div>
         <div class="tab-pane fade" id="xinan">
-            <p>
-                test6
-            </p>
+            <ul class="nav nav-pills">
+                <li>省份</li>
+                <li class="active"><a th:href="@{'../yuanxiao/' + ${'重庆'}}">重庆</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'四川'}}">四川</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'贵州'}}">贵州</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'云南'}}">云南</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'西藏'}}">西藏</a></li>
+            </ul>
         </div>
     </div>
     <!-- MAIN -->
