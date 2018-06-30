@@ -27,7 +27,15 @@ public class LoginTable {
         this.user = user;
     }
 
-    public LoginTable() {
+    public LoginTable(Integer LogID,String  IP,Date    Time,User aUser) {
+        setLogID(LogID);
+        setIP(IP);
+        setTime(Time);
+        setUser(aUser);
+    }
+
+    public LoginTable(){
+
     }
 
     public Integer getLogID() {
@@ -54,13 +62,7 @@ public class LoginTable {
         Time = time;
     }
 
-    public Integer getUserID() {
-        return user.getUserID();
-    }
 
-    public void setUserID(Integer userID) {
-        user.setUserID(userID);
-    }
 
 
 }

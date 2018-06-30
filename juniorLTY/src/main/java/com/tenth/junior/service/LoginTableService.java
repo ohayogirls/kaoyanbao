@@ -11,6 +11,8 @@ public interface LoginTableService {
 
     LoginTable addLoginTable(LoginTable loginTable);
 
+   //LoginTable addLoginTable(LoginTable loginTable);
+
     Optional<LoginTable> findByID(Integer id);
 
     LoginTable updateLoginTable(LoginTable loginTable);
