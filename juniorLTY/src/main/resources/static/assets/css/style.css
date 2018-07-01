@@ -103,8 +103,8 @@ ul.nav.navbar-nav {
 }
 .nav > li > a {
 	padding: 52px 0em;
-	font-size: 15px;
-	font-weight: 700;
+	font-size: 24px;
+	font-weight: 400;
 	text-transform: uppercase;
 	line-height: 22px;
 	background-color: rgb(5, 166, 179);

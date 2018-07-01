@@ -11,6 +11,7 @@
     <!-- MAIN CSS -->
     <link rel='stylesheet' th:href="@{../../assets/css/style.css}">
     <!--CSS BY LTY-->
+    <link rel="stylesheet" th:href="@{../../assets/css/index-yuanxiao.css}">
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
     <!--JAVASCRIPT BY SELF-->
@@ -53,19 +54,19 @@
 <!-- WRAPPER -->
 <div id="wrapper">
     <ul id="myTab" class="nav nav-pills">
-        <li>地域</li>
-        <li class="active"><a href="#huabei" data-toggle="tab">华北</a></li>
-        <li><a href="#dongbei" data-toggle="tab">东北</a></li>
-        <li><a href="#huadong" data-toggle="tab">华东</a></li>
-        <li><a href="#huazhong" data-toggle="tab">华中</a></li>
-        <li><a href="#huanan" data-toggle="tab">华南</a></li>
-        <li><a href="#xibei" data-toggle="tab">西北</a></li>
-        <li><a href="#xinan" data-toggle="tab">西南</a></li>
+        <li><label>地域</label></li>
+        <li class="active"><a class="" href="#huabei" data-toggle="tab">华北</a></li>
+        <li><a class="" href="#dongbei" data-toggle="tab">东北</a></li>
+        <li><a class="" href="#huadong" data-toggle="tab">华东</a></li>
+        <li><a class="" href="#huazhong" data-toggle="tab">华中</a></li>
+        <li><a class="" href="#huanan" data-toggle="tab">华南</a></li>
+        <li><a class="" href="#xibei" data-toggle="tab">西北</a></li>
+        <li><a class="" href="#xinan" data-toggle="tab">西南</a></li>
     </ul>
     <div id="myTabContent" class="tab-content">
         <div class="tab-pane fade in active" id="huabei">
             <ul class="nav nav-pills">
-                <li>省份</li>
+                <li><label>省份</label></li>
                 <li class="active"><a th:href="@{'../yuanxiao/' + ${'北京'}}">北京</a></li>
                 <li><a th:href="@{'../yuanxiao/' + ${'天津'}}">天津</a></li>
                 <li><a th:href="@{'../yuanxiao/' + ${'河北'}}">河北</a></li>
@@ -75,7 +76,7 @@
         </div>
         <div class="tab-pane fade" id="dongbei">
             <ul class="nav nav-pills">
-                <li>省份</li>
+                <li><label>省份</label></li>
                 <li class="active"><a th:href="@{'../yuanxiao/' + ${'黑龙江'}}">黑龙江</a></li>
                 <li><a th:href="@{'../yuanxiao/' + ${'吉林'}}">吉林</a></li>
                 <li><a th:href="@{'../yuanxiao/' + ${'辽宁'}}">辽宁</a></li>
@@ -83,7 +84,7 @@
         </div>
         <div class="tab-pane fade" id="huadong">
             <ul class="nav nav-pills">
-                <li>省份</li>
+                <li><label>省份</label></li>
                 <li class="active"><a th:href="@{'../yuanxiao/' + ${'山东'}}">山东</a></li>
                 <li><a th:href="@{'../yuanxiao/' + ${'上海'}}">上海</a></li>
                 <li><a th:href="@{'../yuanxiao/' + ${'江苏'}}">江苏</a></li>
@@ -95,7 +96,7 @@
         </div>
         <div class="tab-pane fade" id="huazhong">
             <ul class="nav nav-pills">
-                <li>省份</li>
+                <li><label>省份</label></li>
                 <li class="active"><a th:href="@{'../yuanxiao/' + ${'河南'}}">河南</a></li>
                 <li><a th:href="@{'../yuanxiao/' + ${'湖北'}}">湖北</a></li>
                 <li><a th:href="@{'../yuanxiao/' + ${'湖南'}}">湖南</a></li>
@@ -103,7 +104,7 @@
         </div>
         <div class="tab-pane fade" id="huanan">
             <ul class="nav nav-pills">
-                <li>省份</li>
+                <li><label>省份</label></li>
                 <li class="active"><a th:href="@{'../yuanxiao/' + ${'广东'}}">广东</a></li>
                 <li><a th:href="@{'../yuanxiao/' + ${'广西'}}">广西</a></li>
                 <li><a th:href="@{'../yuanxiao/' + ${'海南'}}">海南</a></li>
@@ -111,7 +112,7 @@
         </div>
         <div class="tab-pane fade" id="xibei">
             <ul class="nav nav-pills">
-                <li>省份</li>
+                <li><label>省份</label></li>
                 <li class="active"><a th:href="@{'../yuanxiao/' + ${'陕西'}}">陕西</a></li>
                 <li><a th:href="@{'../yuanxiao/' + ${'甘肃'}}">甘肃</a></li>
                 <li><a th:href="@{'../yuanxiao/' + ${'宁夏'}}">宁夏</a></li>
@@ -121,7 +122,7 @@
         </div>
         <div class="tab-pane fade" id="xinan">
             <ul class="nav nav-pills">
-                <li>省份</li>
+                <li><label>省份</label></li>
                 <li class="active"><a th:href="@{'../yuanxiao/' + ${'重庆'}}">重庆</a></li>
                 <li><a th:href="@{'../yuanxiao/' + ${'四川'}}">四川</a></li>
                 <li><a th:href="@{'../yuanxiao/' + ${'贵州'}}">贵州</a></li>
@@ -130,64 +131,16 @@
             </ul>
         </div>
     </div>
-    <!-- MAIN -->
-    <div class="main">
-        <!--MAIN CONTENT-->
-        <div class="main-content">
-            <div class="container-fluid">
-                <h3 class="page-title">School Table#学校表</h3>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="panel">
-                            <div class="panel-body">
-                                <table class="table">
-                                    <thead>
-                                    <tr>
-                                        <th class="th-SchoolID">SchoolID</th>
-                                        <th class="th-SchoolName">SchoolName</th>
-                                        <th class="th-Area">Area</th>
-                                        <th class="th-Province">Province</th>
-                                        <th class="th-CutTime">CutTime</th>
-                                        <th class="th-Outline">Outline</th>
-                                        <th class="th-CatalogLink">CatalogLink</th>
-                                        <th class="th-ReferrenceBook">ReferrenceBook</th>
-                                        <th class="th-Is985">Is985</th>
-                                        <th class="th-Is211">Is211</th>
-                                        <th class="th-edit">操作</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr th:each="schoolData : ${schIndex}">
-                                        <td th:text="${schoolData.getSchoolID()}"></td>
-                                        <td th:text="${schoolData.getSchoolName()}"></td>
-                                        <td th:text="${schoolData.getArea()}"></td>
-                                        <td th:text="${schoolData.getProvince()}"></td>
-                                        <td th:text="${schoolData.getCutTime()}"></td>
-                                        <td th:text="${schoolData.getOutline()}"></td>
-                                        <td th:text="${schoolData.getCatalogLink()}"></td>
-                                        <td th:text="${schoolData.getReferrenceBook()}"></td>
-                                        <td th:text="${schoolData.getIs985()}"></td>
-                                        <td th:text="${schoolData.getIs211()}"></td>
-                                        <td><a th:href="@{'/school/update/'+${schoolData.getSchoolID()}}" ><i class="lnr lnr-pencil"></i></a>
-                                            <a th:href="@{'/school/delete/'+${schoolData.getSchoolID()}}" ><i class="lnr lnr-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                                <div class="plus-circle">
-                                    <a th:href="@{'/school/add'}"><i class="lnr lnr-plus-circle"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- END MAIN CONTENT -->
-    </div>
-    <!-- END MAIN -->
 </div>
 <!-- END WRAPPER -->
+<div class="container">
+    <div class="col-lg-2" th:each="schoolData : ${schIndex}">
+        <div class="panel ">
+            <img th:src="@{../../assets/img/华中科技大学.jpg}">
+            <h4 th:text="${schoolData.getSchoolName()}">华中科技大学</h4>
+        </div>
+    </div>
+</div>
 
 </body>
 

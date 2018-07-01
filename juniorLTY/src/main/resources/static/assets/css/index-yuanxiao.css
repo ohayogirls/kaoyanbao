@@ -1,0 +1,31 @@
+#wrapper .nav > li > a{
+    padding: 20px 40px;
+    border-left: none;
+}
+.nav-pills > li > a{
+    border-radius: 0;
+}
+.nav-pills > li > label{
+    color: rgb(5,166,179);
+    font-size: 28px;
+    padding: 11px 40px;
+}
+.nav > li > a:hover, .nav > li > a:focus{
+    background-color: #337ab7;
+}
+#myTabContent{
+    margin-top: 10px;
+}
+#wrapper{
+    margin-top: 50px;
+    margin-left: 60px;
+    margin-bottom: 50px;
+}
+img{
+    width: 100%;
+    height: auto;
+}
+.panel h4{
+    text-align: center;
+    color: rgb(5,166,179);
+}
