@@ -49,21 +49,21 @@ public class HomepageController {
     //每个学校的报考经验
     @GetMapping("/school/{schoolid}/experience/{expid}")
     public String experiencepage(@PathVariable("schoolid") Integer schoolid,@PathVariable("expid")Integer expid, Model model){
-        model.addAttribute("experience",experienceService.findByID(expid));
+        model.addAttribute("experience",experienceService.findByID(expid).get());
         model.addAttribute("school",schoolService.findSchoolByID(schoolid));
         return "exp-info";
     }
     @GetMapping("/ziliao")
     public String getmaterial(Model model){
         List<Material> materialList = materialService.getAllMaterial();
-        model.addAttribute("allMateria",materialList);
+        model.addAttribute("allMaterial",materialList);
         return "index-ziliao";
     }
     @GetMapping("/jingyan")
     public String getexperience(Model model){
         List<Experience> experienceList=experienceService.getAllExperience();
         model.addAttribute("allExp",experienceList);
-        return "index-exp";
+        return "index-jingyan";
     }
 
 }

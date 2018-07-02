@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>denglu</title>
+    <title>jingyan</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -11,7 +11,7 @@
     <!-- MAIN CSS -->
     <link rel='stylesheet' th:href="@{../../assets/css/style.css}">
     <!--CSS BY LTY-->
-    <link rel="stylesheet" th:href="@{../../assets/css/index-denglu.css}">
+    <link rel="stylesheet" th:href="@{../../assets/css/index-jingyan.css}">
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
     <!--JAVASCRIPT BY SELF-->
@@ -51,52 +51,7 @@
     </nav>
 </div>
 <!--end-header-->
-<!-- WRAPPER -->
-<div id="#wrapper" class="container">
-    <div class="row">
-        <div class="col-lg-4 col-lg-offset-4">
-            <div class="panel">
-                <div class="page-header"></div>
-                <div class="panel-body">
-                    <form id="denglu" method="post" th:action="@{/show/denglu}">
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-lg-2 col-lg-offset-1">
-                                    <label for="signin-email" class="control-label">账户</label>
-                                </div>
-                                <div class="col-lg-8">
-                                    <input type="text" class="form-control" name="UserName" id="signin-email" placeholder="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-lg-2 col-lg-offset-1">
-                                    <label for="signin-password" class="control-label">密码</label>
-                                </div>
-                                <div class="col-lg-8">
-                                    <input type="password" class="form-control" name="Password" id="signin-password" placeholder="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-6 col-lg-offset-3">
-                                <div class="bnr-btn">
-                                    <button type="submit" class="btn btn-info btn-lg btn-block">登陆</button>
-                                </div>
-                                <div id="div-zhuce">
-                                    <span><a th:href="@{'/show/zhuce'}">没有账号？点击注册</a></span>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- END WRAPPER -->
+
 
 </body>
 
