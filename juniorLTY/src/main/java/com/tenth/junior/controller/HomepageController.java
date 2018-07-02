@@ -39,9 +39,9 @@ public class HomepageController {
     }
     @GetMapping("/school/{id}")
     public String schoolpage(@PathVariable("id") Integer id,Model model){
-        model.addAttribute("school",schoolService.findSchoolByID(id));
+        model.addAttribute("school",schoolService.findSchoolByID(id).get());
         model.addAttribute("yearlydata",yearlyDataService.findBySchoolID(id));
-        model.addAttribute("teacher",teacherService.findBySchoolID(id);
+        model.addAttribute("teacher",teacherService.findBySchoolID(id));
         model.addAttribute("experience",experienceService.findBySchoolID(id));
         return "school-info";
         //TODO:学校展示的页面

@@ -8,10 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <!-- VENDOR CSS -->
     <link rel="stylesheet" th:href="@{../../assets/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{../../assets/vendor/linearicons/style.css}">
     <!-- MAIN CSS -->
     <link rel='stylesheet' th:href="@{../../assets/css/style.css}">
     <!--CSS BY LTY-->
-    <link rel="stylesheet" th:href="@{../../assets/css/index-denglu.css}">
+    <link rel="stylesheet" th:href="@{../../assets/css/school-info.css}">
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
     <!--JAVASCRIPT BY SELF-->
@@ -19,6 +20,7 @@
     <script th:src="@{../../assets/js/bootstrap.js}"></script>
     <script type="text/javascript" th:src="@{../../assets/js/move-top.js}"></script>
     <script type="text/javascript" th:src="@{../../assets/js/easing.js}"></script>
+    <script th:src="@{../../assets/scripts/klorofil-common.js}"></script>
 </head>
 
 <body>
@@ -51,7 +53,85 @@
     </nav>
 </div>
 <!--end-header-->
-
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <h1 th:text="${school.getSchoolName()}"></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <ul id="myTab" class="nav nav-pills">
+                <li class="active"><a class="" href="#gfzx" data-toggle="tab">官方资讯</a></li>
+                <li><a class="" href="#lnsj" data-toggle="tab">历年数据</a></li>
+                <li><a class="" href="#msjs" data-toggle="tab">名师介绍</a></li>
+                <li><a class="" href="#bkjy" data-toggle="tab">报考经验</a></li>
+            </ul>
+            <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade in active" id="gfzx">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <ul>
+                                <li><label>报考截至时间</label><span th:text="${school.getCutTime()}"></span></li>
+                                <li><label>考纲</label><a th:href="${school.getOutline()}" th:text="${school.getOutline()}"></a></li>
+                                <li><label>招生简章</label><a th:href="${school.getCatalogLink()}" th:text="${school.getCatalogLink()}"></a></li>
+                                <li><label>参考书</label><a th:href="${school.getReferrenceBook()}" th:text="${school.getReferrenceBook()}"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="lnsj">
+                    <div class="panel">
+                        <div class="panel-body">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th class="th-Year">年份</th>
+                                    <th class="th-Score">分数线</th>
+                                    <th class="th-EnrollRate">报录比</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="yearlyData : ${yearlydata}">
+                                    <td th:text="${yearlyData.getYearID()}"></td>
+                                    <td th:text="${yearlyData.getScore()}"></td>
+                                    <td th:text="${yearlyData.getEnrollRate()}"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="msjs">
+                    <div class="col-lg-4" th:each="teacherData : ${teacher}">
+                        <div class="panel">
+                        <div class="panel-heading">
+                            <h3 class="panel-title" th:text="${teacherData.getName()}"></h3>
+                            <div class="right">
+                                <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up lnr-chevron-down"></i></button>
+                            </div>
+                        </div>
+                        <div class="panel-body" style="display: none">
+                            <p th:text="${teacherData.getSex()}"></p>
+                            <p th:text="${teacherData.getJobTitle()}"></p>
+                            <p th:text="${teacherData.getResearch()}"></p>
+                            <p th:text="${teacherData.getEmail()}"></p>
+                            <a th:href="${teacherData.getCV()}" th:text="${teacherData.getCV()}"></a>
+                            <p th:text="${teacherData.getIntroduction()}"></p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="bkjy">
+                    <ul>
+                        <li th:each="expData : ${experience}"><a th:href="'/show/school/' + ${school.getSchoolID()} + '/experience/' + ${expData.getExpID()}"
+                                                                 th:text="${expData.getTitle()}"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 
