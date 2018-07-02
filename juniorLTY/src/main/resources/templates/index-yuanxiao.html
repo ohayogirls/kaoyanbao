@@ -1,0 +1,147 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>yuanxiao</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!-- VENDOR CSS -->
+    <link rel="stylesheet" th:href="@{../../assets/css/bootstrap.css}">
+    <!-- MAIN CSS -->
+    <link rel='stylesheet' th:href="@{../../assets/css/style.css}">
+    <!--CSS BY LTY-->
+    <link rel="stylesheet" th:href="@{../../assets/css/index-yuanxiao.css}">
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+    <!--JAVASCRIPT BY SELF-->
+    <script th:src="@{../../assets/js/jquery.min.js}"></script>
+    <script th:src="@{../../assets/js/bootstrap.js}"></script>
+    <script type="text/javascript" th:src="@{../../assets/js/move-top.js}"></script>
+    <script type="text/javascript" th:src="@{../../assets/js/easing.js}"></script>
+</head>
+
+<body>
+<!--start-header-->
+<div class="header" id="home">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img th:src="@{../../assets/img/logo.png}" alt="not found" /></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a th:href="@{'/show'}" class="hvr-bounce-to-top">主页<span class="sr-only">(current)</span></a></li>
+                    <li><a th:href="@{'/show/yuanxiao/' + ${'北京'}}" class="hvr-bounce-to-top">院校资讯</a></li>
+                    <li><a th:href="@{'/show/ziliao' + ${'北京'}}" class="hvr-bounce-to-top">资料分享</a></li>
+                    <li><a th:href="@{'/show/jingyan' + ${'北京'}}" class="hvr-bounce-to-top">经验交流</a></li>
+                    <li><a th:href="@{'/show/denglu'}" class="hvr-bounce-to-top">登陆</a></li>
+                </ul>
+                <div class="clearfix"></div>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+<!--end-header-->
+<!-- WRAPPER -->
+<div id="wrapper">
+    <ul id="myTab" class="nav nav-pills">
+        <li><label>地域</label></li>
+        <li class="active"><a class="" href="#huabei" data-toggle="tab">华北</a></li>
+        <li><a class="" href="#dongbei" data-toggle="tab">东北</a></li>
+        <li><a class="" href="#huadong" data-toggle="tab">华东</a></li>
+        <li><a class="" href="#huazhong" data-toggle="tab">华中</a></li>
+        <li><a class="" href="#huanan" data-toggle="tab">华南</a></li>
+        <li><a class="" href="#xibei" data-toggle="tab">西北</a></li>
+        <li><a class="" href="#xinan" data-toggle="tab">西南</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade in active" id="huabei">
+            <ul class="nav nav-pills">
+                <li><label>省份</label></li>
+                <li class="active"><a th:href="@{'../yuanxiao/' + ${'北京'}}">北京</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'天津'}}">天津</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'河北'}}">河北</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'山西'}}">山西</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'内蒙古'}}">内蒙古</a></li>
+            </ul>
+        </div>
+        <div class="tab-pane fade" id="dongbei">
+            <ul class="nav nav-pills">
+                <li><label>省份</label></li>
+                <li class="active"><a th:href="@{'../yuanxiao/' + ${'黑龙江'}}">黑龙江</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'吉林'}}">吉林</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'辽宁'}}">辽宁</a></li>
+            </ul>
+        </div>
+        <div class="tab-pane fade" id="huadong">
+            <ul class="nav nav-pills">
+                <li><label>省份</label></li>
+                <li class="active"><a th:href="@{'../yuanxiao/' + ${'山东'}}">山东</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'上海'}}">上海</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'江苏'}}">江苏</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'浙江'}}">浙江</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'江西'}}">江西</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'安徽'}}">安徽</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'福建'}}">福建</a></li>
+            </ul>
+        </div>
+        <div class="tab-pane fade" id="huazhong">
+            <ul class="nav nav-pills">
+                <li><label>省份</label></li>
+                <li class="active"><a th:href="@{'../yuanxiao/' + ${'河南'}}">河南</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'湖北'}}">湖北</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'湖南'}}">湖南</a></li>
+            </ul>
+        </div>
+        <div class="tab-pane fade" id="huanan">
+            <ul class="nav nav-pills">
+                <li><label>省份</label></li>
+                <li class="active"><a th:href="@{'../yuanxiao/' + ${'广东'}}">广东</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'广西'}}">广西</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'海南'}}">海南</a></li>
+            </ul>
+        </div>
+        <div class="tab-pane fade" id="xibei">
+            <ul class="nav nav-pills">
+                <li><label>省份</label></li>
+                <li class="active"><a th:href="@{'../yuanxiao/' + ${'陕西'}}">陕西</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'甘肃'}}">甘肃</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'宁夏'}}">宁夏</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'新疆'}}">新疆</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'青海'}}">青海</a></li>
+            </ul>
+        </div>
+        <div class="tab-pane fade" id="xinan">
+            <ul class="nav nav-pills">
+                <li><label>省份</label></li>
+                <li class="active"><a th:href="@{'../yuanxiao/' + ${'重庆'}}">重庆</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'四川'}}">四川</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'贵州'}}">贵州</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'云南'}}">云南</a></li>
+                <li><a th:href="@{'../yuanxiao/' + ${'西藏'}}">西藏</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- END WRAPPER -->
+<div class="container">
+    <div class="col-lg-2" th:each="schoolData : ${schIndex}">
+        <div class="panel ">
+            <img th:src="@{../../assets/img/华中科技大学.jpg}">
+            <h4 th:text="${schoolData.getSchoolName()}">华中科技大学</h4>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

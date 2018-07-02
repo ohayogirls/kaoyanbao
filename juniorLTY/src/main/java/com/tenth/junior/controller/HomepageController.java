@@ -28,7 +28,7 @@ public class HomepageController {
     private YearlyDataService yearlyDataService;
     @GetMapping
     public String gethomepage(){
-        return "homepage";
+        return "index";
     }
 
     @GetMapping("/yuanxiao/{province}")

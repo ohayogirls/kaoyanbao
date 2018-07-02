@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/show")
 public class RegisterController {
 
     @Autowired
@@ -31,16 +31,15 @@ public class RegisterController {
      * 登录界面
      * @return
      */
-    @GetMapping("/register")
+    @GetMapping("/denglu")
     public String index(Model model) {
         //List<User> list = userService.getAllUser();
         //model.addAttribute("userdata", list);
-        return "register";
+        return "index-denglu";
     }
 
-   @PostMapping("/register")
+   @PostMapping("/denglu")
     public String Register(User user){
-
        String password1 = userService.findByName(user.getUserName()).getPassword();
        if(userService.findByName(user.getUserName()) != null){
            if( user.getPassword().equalsIgnoreCase(password1)){
@@ -50,15 +49,14 @@ public class RegisterController {
                loginTable.setLogID(loginTableService.getLogTanumber());
                loginTable.setTime(loginTableService.presentTime());
                loginTable.setIP(loginTableService.getIPAddr(request));
-
                loginTableService.addLoginTable(loginTable);
-               return "redirect:/logintable";
+               return "redirect:/show";
            }
            else
-               return "redirect:/register";
+               return "redirect:/show/denglu";
        }
         else
-            return "redirect:/register";    //用户名或密码错误，重新输入数据
+            return "redirect:/show/denglu";    //用户名或密码错误，重新输入数据
     }
 
     /**
@@ -67,18 +65,18 @@ public class RegisterController {
      * @param password
      * @return
      */
-    @GetMapping("/signIn")
+    @GetMapping("/zhuce")
     public String addPage(Model model) {
-        return "sign-in";
+        return "index-zhuce";
     }
 
-    @PostMapping("/signIn")
+    @PostMapping("/zhuce")
     public String getaddpage(User user) {
         if(userService.findByName(user.getUserName())!=null)
-            return "redirect:/signIn";
+            return "redirect:/show/zhuce";
         else
             userService.addUser(user);
-        return "school";
+        return "index-denglu";
 
     }
 
