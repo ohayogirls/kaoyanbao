@@ -7,6 +7,7 @@ import com.tenth.junior.repository.MaterialRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -49,5 +50,17 @@ public class ExperienceServiceImpl implements  ExperienceService{
     @Override
     public List<Experience> queryByExperienceType(String type) {
         return experiencerepository.queryByType(type);
+    }
+
+    @Override
+    public List<Experience> findBySchoolID(Integer ID) {
+        List<Experience> list=new ArrayList<>();
+        List<Experience> aimList=new ArrayList<>(experiencerepository.findAll());
+        for (int i=0;i<aimList.size();i++){
+            if (aimList.get(i).getSchoolID()==ID){
+                list.add(aimList.get(i));
+            }
+        }
+        return list;
     }
 }

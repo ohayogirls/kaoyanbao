@@ -3,9 +3,7 @@ package com.tenth.junior.controller;
 import com.tenth.junior.bean.Experience;
 import com.tenth.junior.bean.Material;
 import com.tenth.junior.bean.School;
-import com.tenth.junior.service.ExperienceService;
-import com.tenth.junior.service.MaterialService;
-import com.tenth.junior.service.SchoolService;
+import com.tenth.junior.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,6 +22,10 @@ public class HomepageController {
     private MaterialService materialService;
     @Autowired
     private ExperienceService experienceService;
+    @Autowired
+    private TeacherService teacherService;
+    @Autowired
+    private YearlyDataService yearlyDataService;
     @GetMapping
     public String gethomepage(){
         return "homepage";
@@ -37,8 +39,11 @@ public class HomepageController {
     }
     @GetMapping("/school/{id}")
     public String schoolpage(@PathVariable("id") Integer id,Model model){
-        model.addAttribute("school",schoolService.findSchoolByID(id).get());
-        return "";
+        model.addAttribute("school",schoolService.findSchoolByID(id));
+        model.addAttribute("yearlydata",yearlyDataService.findBySchoolID(id));
+        model.addAttribute("teacher",teacherService.findTeacherBySchool(teacherService.findAllTeacher(),schoolService.findSchoolByID(id).get().getSchoolName()));
+        model.addAttribute("experience",experienceService.findBySchoolID(id));
+        return "school-info";
         //TODO:学校展示的页面
 
     }

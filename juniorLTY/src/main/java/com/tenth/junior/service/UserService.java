@@ -1,5 +1,6 @@
 package com.tenth.junior.service;
 import com.tenth.junior.bean.User;
+import jdk.nashorn.internal.runtime.regexp.joni.constants.StringType;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
@@ -19,5 +20,4 @@ public interface UserService {
     User findByName(String user_name);
 
     public long getUserNum();
-
 }
