@@ -1,5 +1,6 @@
 package com.tenth.junior.service;
 
+import com.tenth.junior.bean.Experience;
 import com.tenth.junior.bean.Teacher;
 import com.tenth.junior.repository.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -102,5 +103,17 @@ public class TeacherServiceImpl implements TeacherService {
     @Override
     public Optional<Teacher> findTeacherByID(Integer id) {
         return repository.findById(id);
+    }
+
+    @Override
+    public List<Teacher> findBySchoolID(Integer ID) {
+        List<Teacher> list=new ArrayList<>();
+        List<Teacher> aimList=new ArrayList<>(repository.findAll());
+        for (int i=0;i<aimList.size();i++){
+            if (aimList.get(i).getSchoolID()==ID){
+                list.add(aimList.get(i));
+            }
+        }
+        return list;
     }
 }
