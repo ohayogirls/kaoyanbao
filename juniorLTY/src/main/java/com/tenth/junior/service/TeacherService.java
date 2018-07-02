@@ -85,5 +85,5 @@ public interface TeacherService {
      * @return aimList
      */
     List<Teacher> findTeacherBySchool(List<Teacher> aimList,String schoolName);
-
+    List<Teacher> findBySchoolID(Integer ID);
 }
