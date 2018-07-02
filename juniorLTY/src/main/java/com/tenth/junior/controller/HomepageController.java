@@ -45,7 +45,13 @@ public class HomepageController {
         model.addAttribute("experience",experienceService.findBySchoolID(id));
         return "school-info";
         //TODO:学校展示的页面
-
+    }
+    //每个学校的报考经验
+    @GetMapping("/school/{schoolid}/experience/{expid}")
+    public String experiencepage(@PathVariable("schoolid") Integer schoolid,@PathVariable("expid")Integer expid, Model model){
+        model.addAttribute("experience",experienceService.findByID(expid));
+        model.addAttribute("school",schoolService.findSchoolByID(schoolid));
+        return "exp-info";
     }
     @GetMapping("/ziliao")
     public String getmaterial(Model model){
