@@ -133,11 +133,14 @@
     </div>
 </div>
 <!-- END WRAPPER -->
+
 <div class="container">
     <div class="col-lg-2" th:each="schoolData : ${schIndex}">
         <div class="panel ">
-            <img th:src="@{../../assets/img/华中科技大学.jpg}">
-            <h4 th:text="${schoolData.getSchoolName()}">华中科技大学</h4>
+            <a th:href="@{'/show/school/' + ${schoolData.getSchoolID()}}">
+                <img th:src="@{../../assets/img/华中科技大学.jpg}">
+                <h4 th:text="${schoolData.getSchoolName()}">华中科技大学</h4>
+            </a>
         </div>
     </div>
 </div>

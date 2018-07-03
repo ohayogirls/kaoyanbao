@@ -1,0 +1,62 @@
+body{
+    background-color: #F3F5F8;
+}
+.col-lg-12 .nav > li > a{
+    padding: 20px 40px;
+    border-left: none;
+}
+.nav-pills > li > a{
+    border-radius: 0;
+}
+.nav-pills > li > label{
+    color: rgb(5,166,179);
+    font-size: 28px;
+    padding: 11px 40px;
+}
+.nav > li > a:hover, .nav > li > a:focus{
+    background-color: #337ab7;
+}
+h1{
+    color: rgb(5,166,179);
+    font-weight: 400;
+}
+.th-Year{
+    width: 20%;
+}
+.th-Score{
+    width: 20%;
+}
+.th-EnrollRate{
+    width: 20%;
+}
+.panel .panel-heading button i {
+    font-size: 14px;
+}
+.lnr {
+    font-family: 'Linearicons-Free';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.panel .panel-heading {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+}
+.panel .right {
+    position: absolute;
+    right: 20px;
+    top: 32%;
+}
+.panel .panel-heading button {
+    padding: 0;
+    margin-left: 5px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}

@@ -10,20 +10,24 @@ body{
     color: rgb(5,166,179);
 }
 .btn-lg{
-    border: none;
+    padding: 5px 8px;
+    border: 2px solid rgb(5,166,179);
     border-radius: 0;
 }
 .btn-info{
-    background-color: rgb(5,166,179);
+    background-color: white;
+    color: rgb(5,166,179);
 }
 .btn-info:hover{
-    background-color: #0bc2d1;
+    background-color: rgb(5,166,179);
+    color: white;
 }
 span a{
     color: black;
 }
 #div-zhuce{
     text-align: center;
+    margin-top: 10px;
 }
 .panel{
     margin-top: 100px;
