@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -56,7 +57,25 @@ public class HomepageController {
     @GetMapping("/ziliao")
     public String getmaterial(Model model){
         List<Material> materialList = materialService.getAllMaterial();
-        model.addAttribute("allMateria",materialList);
+        model.addAttribute("allMaterial",materialList);
+        return "index-ziliao";
+    }
+    @GetMapping("/ziliao/{category}/{type}")
+    public  String materialpage1(@PathVariable("category") String categoty,@PathVariable("type")String type,Model model){
+        List<Material> materialList1 ;
+        List<Material> materialList2 ;
+        List<Material> materialList ;
+        materialList1 = materialService.getAllMat();
+        materialList2 = materialService.findByCategory(materialList1,categoty);
+        materialList = materialService.findByType(materialList2,type);
+        model.addAttribute("partMaterial",materialList);
+        return "index-ziliao";
+    }
+    @GetMapping("/ziliao/{category}")
+    public  String materialpage2(@PathVariable("category") String categoty,Model model){
+        List<Material> materialList1 = materialService.getAllMat();
+        List<Material> materialList = materialService.findByCategory(materialList1,categoty);
+        model.addAttribute("partMaterial",materialList);
         return "index-ziliao";
     }
     @GetMapping("/jingyan")
@@ -65,5 +84,5 @@ public class HomepageController {
         model.addAttribute("allExp",experienceList);
         return "index-exp";
     }
-
+    //
 }

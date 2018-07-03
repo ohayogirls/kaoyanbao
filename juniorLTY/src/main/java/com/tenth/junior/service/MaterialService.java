@@ -21,4 +21,8 @@ public interface MaterialService {
 
     List<Material> queryByMaterialType(String type);
 
+    List<Material> findByCategory(List<Material> aimList,String category);
+
+    List<Material> findByType(List<Material> aimList,String type);
+
 }
