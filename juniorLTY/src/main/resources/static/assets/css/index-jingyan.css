@@ -1,0 +1,23 @@
+body{
+    background-color: #F3F5F8;
+}
+#wrapper .nav > li > a{
+    padding: 20px 40px;
+    border-left: none;
+}
+.nav-pills > li > a{
+    border-radius: 0;
+}
+.nav-pills > li > label{
+    color: rgb(5,166,179);
+    font-size: 28px;
+    padding: 11px 40px;
+}
+.nav > li > a:hover, .nav > li > a:focus{
+    background-color: #337ab7;
+}
+#wrapper{
+    margin-top: 50px;
+    margin-left: 60px;
+    margin-bottom: 50px;
+}

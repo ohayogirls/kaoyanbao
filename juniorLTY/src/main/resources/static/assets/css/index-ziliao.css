@@ -16,3 +16,11 @@ body{
 .nav > li > a:hover, .nav > li > a:focus{
     background-color: #337ab7;
 }
+#myTabContent{
+    margin-top: 10px;
+}
+#wrapper{
+    margin-top: 50px;
+    margin-left: 60px;
+    margin-bottom: 50px;
+}
