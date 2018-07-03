@@ -56,7 +56,7 @@
         <div class="col-lg-12">
             <ul class="nav nav-pills">
                 <li><label>分类</label></li>
-                <li class="active"><a th:href="@{'/show/jingyan/' + ${'备考经验'}}">备考经验</a></li>
+                <li class=""><a th:href="@{'/show/jingyan/' + ${'备考经验'}}">备考经验</a></li>
                 <li><a th:href="@{'/show/jingyan/' + ${'复试经验'}}">复试经验</a></li>
                 <li><a th:href="@{'/show/jingyan/' + ${'心理调节'}}">心理调节</a></li>
                 <li><a th:href="@{'/show/jingyan/' + ${'院校经验'}}">院校经验</a></li>
@@ -68,7 +68,7 @@
 <div id="jingyan-panel" class="container">
     <div class="row" >
         <div class="col-lg-12">
-            <ul>
+            <ul class="list-unstyled">
                 <li th:each="expData : ${allExp}"><a th:text="${expData.getTitle()}" th:href="${expData.getTitle()}"></a></li>
             </ul>
         </div>

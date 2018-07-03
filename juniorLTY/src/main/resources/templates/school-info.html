@@ -71,12 +71,20 @@
                 <div class="tab-pane fade in active" id="gfzx">
                     <div class="row">
                         <div class="col-lg-12">
-                            <ul>
-                                <li><label>报考截至时间</label><span th:text="${school.getCutTime()}"></span></li>
-                                <li><label>考纲</label><a th:href="${school.getOutline()}" th:text="${school.getOutline()}"></a></li>
-                                <li><label>招生简章</label><a th:href="${school.getCatalogLink()}" th:text="${school.getCatalogLink()}"></a></li>
-                                <li><label>参考书</label><a th:href="${school.getReferrenceBook()}" th:text="${school.getReferrenceBook()}"></a></li>
-                            </ul>
+                            <dl class="dl-horizontal">
+                                <dt>报考截至时间</dt>
+                                <dd><span th:text="${school.getCutTime()}"></span></dd>
+                                <dt>考纲</dt>
+                                <dd><a th:href="${school.getOutline()}" th:text="${school.getOutline()}"></a></dd>
+                                <dt>招生简章</dt>
+                                <dd><a th:href="${school.getCatalogLink()}" th:text="${school.getCatalogLink()}"></a></dd>
+                                <dt>参考书</dt>
+                                <dd><a th:href="${school.getReferrenceBook()}" th:text="${school.getReferrenceBook()}"></a></dd>
+                                <!--<li><label>报考截至时间</label><span th:text="${school.getCutTime()}"></span></li>-->
+                                <!--<li><label>考纲</label><a th:href="${school.getOutline()}" th:text="${school.getOutline()}"></a></li>-->
+                                <!--<li><label>招生简章</label><a th:href="${school.getCatalogLink()}" th:text="${school.getCatalogLink()}"></a></li>-->
+                                <!--<li><label>参考书</label><a th:href="${school.getReferrenceBook()}" th:text="${school.getReferrenceBook()}"></a></li>-->
+                            </dl>
                         </div>
                     </div>
                 </div>
@@ -123,7 +131,7 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="bkjy">
-                    <ul>
+                    <ul class="list-unstyled">
                         <li th:each="expData : ${experience}"><a th:href="'/show/school/' + ${school.getSchoolID()} + '/experience/' + ${expData.getExpID()}"
                                                                  th:text="${expData.getTitle()}"></a></li>
                     </ul>

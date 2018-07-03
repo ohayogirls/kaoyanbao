@@ -55,17 +55,17 @@
 <div id="wrapper">
     <ul id="myTab" class="nav nav-pills">
         <li><label>科目</label></li>
-        <li class="active"><a class="" href="#zhengzhi" data-toggle="tab">政治</a></li>
+        <li class=""><a class="" href="#zhengzhi" data-toggle="tab">政治</a></li>
         <li><a class="" href="#shuxue" data-toggle="tab">数学</a></li>
         <li><a class="" href="#yingyu" data-toggle="tab">英语</a></li>
         <li><a class="" href="#jisuanji" data-toggle="tab">计算机</a></li>
 
     </ul>
     <div id="myTabContent" class="tab-content">
-        <div class="tab-pane fade in active" id="zhengzhi">
+        <div class="tab-pane fade" id="zhengzhi">
             <ul class="nav nav-pills">
                 <li><label>类别</label></li>
-                <li class="active"><a th:href="@{'/show/ziliao/' + ${'政治'} + '/' + ${'真题'}}">真题</a></li>
+                <li class=""><a th:href="@{'/show/ziliao/' + ${'政治'} + '/' + ${'真题'}}">真题</a></li>
                 <li><a th:href="@{'/show/ziliao/' + ${'政治'} + '/' + ${'模拟题'}}">模拟题</a></li>
                 <li><a th:href="@{'/show/ziliao/' + ${'政治'} + '/' + ${'视频教学'}}">视频教学</a></li>
             </ul>
@@ -73,7 +73,7 @@
         <div class="tab-pane fade" id="shuxue">
             <ul class="nav nav-pills">
                 <li><label>类别</label></li>
-                <li class="active"><a th:href="@{'/show/ziliao/' + ${'数学'} + '/' + ${'真题'}}">真题</a></li>
+                <li class=""><a th:href="@{'/show/ziliao/' + ${'数学'} + '/' + ${'真题'}}">真题</a></li>
                 <li><a th:href="@{'/show/ziliao/' + ${'数学'} + '/' + ${'模拟题'}}">模拟题</a></li>
                 <li><a th:href="@{'/show/ziliao/' + ${'数学'} + '/' + ${'视频教学'}}">视频教学</a></li>
             </ul>
@@ -81,7 +81,7 @@
         <div class="tab-pane fade" id="yingyu">
             <ul class="nav nav-pills">
                 <li><label>类别</label></li>
-                <li class="active"><a th:href="@{'/show/ziliao/' + ${'英语'} + '/' + ${'真题'}}">真题</a></li>
+                <li class=""><a th:href="@{'/show/ziliao/' + ${'英语'} + '/' + ${'真题'}}">真题</a></li>
                 <li><a th:href="@{'/show/ziliao/' + ${'英语'} + '/' + ${'模拟题'}}">模拟题</a></li>
                 <li><a th:href="@{'/show/ziliao/' + ${'英语'} + '/' + ${'视频教学'}}">视频教学</a></li>
             </ul>
@@ -89,7 +89,7 @@
         <div class="tab-pane fade" id="jisuanji">
             <ul class="nav nav-pills">
                 <li><label>类别</label></li>
-                <li class="active"><a th:href="@{'/show/ziliao/' + ${'计算机'} + '/' + ${'真题'}}">真题</a></li>
+                <li class=""><a th:href="@{'/show/ziliao/' + ${'计算机'} + '/' + ${'真题'}}">真题</a></li>
                 <li><a th:href="@{'/show/ziliao/' + ${'计算机'} + '/' + ${'模拟题'}}">模拟题</a></li>
                 <li><a th:href="@{'/show/ziliao/' + ${'计算机'} + '/' + ${'视频教学'}}">视频教学</a></li>
             </ul>
@@ -101,7 +101,7 @@
 <div id="ziliao-panel" class="container">
     <div class="row" >
         <div class="col-lg-12">
-            <ul>
+            <ul class="list-unstyled">
                 <li th:each="materialData : ${allMaterial}"><a th:text="${materialData.getLink()}" th:href="${materialData.getLink()}"></a></li>
             </ul>
         </div>
