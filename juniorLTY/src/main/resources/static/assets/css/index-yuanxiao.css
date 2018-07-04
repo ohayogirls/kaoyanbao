@@ -36,3 +36,16 @@ img{
 .panel{
     padding: 6px;
 }
+.page-header{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 24px;
+}
+.breadcrumb{
+    margin: 0;
+    border-radius: 0;
+    background-color: rgb(5,166,179);
+    color: white;
+}
