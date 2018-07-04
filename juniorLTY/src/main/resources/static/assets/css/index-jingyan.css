@@ -10,7 +10,7 @@ html,body{
     border-radius: 0;
 }
 .nav-pills > li > label{
-    color: rgb(5,166,179);
+    color: #337ab7;
     font-size: 28px;
     padding: 11px 40px;
 }
@@ -27,7 +27,7 @@ html,body{
 }
 #jingyan-panel a{
     font-size: 20px;
-    color: rgb(5,166,179);
+    color: black;
 }
 .page-header{
     text-align: center;
@@ -41,4 +41,7 @@ html,body{
     border-radius: 0;
     background-color: rgb(5,166,179);
     color: white;
+}
+.panel{
+    padding: 0px;
 }

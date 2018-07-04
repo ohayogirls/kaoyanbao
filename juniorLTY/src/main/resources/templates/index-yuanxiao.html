@@ -134,21 +134,19 @@
 </div>
 <!-- END WRAPPER -->
 <!--start-school-panel-->
-<div class="container">
-    <div class="panel">
-        <div class="page-header">
-            <ol class="breadcrumb">
-                <li ><span th:each="schData,status : ${schIndex}" th:if="${status.first == true}" th:text="${schData.getProvince()}"></span></li>
-            </ol>
-        </div>
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-lg-2" th:each="schoolData : ${schIndex}">
-                    <a th:href="@{'/show/school/' + ${schoolData.getSchoolID()}}">
-                        <img th:src="@{../../assets/img/华中科技大学.jpg}">
-                        <h4 th:text="${schoolData.getSchoolName()}">华中科技大学</h4>
-                    </a>
-                </div>
+<div id="school-panel" class="container panel">
+    <div class="page-header">
+        <ol class="breadcrumb">
+            <li ><span th:each="schData,status : ${schIndex}" th:if="${status.first == true}" th:text="${schData.getProvince()}"></span></li>
+        </ol>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-lg-2" th:each="schoolData : ${schIndex}">
+                <a th:href="@{'/show/school/' + ${schoolData.getSchoolID()}}">
+                    <img th:src="@{../../assets/img/华中科技大学.jpg}">
+                    <h4 th:text="${schoolData.getSchoolName()}">华中科技大学</h4>
+                </a>
             </div>
         </div>
     </div>

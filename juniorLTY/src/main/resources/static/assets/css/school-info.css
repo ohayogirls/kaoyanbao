@@ -18,6 +18,8 @@ html,body{
     background-color: #337ab7;
 }
 h1{
+    font-size: 48px;
+    margin-bottom: 20px;
     color: rgb(5,166,179);
     font-weight: 400;
 }
@@ -60,4 +62,23 @@ h1{
     background-color: transparent;
     border: none;
     outline: none;
+}
+.break-line{
+    margin-top: 0;
+    border-bottom: 4px solid #337ab7;
+}
+#bkjy a{
+    font-size: 20px;
+    color: black;
+}
+.row .col-lg-4{
+    text-align: center;
+}
+dt{
+    font-size: 20px;
+    color: rgb(5,166,179);
+}
+dd{
+    font-size: 20px;
+    color: black;
 }
