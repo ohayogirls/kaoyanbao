@@ -1,4 +1,5 @@
-body{
+html,body{
+    height: 100%;
     background-color: #F3F5F8;
 }
 #wrapper .nav > li > a{
@@ -20,4 +21,24 @@ body{
     margin-top: 50px;
     margin-left: 60px;
     margin-bottom: 50px;
+}
+.row .col-lg-4{
+    text-align: center;
+}
+#jingyan-panel a{
+    font-size: 20px;
+    color: rgb(5,166,179);
+}
+.page-header{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 24px;
+}
+.breadcrumb{
+    margin: 0;
+    border-radius: 0;
+    background-color: rgb(5,166,179);
+    color: white;
 }

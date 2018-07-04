@@ -7,18 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <!-- VENDOR CSS -->
-    <link rel="stylesheet" th:href="@{../../assets/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/bootstrap.css}">
     <!-- MAIN CSS -->
-    <link rel='stylesheet' th:href="@{../../assets/css/style.css}">
+    <link rel='stylesheet' th:href="@{/assets/css/style.css}">
     <!--CSS BY LTY-->
-    <link rel="stylesheet" th:href="@{../../assets/css/index-ziliao.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/index-ziliao.css}">
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
     <!--JAVASCRIPT BY SELF-->
-    <script th:src="@{../../assets/js/jquery.min.js}"></script>
-    <script th:src="@{../../assets/js/bootstrap.js}"></script>
-    <script type="text/javascript" th:src="@{../../assets/js/move-top.js}"></script>
-    <script type="text/javascript" th:src="@{../../assets/js/easing.js}"></script>
+    <script th:src="@{/assets/js/jquery.min.js}"></script>
+    <script th:src="@{/assets/js/bootstrap.js}"></script>
+    <script type="text/javascript" th:src="@{/assets/js/move-top.js}"></script>
+    <script type="text/javascript" th:src="@{/assets/js/easing.js}"></script>
 </head>
 
 <body>
@@ -34,7 +34,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><img th:src="@{../../assets/img/logo.png}" alt="not found" /></a>
+                <a class="navbar-brand" href="index.html"><img th:src="@{/assets/img/logo.png}" alt="not found" /></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -67,7 +67,7 @@
                 <li><label>类别</label></li>
                 <li class=""><a th:href="@{'/show/ziliao/' + ${'政治'} + '/' + ${'真题'}}">真题</a></li>
                 <li><a th:href="@{'/show/ziliao/' + ${'政治'} + '/' + ${'模拟题'}}">模拟题</a></li>
-                <li><a th:href="@{'/show/ziliao/' + ${'政治'} + '/' + ${'视频教学'}}">视频教学</a></li>
+                <li><a th:href="@{'/show/ziliao/' + ${'政治'} + '/' + ${'视频'}}">视频</a></li>
             </ul>
         </div>
         <div class="tab-pane fade" id="shuxue">
@@ -75,7 +75,7 @@
                 <li><label>类别</label></li>
                 <li class=""><a th:href="@{'/show/ziliao/' + ${'数学'} + '/' + ${'真题'}}">真题</a></li>
                 <li><a th:href="@{'/show/ziliao/' + ${'数学'} + '/' + ${'模拟题'}}">模拟题</a></li>
-                <li><a th:href="@{'/show/ziliao/' + ${'数学'} + '/' + ${'视频教学'}}">视频教学</a></li>
+                <li><a th:href="@{'/show/ziliao/' + ${'数学'} + '/' + ${'视频'}}">视频</a></li>
             </ul>
         </div>
         <div class="tab-pane fade" id="yingyu">
@@ -83,7 +83,7 @@
                 <li><label>类别</label></li>
                 <li class=""><a th:href="@{'/show/ziliao/' + ${'英语'} + '/' + ${'真题'}}">真题</a></li>
                 <li><a th:href="@{'/show/ziliao/' + ${'英语'} + '/' + ${'模拟题'}}">模拟题</a></li>
-                <li><a th:href="@{'/show/ziliao/' + ${'英语'} + '/' + ${'视频教学'}}">视频教学</a></li>
+                <li><a th:href="@{'/show/ziliao/' + ${'英语'} + '/' + ${'视频'}}">视频</a></li>
             </ul>
         </div>
         <div class="tab-pane fade" id="jisuanji">
@@ -91,17 +91,27 @@
                 <li><label>类别</label></li>
                 <li class=""><a th:href="@{'/show/ziliao/' + ${'计算机'} + '/' + ${'真题'}}">真题</a></li>
                 <li><a th:href="@{'/show/ziliao/' + ${'计算机'} + '/' + ${'模拟题'}}">模拟题</a></li>
-                <li><a th:href="@{'/show/ziliao/' + ${'计算机'} + '/' + ${'视频教学'}}">视频教学</a></li>
+                <li><a th:href="@{'/show/ziliao/' + ${'计算机'} + '/' + ${'视频'}}">视频</a></li>
             </ul>
         </div>
     </div>
 </div>
 <!-- END WRAPPER -->
 <!--start-ziliao-panel-->
-<div id="ziliao-panel" class="container">
-    <div class="row" >
-        <div class="col-lg-4" th:each="materialData : ${allMaterial}">
-            <a th:text="${materialData.getLink()}" th:href="${materialData.getLink()}"></a>
+<div id="ziliao-panel" class="container panel">
+    <div class="page-header">
+        <ol class="breadcrumb" >
+            <li>
+                <span th:each="materialData,materialSta : ${allMaterial}" th:if="${materialSta.first == true}" th:text="${materialData.getCategory()}"></span>
+                <span th:each="materialData,materialSta : ${allMaterial}" th:if="${materialSta.first == true}" th:text="${materialData.getType()}"></span>
+            </li>
+        </ol>
+    </div>
+    <div class="panel-body">
+        <div class="row" >
+            <div class="col-lg-4" th:each="materialData : ${allMaterial}">
+                <a th:text="${materialData.getLink()}" th:href="${materialData.getLink()}"></a>
+            </div>
         </div>
     </div>
 </div>

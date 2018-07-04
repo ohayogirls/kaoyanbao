@@ -65,16 +65,25 @@
     </div>
 </div>
 <!--start-jingyan-panel-->
-<div id="jingyan-panel" class="container">
-    <div class="row" >
-        <div class="col-lg-12">
-            <ul class="list-unstyled">
-                <li th:each="expData : ${allExp}"><a th:text="${expData.getTitle()}" th:href="${expData.getTitle()}"></a></li>
-            </ul>
+<div id="jingyan-panel" class="container panel">
+    <div class="page-header">
+        <ol class="breadcrumb">
+            <li id="panel-tab"></li>
+        </ol>
+    </div>
+    <div class="panel-body">
+        <div class="row" >
+            <div class="col-lg-4" th:each="expData : ${allExp}">
+                <a th:text="${expData.getTitle()}" th:href="${expData.getTitle()}"></a>
+            </div>
         </div>
     </div>
 </div>
 <!--end-jingyan-panel-->
 </body>
-
+<script>
+    $(document).ready(function(){
+        document.getElementById('panel-tag').innerText = document.location.href.split('/').lastIndexOf();
+    });
+</script>
 </html>

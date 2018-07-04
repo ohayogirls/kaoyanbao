@@ -68,14 +68,14 @@ public class HomepageController {
         materialList1 = materialService.getAllMat();
         materialList2 = materialService.findByCategory(materialList1,categoty);
         materialList = materialService.findByType(materialList2,type);
-        model.addAttribute("partMaterial",materialList);
+        model.addAttribute("allMaterial",materialList);
         return "index-ziliao";
     }
     @GetMapping("/ziliao/{category}")
     public  String materialpage2(@PathVariable("category") String categoty,Model model){
         List<Material> materialList1 = materialService.getAllMat();
         List<Material> materialList = materialService.findByCategory(materialList1,categoty);
-        model.addAttribute("partMaterial",materialList);
+        model.addAttribute("allMaterial",materialList);
         return "index-ziliao";
     }
     @GetMapping("/jingyan")
