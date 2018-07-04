@@ -83,7 +83,8 @@
 </body>
 <script>
     $(document).ready(function(){
-        document.getElementById('panel-tag').innerText = document.location.href.split('/').lastIndexOf();
+        var nowhref = document.location.href.split('/');
+        document.getElementById('panel-tag').innerHTML = nowhref.indexOf(nowhref.length-1);
     });
 </script>
 </html>
