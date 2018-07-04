@@ -84,5 +84,12 @@ public class HomepageController {
         model.addAttribute("allExp",experienceList);
         return "index-jingyan";
     }
+    @GetMapping("/jingyan/{type}")
+    public String experience(@PathVariable("type")String type,Model model){
+        List<Experience> experienceList =experienceService.queryByExperienceType(type);
+        model.addAttribute("material",experienceList);
+        return "index-jingyan";
+    }
+
     //
 }
