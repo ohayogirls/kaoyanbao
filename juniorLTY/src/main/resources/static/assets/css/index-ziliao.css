@@ -24,3 +24,7 @@ body{
     margin-left: 60px;
     margin-bottom: 50px;
 }
+#ziliao-panel a{
+    font-size: 24px;
+    color: rgb(5,166,179);
+}

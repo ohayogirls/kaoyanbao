@@ -16,7 +16,7 @@ public class Experience {
 
 
 
-    private String    Time;
+    private String  Time;
     private String  Text;
 
 
