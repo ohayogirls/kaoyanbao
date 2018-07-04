@@ -82,7 +82,14 @@ public class HomepageController {
     public String getexperience(Model model){
         List<Experience> experienceList=experienceService.getAllExperience();
         model.addAttribute("allExp",experienceList);
-        return "index-exp";
+        return "index-jingyan";
     }
+    @GetMapping("/jingyan/{type}")
+    public String experience(@PathVariable("type")String type,Model model){
+        List<Experience> experienceList =experienceService.queryByExperienceType(type);
+        model.addAttribute("material",experienceList);
+        return "index-jingyan";
+    }
+
     //
 }
