@@ -72,7 +72,7 @@
 									<table class="table">
 										<thead>
 										<tr>
-											<th class="th-TeacherID">老师ID</th>
+											<!--<th class="th-TeacherID">老师ID</th>-->
 											<th class="th-Name">姓名</th>
 											<th class="th-Sex">性别</th>
 											<th class="th-CV">个人主页</th>
@@ -86,7 +86,7 @@
 										</thead>
 										<tbody>
 										<tr th:each="teacherData : ${teacher}">
-											<td th:text="${teacherData.getTeacherID()}"></td>
+
 											<td th:text="${teacherData.getName()}"></td>
 											<td th:text="${teacherData.getSex()}"></td>
 											<td th:text="${teacherData.getCV()}"></td>
@@ -94,7 +94,7 @@
 											<td th:text="${teacherData.getEmail()}"></td>
 											<td th:text="${teacherData.getJobTitle()}"></td>
 											<td th:text="${teacherData.getIntroduction()}"></td>
-											<td th:text="${teacherData.getSchoolID()}"></td>
+											<td th:text="${teacherData.getSchool().getSchoolName()}"></td>
 											<td><a th:href="@{'/teacher/update/'+${teacherData.getTeacherID()}}" ><i class="lnr lnr-pencil"></i></a>
 												<a th:href="@{'/teacher/delete/'+${teacherData.getTeacherID()}}" ><i class="lnr lnr-trash"></i></a>
 											</td>

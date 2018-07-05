@@ -71,7 +71,7 @@
 									<table class="table">
 										<thead>
 										<tr>
-											<th class="th-MaterialID">资料ID</th>
+											<!--<th class="th-MaterialID">资料ID</th>-->
 											<th class="th-Category">科目</th>
 											<th class="th-Type">类别</th>
 											<th class="th-Link">链接</th>
@@ -80,7 +80,7 @@
 										</thead>
 										<tbody>
 										<tr th:each="materialData : ${mat}">
-											<td th:text="${materialData.getMaterialID()}"></td>
+
 											<td th:text="${materialData.getCategory()}"></td>
 											<td th:text="${materialData.getType()}"></td>
 											<td th:text="${materialData.getLink()}"></td>

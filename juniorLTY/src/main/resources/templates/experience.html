@@ -71,7 +71,7 @@
 									<table class="table">
 										<thead>
 										<tr>
-											<th class="th-ExpID">经验ID</th>
+											<!--<th class="th-ExpID">经验ID</th>-->
 											<th class="th-Type">类别</th>
 											<th class="th-Author">作者</th>
 											<th class="th-Time">时间</th>
@@ -83,13 +83,13 @@
 										</thead>
 										<tbody>
 										<tr th:each="expData : ${exp}">
-											<td th:text="${expData.getExpID()}"></td>
+
 											<td th:text="${expData.getType()}"></td>
 											<td th:text="${expData.getAuthor()}"></td>
 											<td th:text="${expData.getTime()}"></td>
 											<td th:text="${expData.getTitle()}"></td>
 											<td th:text="${expData.getText()}"></td>
-											<td th:text="${expData.getSchoolID()}"></td>
+											<td th:text="${expData.getSchool().getSchoolName()}"></td>
 											<td><a th:href="@{'/experience/update/'+${expData.getExpID()}}" ><i class="lnr lnr-pencil"></i></a>
 												<a th:href="@{'/experience/delete/'+${expData.getExpID()}}" ><i class="lnr lnr-trash"></i></a>
 											</td>

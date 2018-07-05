@@ -71,7 +71,7 @@
 									<table class="table">
 										<thead>
 										<tr>
-											<th class="th-SchoolID">学校ID</th>
+											<!--<th class="th-SchoolID">学校ID</th>-->
 											<th class="th-SchoolName">学校名称</th>
 											<th class="th-Area">地域</th>
 											<th class="th-Province">省份</th>
@@ -86,7 +86,7 @@
 										</thead>
 										<tbody>
 										<tr th:each="schoolData : ${school}">
-											<td th:text="${schoolData.getSchoolID()}"></td>
+
 											<td th:text="${schoolData.getSchoolName()}"></td>
 											<td th:text="${schoolData.getArea()}"></td>
 											<td th:text="${schoolData.getProvince()}"></td>

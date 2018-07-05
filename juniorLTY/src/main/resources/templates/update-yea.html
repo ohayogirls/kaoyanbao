@@ -71,8 +71,8 @@
                                 <form method="post" th:action="@{/yearlydata/update}">
                                     <!--<input type="hidden" name="stuID" th:value="${stu.stuID}" >-->
                                     <div class="form-group">
-                                        <label for="inputSchoolID">学校</label>
-                                        <select name="school.SchoolID" id="inputSchoolID" class="form-control" >
+                                        <label for="inputSchoolName">学校</label>
+                                        <select name="pk.SchoolID" id="inputSchoolName" class="form-control" >
                                             <option th:each="schoolData : ${allSchool}" th:value="${schoolData.getSchoolID()}" th:text="${schoolData.getSchoolName()}" ></option>
                                         </select>
                                     </div>

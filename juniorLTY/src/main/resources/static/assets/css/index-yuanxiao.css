@@ -3,19 +3,28 @@ html,body{
     background-color: #F3F5F8;
 }
 #wrapper .nav > li > a{
-    padding: 20px 40px;
+    font-size: 20px;
+    color: #4d4d4d;
+    padding: 10px 10px;
     border-left: none;
+    background-color: #F3F5F8;
+}
+#wrapper .nav > li > a:hover,
+#wrapper .nav > li > a:focus{
+    font-size: 22px;
+    color: #2b2b2b;
 }
 .nav-pills > li > a{
     border-radius: 0;
 }
 .nav-pills > li > label{
-    color: #337ab7;
-    font-size: 28px;
-    padding: 11px 40px;
+    color: #EF6286;
+    font-size: 26px;
+    padding: 2px 30px;
 }
 .nav > li > a:hover, .nav > li > a:focus{
-    background-color: #337ab7;
+    border: none;
+    color: #EF6286;
 }
 #myTabContent{
     margin-top: 10px;
@@ -26,6 +35,7 @@ html,body{
     margin-bottom: 50px;
 }
 img{
+    background-color: transparent;
     width: 100%;
     height: auto;
 }
@@ -43,9 +53,10 @@ img{
 .breadcrumb{
     margin: 0;
     border-radius: 0;
-    background-color: rgb(5,166,179);
-    color: white;
+    background-color: #F3F5F8;
+    color: #EF6286;
 }
 .panel{
+    background-color: #F3F5F8;
     padding: 0px;
 }
