@@ -1,23 +1,24 @@
 package com.tenth.junior.bean;
 
 import javax.persistence.Embeddable;
+import javax.persistence.Entity;
 import java.io.Serializable;
 import java.util.Objects;
 
 @Embeddable
 public class YearlyDataPK implements Serializable {
-    private School school;
+    private Integer schoolid;
     private Integer Year;
 
+    public Integer getSchoolid() {
+        return schoolid;
+    }
+
+    public void setSchoolid(Integer schoolid) {
+        this.schoolid = schoolid;
+    }
+
     public YearlyDataPK() {
-    }
-
-    public School getSchool() {
-        return school;
-    }
-
-    public void setSchool(School school) {
-        this.school = school;
     }
 
     public Integer getYear() {
@@ -33,13 +34,14 @@ public class YearlyDataPK implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         YearlyDataPK that = (YearlyDataPK) o;
-        return Objects.equals(school, that.school) &&
-                Objects.equals(Year, that.Year);
+        return
+                Objects.equals(Year, that.Year)&&
+                Objects.equals(schoolid,that.schoolid);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(school, Year);
+        return Objects.hash(Year,schoolid);
     }
 }

@@ -23,6 +23,8 @@ public class YearlyDataController {
     @GetMapping
     public String index(Model model){
         List<YearlyData> yearlyDataList = yearlyDataService.findAllYearlyData();
+        List<School> schoolList = schoolService.findAllSchool();
+        model.addAttribute("allSchool",schoolList);
         model.addAttribute("yearlydata",yearlyDataList);
         return "yearly-data";
     }
@@ -43,8 +45,7 @@ public class YearlyDataController {
     @GetMapping("/delete/{school}/{year}")
     public String deleteData(@PathVariable("school") Integer schoolid,@PathVariable("year") Integer year){
         YearlyDataPK pk = new YearlyDataPK();
-        Optional<School> school =schoolService.findSchoolByID(schoolid);
-        pk.setSchool(school.get());
+        pk.setSchoolid(schoolid);
         pk.setYear(year);
         yearlyDataService.deleteYearlyData(pk);
         return "redirect:/yearlydata";
@@ -53,8 +54,7 @@ public class YearlyDataController {
     @GetMapping("/update/{school}/{year}")
     public String updatepage(@PathVariable("school") Integer schoolid,@PathVariable("year") Integer year,Model model){
         YearlyDataPK pk = new YearlyDataPK();
-        Optional<School> school =schoolService.findSchoolByID(schoolid);
-        pk.setSchool(school.get());
+        pk.setSchoolid(schoolid);
         pk.setYear(year);
         model.addAttribute("yearlydata",yearlyDataService.findByID(pk).get());
         List<School> schoolList = schoolService.findAllSchool();

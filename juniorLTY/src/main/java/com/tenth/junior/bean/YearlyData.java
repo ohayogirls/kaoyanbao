@@ -1,17 +1,25 @@
 package com.tenth.junior.bean;
 
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
 @Entity
 public class YearlyData {
     @EmbeddedId
-    private YearlyDataPK pk=new YearlyDataPK();
+    private YearlyDataPK pk;
 
     private Integer score;
 
     private String EnrollRate;
+
+    private String schoolname;
+
+    public String getSchoolname() {
+        return schoolname;
+    }
+
+    public void setSchoolname(String schoolname) {
+        this.schoolname = schoolname;
+    }
 
     public YearlyDataPK getPk() {
         return pk;
@@ -22,14 +30,12 @@ public class YearlyData {
     }
 
     @Transient
-    public Integer getSchoolID(){
-        return getPk().getSchoolID();
+    public Integer getYear(){
+        return getPk().getYear();
     }
 
     @Transient
-    public Integer getYearID(){
-        return getPk().getYearID();
-    }
+    public Integer getSchoolID() {return getPk().getSchoolid();}
 
     public Integer getScore() {
         return score;
