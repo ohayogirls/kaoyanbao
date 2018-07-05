@@ -14,6 +14,15 @@ public class School {
     private String  Area;
     private String  Province;
     private String  Outline;
+    private String  badge;
+
+    public String getBadge() {
+        return badge;
+    }
+
+    public void setBadge(String badge) {
+        this.badge = badge;
+    }
 
     public String getCutTime() {
         return CutTime;

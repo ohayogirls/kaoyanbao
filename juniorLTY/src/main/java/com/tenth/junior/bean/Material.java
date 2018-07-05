@@ -12,6 +12,15 @@ public class Material {
     private String  Category;
     private String  Type;
     private String  Link;
+    private String  Title;
+
+    public String getTitle() {
+        return Title;
+    }
+
+    public void setTitle(String title) {
+        Title = title;
+    }
 
     public Integer getMaterialID() {
         return MaterialID;

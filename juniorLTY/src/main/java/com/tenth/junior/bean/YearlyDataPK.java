@@ -6,26 +6,26 @@ import java.util.Objects;
 
 @Embeddable
 public class YearlyDataPK implements Serializable {
-    private Integer SchoolID;
-    private Integer YearID;
+    private School school;
+    private Integer Year;
 
     public YearlyDataPK() {
     }
 
-    public Integer getSchoolID() {
-        return SchoolID;
+    public School getSchool() {
+        return school;
     }
 
-    public void setSchoolID(Integer schoolID) {
-        SchoolID = schoolID;
+    public void setSchool(School school) {
+        this.school = school;
     }
 
     public Integer getYearID() {
-        return YearID;
+        return Year;
     }
 
-    public void setYearID(Integer yearID) {
-        YearID = yearID;
+    public void setYear(Integer year) {
+        Year = year;
     }
 
     @Override
@@ -33,13 +33,13 @@ public class YearlyDataPK implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         YearlyDataPK that = (YearlyDataPK) o;
-        return Objects.equals(SchoolID, that.SchoolID) &&
-                Objects.equals(YearID, that.YearID);
+        return Objects.equals(school, that.school) &&
+                Objects.equals(Year, that.Year);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(SchoolID, YearID);
+        return Objects.hash(school, Year);
     }
 }

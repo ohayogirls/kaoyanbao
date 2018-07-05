@@ -1,5 +1,6 @@
 package com.tenth.junior.controller;
 
+import com.tenth.junior.bean.Comment;
 import com.tenth.junior.bean.Experience;
 import com.tenth.junior.bean.Material;
 import com.tenth.junior.bean.School;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/show")
@@ -27,6 +29,8 @@ public class HomepageController {
     private TeacherService teacherService;
     @Autowired
     private YearlyDataService yearlyDataService;
+    @Autowired
+    private CommentService commentService;
     @GetMapping
     public String gethomepage(){
         return "index";
@@ -90,6 +94,13 @@ public class HomepageController {
         model.addAttribute("allExp",experienceList);
         return "index-jingyan";
     }
-
+    @GetMapping("/jingyan/{id}")
+    public String experienceinfo(@PathVariable("id")Integer id,Model model){
+        Optional<Experience> experience =experienceService.findByID(id);
+        List<Comment> commentList=commentService.getCommentByExp(experience.get());
+        model.addAttribute("Exp",experience.get());
+        model.addAttribute("comment",commentList);
+        return "exp-info";
+    }
     //
 }
