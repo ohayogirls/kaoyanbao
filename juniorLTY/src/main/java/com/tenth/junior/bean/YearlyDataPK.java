@@ -20,7 +20,7 @@ public class YearlyDataPK implements Serializable {
         this.school = school;
     }
 
-    public Integer getYearID() {
+    public Integer getYear() {
         return Year;
     }
 
