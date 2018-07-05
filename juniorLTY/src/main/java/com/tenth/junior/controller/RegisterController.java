@@ -50,6 +50,9 @@ public class RegisterController {
                loginTable.setTime(loginTableService.presentTime());
                loginTable.setIP(loginTableService.getIPAddr(request));
                loginTableService.addLoginTable(loginTable);
+               if(userService.findByName(user.getUserName()).getAdministrator() ){
+                   return "redirect:/school";
+               }
                return "redirect:/show";
            }
            else

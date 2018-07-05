@@ -41,8 +41,8 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a th:href="@{'/show'}" class="hvr-bounce-to-top">主页<span class="sr-only">(current)</span></a></li>
                     <li><a th:href="@{'/show/yuanxiao/' + ${'北京'}}" class="hvr-bounce-to-top">院校资讯</a></li>
-                    <li><a th:href="@{'/show/ziliao'}" class="hvr-bounce-to-top">资料分享</a></li>
-                    <li><a th:href="@{'/show/jingyan'}" class="hvr-bounce-to-top">经验交流</a></li>
+                    <li><a th:href="@{'/show/ziliao/' + ${'政治'} + '/' + ${'真题'}}" class="hvr-bounce-to-top">资料分享</a></li>
+                    <li><a th:href="@{'/show/jingyan/' + ${'备考经验'}}" class="hvr-bounce-to-top">经验交流</a></li>
                     <li><a th:href="@{'/show/denglu'}" class="hvr-bounce-to-top">登陆</a></li>
                 </ul>
                 <div class="clearfix"></div>
@@ -101,10 +101,8 @@
 <div id="ziliao-panel" class="container panel">
     <div class="page-header">
         <ol class="breadcrumb" >
-            <li>
-                <span th:each="materialData,materialSta : ${allMaterial}" th:if="${materialSta.first == true}" th:text="${materialData.getCategory()}"></span>
-                <span th:each="materialData,materialSta : ${allMaterial}" th:if="${materialSta.first == true}" th:text="${materialData.getType()}"></span>
-            </li>
+            <li ><span th:each="materialData,status : ${allMaterial}" th:if="${status.first == true}" th:text="${materialData.getCategory()}"></span></li>
+            <li ><span th:each="materialData,status : ${allMaterial}" th:if="${status.first == true}" th:text="${materialData.getType()}"></span></li>
         </ol>
     </div>
     <div class="panel-body">
@@ -116,7 +114,13 @@
     </div>
 </div>
 <!--end-ziliao-panel-->
-
+<script>
+    $(document).ready(function(){
+        // var nowhref = document.location.href.split('/');
+        // document.getElementById('panel-tag2').innerHTML = nowhref.pop();
+        // document.getElementById('panel-tag1').innerHTML = nowhref.pop();
+    });
+</script>
 </body>
 
 </html>

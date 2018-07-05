@@ -41,8 +41,8 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a th:href="@{'/show'}" class="hvr-bounce-to-top">主页<span class="sr-only">(current)</span></a></li>
                     <li><a th:href="@{'/show/yuanxiao/' + ${'北京'}}" class="hvr-bounce-to-top">院校资讯</a></li>
-                    <li><a th:href="@{'/show/ziliao'}" class="hvr-bounce-to-top">资料分享</a></li>
-                    <li><a th:href="@{'/show/jingyan'}" class="hvr-bounce-to-top">经验交流</a></li>
+                    <li><a th:href="@{'/show/ziliao/' + ${'政治'} + '/' + ${'真题'}}" class="hvr-bounce-to-top">资料分享</a></li>
+                    <li><a th:href="@{'/show/jingyan/' + ${'备考经验'}}" class="hvr-bounce-to-top">经验交流</a></li>
                     <li><a th:href="@{'/show/denglu'}" class="hvr-bounce-to-top">登陆</a></li>
                 </ul>
                 <div class="clearfix"></div>
@@ -68,7 +68,7 @@
 <div id="jingyan-panel" class="container panel">
     <div class="page-header">
         <ol class="breadcrumb">
-            <li id="panel-tab"></li>
+            <li ><span th:each="expData,status : ${allExp}" th:if="${status.first == true}" th:text="${expData.getType()}"></span></li>
         </ol>
     </div>
     <div class="panel-body">
@@ -83,7 +83,8 @@
 </body>
 <script>
     $(document).ready(function(){
-        document.getElementById('panel-tag').innerText = document.location.href.split('/').lastIndexOf();
+        // var nowhref = document.location.href.split('/');
+        // document.getElementById('panel-tag').innerHTML = nowhref.indexOf(nowhref.length-1);
     });
 </script>
 </html>
