@@ -98,11 +98,14 @@ public class SchoolServiceImpl implements SchoolService{
     @Override
     public List<School> findSchoolByProvince(List<School> aimList, String province) {
         List<School> list=new ArrayList<>();
-        for (int i=0;i<aimList.size();i++){
-            if (aimList.get(i).getProvince().equals(province)){
-                list.add(aimList.get(i));
+        if(aimList!=null){
+            for (int i=0;i<aimList.size();i++){
+                if (province.equals(aimList.get(i).getProvince())){
+                    list.add(aimList.get(i));
+                }
             }
         }
+
         return list;
     }
 

@@ -39,7 +39,7 @@ public class RegisterController {
     }
 
    @PostMapping("/denglu")
-    public String Register(User user){
+    public String Register(User user,Model model){
        String password1 = userService.findByName(user.getUserName()).getPassword();
        if(userService.findByName(user.getUserName()) != null){
            if( user.getPassword().equalsIgnoreCase(password1)){
@@ -50,9 +50,11 @@ public class RegisterController {
                loginTable.setTime(loginTableService.presentTime());
                loginTable.setIP(loginTableService.getIPAddr(request));
                loginTableService.addLoginTable(loginTable);
+               model.addAttribute("userdata",userService.findByName(user.getUserName()));
                if(userService.findByName(user.getUserName()).getAdministrator() ){
                    return "redirect:/school";
                }
+
                return "redirect:/show";
            }
            else

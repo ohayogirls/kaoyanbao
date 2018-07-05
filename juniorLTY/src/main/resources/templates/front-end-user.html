@@ -73,7 +73,7 @@
 									<table class="table">
 										<thead>
 										<tr>
-											<th class="th-UserID">用户ID</th>
+											<!--<th class="th-UserID">用户ID</th>-->
 											<th class="th-UserName">账户</th>
 											<th class="th-Password">密码</th>
 											<th class="th-HeadPath">头像</th>
@@ -85,7 +85,7 @@
 										</thead>
 										<tbody>
 										<tr th:each="userData : ${userdata}">
-											<td th:text="${userData.getUserID()}"></td>
+
 											<td th:text="${userData.getUserName()}"></td>
 											<td th:text="${userData.getPassword()}"></td>
 											<td th:text="${userData.getHeadPath()}"></td>

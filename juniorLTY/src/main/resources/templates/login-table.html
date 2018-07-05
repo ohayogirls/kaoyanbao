@@ -72,7 +72,7 @@
 									<table class="table">
 										<thead>
 										<tr>
-											<th class="th-LogID">记录ID</th>
+											<!--<th class="th-LogID">记录ID</th>-->
 											<th class="th-UserID">账户</th>
 											<th class="th-IP">IP</th>
 											<th class="th-Time">访问时间</th>
@@ -80,7 +80,7 @@
 										</thead>
 										<tbody>
 										<tr th:each="loginData : ${logindata}">
-											<td th:text="${loginData.getLogID()}"></td>
+
 											<td th:text="${loginData.getUser().getUserName()}"></td>
 											<td th:text="${loginData.getIP()}"></td>
 											<td th:text="${loginData.getTime()}"></td>
