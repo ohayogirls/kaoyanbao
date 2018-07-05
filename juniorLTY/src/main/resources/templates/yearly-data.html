@@ -80,12 +80,12 @@
 									</thead>
 									<tbody>
 									<tr th:each="yearlyData : ${yearlydata}">
-										<td th:text="${yearlyData.getSchoolID()}">1</td>
-										<td th:text="${yearlyData.getYearID()}">2017</td>
+										<td th:text="${yearlyData.getSchoolname()}">1</td>
+										<td th:text="${yearlyData.getYear()}">2017</td>
 										<td th:text="${yearlyData.getScore()}">389</td>
 										<td th:text="${yearlyData.getEnrollRate()}">38</td>
-										<td><a th:href="@{'/yearlydata/update/'+${yearlyData.getSchoolID()}+'/'+${yearlyData.getYearID()}}" ><i class="lnr lnr-pencil"></i></a>
-											<a th:href="@{'/yearlydata/delete/'+${yearlyData.getSchoolID()}+'/'+${yearlyData.getYearID()}}" ><i class="lnr lnr-trash"></i></a>
+										<td><a th:href="@{'/yearlydata/update/'+${yearlyData.getSchoolID()}+'/'+${yearlyData.getYear()}}" ><i class="lnr lnr-pencil"></i></a>
+											<a th:href="@{'/yearlydata/delete/'+${yearlyData.getSchoolID()}+'/'+${yearlyData.getYear()}}" ><i class="lnr lnr-trash"></i></a>
 										</td>
 									</tr>
 									</tbody>

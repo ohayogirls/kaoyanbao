@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 public class YearlyData {
     @EmbeddedId
-    private YearlyDataPK pk;
+    private YearlyDataPK pk =new YearlyDataPK();
 
     private Integer score;
 

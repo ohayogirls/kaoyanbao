@@ -12,8 +12,14 @@ import java.util.List;
 import java.util.Optional;
 @Service
 public class CommentServiceImpl implements CommentService {
+
     @Autowired
     CommentRepository commentRepository;
+
+    @Override
+    public Comment addComment(Comment comment) {
+        return commentRepository.save(comment);
+    }
     @Override
     public List<Comment> getCommentByExp(Experience experience) {
 

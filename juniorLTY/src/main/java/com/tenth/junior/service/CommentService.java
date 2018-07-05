@@ -15,5 +15,6 @@ public interface CommentService {
     Optional<Comment> getCommentByID(Integer id);
     List<Comment> getCommentByUser(User user);
     void deletecomment(Integer id);
+    Comment addComment(Comment comment);
 
 }
