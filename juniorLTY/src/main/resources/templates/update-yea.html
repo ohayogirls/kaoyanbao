@@ -70,12 +70,15 @@
                             <div class="panel-body">
                                 <form method="post" th:action="@{/yearlydata/update}">
                                     <div class="form-group">
+                                        <input type="hidden" th:value="${yearlydata.schoolID}" class="form-control" name="pk.schoolid" readonly placeholder="">
+                                    </div>
+                                    <div class="form-group">
                                         <label for="inputSchoolName">学校</label>
-                                        <input type="text" th:value="${yearlydata.schoolname}" class="form-control" id="inputSchoolName" name="pk.SchoolID" readonly placeholder="">
+                                        <input type="text" th:value="${yearlydata.schoolname}" class="form-control" id="inputSchoolName" name="schoolname" readonly placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputYear">年份</label>
-                                        <input type="text" th:value="${yearlydata.year}" class="form-control" id="inputYear" name="pk.YearID" readonly placeholder="">
+                                        <input type="text" th:value="${yearlydata.year}" class="form-control" id="inputYear" name="pk.Year" readonly placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputScoure">分数线</label>

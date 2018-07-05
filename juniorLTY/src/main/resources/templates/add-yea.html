@@ -71,17 +71,15 @@
                                 <form method="post" th:action="@{/yearlydata/add}">
                                 <!--<input type="hidden" name="stuID" th:value="${stu.stuID}" >-->
                                 <div class="form-group">
-<<<<<<< HEAD
-                                    <label for="inputSchoolID">学校</label>
-                                    <select name="pk.schoolid" id="inputSchoolID" class="form-control" >
-                                    <option th:each="schoolData : ${allSchool}" th:value="${schoolData.getSchoolID()}" th:text="${schoolData.getSchoolName()}" ></option>
-
+                                    <label for="inputSchoolName">学校</label>
+                                    <select name="pk.schoolid" id="inputSchoolID" class="form-control" onchange="document.getElementById('inputSchoolName').value = this.options[this.selectedIndex].text">
+                                        <option th:each="schoolData : ${allSchool}" th:value="${schoolData.getSchoolID()}" th:text="${schoolData.getSchoolName()}" ></option>
                                     </select>
+                                    <input type="text" class="form-control" id="inputSchoolName" name="schoolname" placeholder="" style="display: none;">
                                 </div>
                                 <div class="form-group">
                                     <label for="inputYear">年份</label>
-<<<<<<< HEAD
-                                    <input type="number" class="form-control" id="inputYear" name="pk.Year" placeholder="">
+                                    <input type="number" class="form-control" id="inputYear" name="pk.Year" value="2017">
                                 </div>
                                 <div class="form-group">
                                     <label for="inputScoure">分数线</label>

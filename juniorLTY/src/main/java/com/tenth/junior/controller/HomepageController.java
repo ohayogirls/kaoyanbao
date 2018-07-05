@@ -95,7 +95,7 @@ public class HomepageController {
         model.addAttribute("allExp",experienceList);
         return "index-jingyan";
     }
-    @GetMapping("/jingyan/{id}")
+    @GetMapping("/jingyan/info/{id}")
     public String experienceinfo(@PathVariable("id")Integer id,Model model){
         Optional<Experience> experience =experienceService.findByID(id);
         List<Comment> commentList=commentService.getCommentByExp(experience.get());
