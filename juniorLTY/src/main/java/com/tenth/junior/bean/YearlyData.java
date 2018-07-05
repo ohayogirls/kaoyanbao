@@ -22,13 +22,13 @@ public class YearlyData {
     }
 
     @Transient
-    public Integer getSchoolID(){
-        return getPk().getSchoolID();
+    public School getSchoolID(){
+        return getPk().getSchool();
     }
 
     @Transient
     public Integer getYearID(){
-        return getPk().getYearID();
+        return getPk().getYear();
     }
 
     public Integer getScore() {
