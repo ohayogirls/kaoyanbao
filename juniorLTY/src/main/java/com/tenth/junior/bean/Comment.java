@@ -1,6 +1,7 @@
 package com.tenth.junior.bean;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 @Entity
 public class Comment {
@@ -8,6 +9,7 @@ public class Comment {
     @GeneratedValue
     private Integer id;
     private String  content;
+    private Timestamp time;
     @ManyToOne
     private Experience experience;
     @OneToOne
@@ -43,5 +45,13 @@ public class Comment {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Timestamp getTime() {
+        return time;
+    }
+
+    public void setTime(Timestamp time) {
+        this.time = time;
     }
 }

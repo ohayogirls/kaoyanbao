@@ -3,7 +3,6 @@ package com.tenth.junior.bean;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.util.Date;
 
 @Entity
 public class School {
@@ -14,14 +13,14 @@ public class School {
     private String  Area;
     private String  Province;
     private String  Outline;
-    private String  badge;
+    private String logo;
 
-    public String getBadge() {
-        return badge;
+    public String getLogo() {
+        return logo;
     }
 
-    public void setBadge(String badge) {
-        this.badge = badge;
+    public void setLogo(String logo) {
+        this.logo = logo;
     }
 
     public String getCutTime() {
