@@ -99,7 +99,7 @@
                                 </thead>
                                 <tbody>
                                 <tr th:each="yearlyData : ${yearlydata}">
-                                    <td th:text="${yearlyData.getYearID()}"></td>
+                                    <td th:text="${yearlyData.getYear()}"></td>
                                     <td th:text="${yearlyData.getScore()}"></td>
                                     <td th:text="${yearlyData.getEnrollRate()}"></td>
                                 </tr>
