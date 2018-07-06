@@ -74,7 +74,7 @@
     <div class="panel-body">
         <div class="row" >
             <div class="col-lg-4" th:each="expData : ${allExp}">
-                <a th:text="${expData.getTitle()}" th:href="${expData.getTitle()}"></a>
+                <a th:text="${expData.getTitle()}" th:href="@{'/show/jingyan/info/' + ${expData.getExpID()}}"></a>
             </div>
         </div>
     </div>

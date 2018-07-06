@@ -108,7 +108,7 @@
     <div class="panel-body">
         <div class="row" >
             <div class="col-lg-4" th:each="materialData : ${allMaterial}">
-                <a th:text="${materialData.getLink()}" th:href="${materialData.getLink()}"></a>
+                <a th:text="${materialData.getTitle()}" th:href="${materialData.getLink()}"></a>
             </div>
         </div>
     </div>

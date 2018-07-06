@@ -51,21 +51,35 @@
     </nav>
 </div>
 <!--end-header-->
+<!--exp content start-->
 <div class="container">
     <div class="row">
         <div class="col-lg-6 col-lg-offset-3">
-            <h1 th:text="${experience.getTitle()}"></h1>
-            <h4 th:text="${experience.getTime()}"></h4>
-            <h3 th:text="${experience.getAuthor()}"></h3>
+            <h1 th:text="${Exp.getTitle()}"></h1>
+            <h3 th:text="${Exp.getAuthor()}"></h3>
+            <h4 th:text="${Exp.getTime()}"></h4>
         </div>
     </div>
     <div class="row">
         <div class="col-lg-6 col-lg-offset-3">
-            <p th:text="${experience.getText()}"></p>
+            <p th:text="${Exp.getText()}"></p>
         </div>
     </div>
 </div>
+<!--exp-content-end-->
+<!--exp-comment-start-->
+<div class="container">
+    <div class="row">
+        <div th:each="commentData : ${comment}" class="col-lg-6 col-lg-offset-3">
+            <div class="panel">
+                <div class="page-header" th:text="${commentData.getUser().getUserName()}"></div>
+                <div class="panel-body" th:text="${commentData.getContent()}"></div>
+            </div>
+        </div>
+    </div>
 
+</div>
+<!--exp-comment-end-->
 </body>
 
 </html>
