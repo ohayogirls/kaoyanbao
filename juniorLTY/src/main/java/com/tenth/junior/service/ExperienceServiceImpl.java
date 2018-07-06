@@ -57,7 +57,19 @@ public class ExperienceServiceImpl implements  ExperienceService{
         List<Experience> list=new ArrayList<>();
         List<Experience> aimList=new ArrayList<>(experiencerepository.findAll());
         for (int i=0;i<aimList.size();i++){
-            if (aimList.get(i).getSchoolID()==ID){
+            if (aimList.get(i).getSchoolID().equals(ID)){
+                list.add(aimList.get(i));
+            }
+        }
+        return list;
+    }
+
+    @Override
+    public List<Experience> findByType(String type) {
+        List<Experience> list=new ArrayList<>();
+        List<Experience> aimList=new ArrayList<>(experiencerepository.findAll());
+        for (int i=0;i<aimList.size();i++){
+            if (aimList.get(i).getType().equals(type)){
                 list.add(aimList.get(i));
             }
         }

@@ -46,7 +46,7 @@ public class YearlyDataServiceImpl implements YearlyDataService{
         List<YearlyData> aimList=new ArrayList<>(yearlyDataRepository.findAll());
        if(aimList!=null){
            for (int i=0;i<aimList.size();i++){
-               if (aimList.get(i).getSchoolID()==id){
+               if (aimList.get(i).getSchoolID().equals(id)){
                    list.add(aimList.get(i));
                }
            }

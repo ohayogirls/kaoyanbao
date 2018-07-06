@@ -18,6 +18,7 @@ public interface ExperienceService {
 
     void deleteExperience(Experience experience);
     List<Experience> findBySchoolID(Integer ID);
+    List<Experience> findByType(String type);
 
     List<Experience> getAllExp();
 
