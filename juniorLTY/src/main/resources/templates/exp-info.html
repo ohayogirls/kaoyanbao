@@ -52,7 +52,7 @@
 </div>
 <!--end-header-->
 <!--exp content start-->
-<div class="container">
+<div id="exp-content" class="container">
     <div class="row">
         <div class="col-lg-6 col-lg-offset-3">
             <h1 th:text="${Exp.getTitle()}"></h1>
@@ -66,9 +66,10 @@
         </div>
     </div>
 </div>
+
 <!--exp-content-end-->
 <!--exp-comment-start-->
-<div class="container">
+<div id="exp-comment" class="container">
     <div class="row">
         <div th:each="commentData : ${comment}" class="col-lg-6 col-lg-offset-3">
             <div class="panel">
