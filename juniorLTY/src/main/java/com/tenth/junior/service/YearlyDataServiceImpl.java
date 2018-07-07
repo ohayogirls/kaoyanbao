@@ -7,9 +7,8 @@ import com.tenth.junior.repository.YearlyDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+
 @Service
 public class YearlyDataServiceImpl implements YearlyDataService{
     @Autowired
@@ -51,7 +50,14 @@ public class YearlyDataServiceImpl implements YearlyDataService{
                }
            }
        }
-        return list;
+        Collections.sort(list, new Comparator<YearlyData>() {
+            @Override
+            public int compare(YearlyData t1, YearlyData t2) {
+                    int i = t2.getYear() - t1.getYear();
+                    return i;
+            }
+        });
+       return list;
     }
 
 }
