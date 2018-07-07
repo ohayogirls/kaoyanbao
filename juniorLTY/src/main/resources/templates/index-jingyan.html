@@ -81,11 +81,13 @@
     </div>
 </div>
 <!--end-jingyan-panel-->
-</body>
+<script type="text/javascript" th:src="@{/assets/js/userManage.js}"></script>
 <script>
-    $(window).ready(function(){
+    $(window).load(function(){
         $('#userIfo').text(getCookie("UserName"));
     });
 </script>
+</body>
+
 
 </html>

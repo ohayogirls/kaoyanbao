@@ -43,7 +43,7 @@
                     <li><a th:href="@{'/show/yuanxiao/' + ${'北京'}}" class="hvr-bounce-to-top">院校资讯</a></li>
                     <li><a th:href="@{'/show/ziliao/' + ${'政治'} + '/' + ${'考研真题'}}" class="hvr-bounce-to-top">资料分享</a></li>
                     <li><a th:href="@{'/show/jingyan/' + ${'备考经验'}}" class="hvr-bounce-to-top">经验交流</a></li>
-                    <li><a th:href="@{'/show/denglu'}" class="hvr-bounce-to-top">登陆</a></li>
+                    <li><a id="userIfo" th:href="@{'/show/denglu'}" class="hvr-bounce-to-top">登陆</a></li>
                 </ul>
                 <div class="clearfix"></div>
             </div><!-- /.navbar-collapse -->
@@ -118,11 +118,10 @@
     </div>
 </div>
 <!--end-ziliao-panel-->
+<script type="text/javascript" th:src="@{/assets/js/userManage.js}"></script>
 <script>
-    $(document).ready(function(){
-        // var nowhref = document.location.href.split('/');
-        // document.getElementById('panel-tag2').innerHTML = nowhref.pop();
-        // document.getElementById('panel-tag1').innerHTML = nowhref.pop();
+    $(window).load(function(){
+        $('#userIfo').text(getCookie("UserName"));
     });
 </script>
 </body>
