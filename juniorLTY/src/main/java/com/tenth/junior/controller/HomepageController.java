@@ -104,7 +104,8 @@ public class HomepageController {
         return "exp-info";
     }
     @PostMapping("/jingyan/{id}/comment")
-    public String addComment(@PathVariable("id")String id, Comment comment){
+    public String addComment(@PathVariable("id")String id, Comment comment,Model model){
+        model.addAttribute("user",RegisterController.user);
         commentService.addComment(comment);
         return "redirect:/jingyan/"+id;
     }

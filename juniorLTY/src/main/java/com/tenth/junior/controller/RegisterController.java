@@ -11,13 +11,14 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Controller
 @RequestMapping("/show")
 public class RegisterController {
-
     @Autowired
     private UserService userService;
 
@@ -37,10 +38,13 @@ public class RegisterController {
         //model.addAttribute("userdata", list);
         return "index-denglu";
     }
-
-   @PostMapping("/denglu")
-    public String Register(User user,Model model){
+    @ResponseBody
+    @PostMapping("/denglu")
+    public Map<String,Object> Register(User user){
+       Map<String,Object> map= new HashMap<String, Object>();
        String password1 = userService.findByName(user.getUserName()).getPassword();
+       //flag1表示是否存在username
+        // flag2表示password是否正确
        if(userService.findByName(user.getUserName()) != null){
            if( user.getPassword().equalsIgnoreCase(password1)){
                //登录成功，在LoginTable表中添加登录日志
@@ -50,26 +54,26 @@ public class RegisterController {
                loginTable.setTime(loginTableService.presentTime());
                loginTable.setIP(loginTableService.getIPAddr(request));
                loginTableService.addLoginTable(loginTable);
-               model.addAttribute("userdata",userService.findByName(user.getUserName()));
-               if(userService.findByName(user.getUserName()).getAdministrator() ){
-                   return "redirect:/school";
-               }
-
-               return "redirect:/show";
+               map.put("flag1",1);
+               map.put("flag2",1);
+               map.put("user",userService.findByName(user.getUserName()));
+               return map;
            }
-           else
-               return "redirect:/show/denglu";
+           else {
+               //密码错误
+               map.put("flag1",1);
+               map.put("flag2",0);
+               return map;
+           }
        }
-        else
-            return "redirect:/show/denglu";    //用户名或密码错误，重新输入数据
+        else {
+           //username不存在
+           map.put("flag1",0);
+           return map;
+       }
     }
 
-    /**
-     * 用户注册信息
-     * @param UserName
-     * @param password
-     * @return
-     */
+
     @GetMapping("/zhuce")
     public String addPage(Model model) {
         return "index-zhuce";
