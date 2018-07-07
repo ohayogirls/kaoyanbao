@@ -143,7 +143,7 @@
     <div class="panel-body">
         <div class="row">
             <div class="col-lg-2" th:each="schoolData : ${schIndex}">
-                <a th:href="@{'/show/school/' + ${schoolData.getSchoolID()}}">
+                <a th:href="@{'/show/school/' + ${schoolData.getSchoolID()}}" >
                     <img th:src="${schoolData.getLogo()}" th:alt="${schoolData.getSchoolName()}">
                     <!--<h4 th:text="${schoolData.getSchoolName()}">华中科技大学</h4>-->
                 </a>
