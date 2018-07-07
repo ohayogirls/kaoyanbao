@@ -93,7 +93,7 @@ public class TeacherServiceImpl implements TeacherService {
         //通过schoolName获取schoolID
         Integer schoolID=schoolService.findSchoolByName(schoolName).getSchoolID();
         for (int i=0;i<aimList.size();i++){
-            if (aimList.get(i).getSchoolID()==schoolID){
+            if (aimList.get(i).getSchoolID().equals(schoolID)){
                 list.add(aimList.get(i));
             }
         }
@@ -110,7 +110,7 @@ public class TeacherServiceImpl implements TeacherService {
         List<Teacher> list=new ArrayList<>();
         List<Teacher> aimList=new ArrayList<>(repository.findAll());
         for (int i=0;i<aimList.size();i++){
-            if (aimList.get(i).getSchoolID()==ID){
+            if (aimList.get(i).getSchoolID().equals(ID)){
                 list.add(aimList.get(i));
             }
         }

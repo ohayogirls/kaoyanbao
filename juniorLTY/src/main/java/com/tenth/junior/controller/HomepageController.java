@@ -91,7 +91,7 @@ public class HomepageController {
     }
     @GetMapping("/jingyan/{type}")
     public String experience(@PathVariable("type")String type,Model model){
-        List<Experience> experienceList =experienceService.queryByExperienceType(type);
+        List<Experience> experienceList =experienceService.findByType(type);
         model.addAttribute("allExp",experienceList);
         return "index-jingyan";
     }
