@@ -84,7 +84,17 @@ public class User {
     public User(){
      //   logintableArray = new ArrayList<LoginTable>(3);
     }
-   // public ArrayList getLoginTables(){
+
+    public User(User user) {
+        UserID =user.getUserID();
+        UserName = user.getUserName();
+        Password = user.getPassword();
+        HeadPath = user.getHeadPath();
+        Email = user.getEmail();
+        IsAdministrator = user.getAdministrator();
+        Phone = user.getPhone();
+    }
+    // public ArrayList getLoginTables(){
    //     return logintableArray;
    // }
 
