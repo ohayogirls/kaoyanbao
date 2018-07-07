@@ -27,11 +27,11 @@ html,body{
     margin-left: 60px;
     margin-bottom: 50px;
 }
-.row .col-lg-4{
+#jingyan-panel .row .col-lg-4{
     text-align: center;
 }
 #jingyan-panel a{
-    font-size: 20px;
+    font-size: 16px;
     color: #4d4d4d;
 }
 .page-header{

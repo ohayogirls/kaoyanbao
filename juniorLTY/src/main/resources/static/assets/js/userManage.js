@@ -17,7 +17,5 @@ function getCookie(key) {
     return false;
 }
 function userShow() {
-
     setCookie("UserName","root");
-    $('#userIfo').text(getCookie("UserName"));
 }
