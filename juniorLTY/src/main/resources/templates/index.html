@@ -109,7 +109,9 @@
                     $('body').removeClass('loading');
                 }
             });
-            $('#userIfo').text(getCookie("UserName"));
+            if(getCookie("UserName")){
+                $('#userIfo').text(getCookie("UserName"));
+            }
         });
     </script>
 </div>

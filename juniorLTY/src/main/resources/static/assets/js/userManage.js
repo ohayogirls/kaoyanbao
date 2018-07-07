@@ -17,5 +17,16 @@ function getCookie(key) {
     return false;
 }
 function userShow() {
-    setCookie("UserName","root");
+    // user = $.ajax({
+    //     type:"POST",
+    //     url:"http://localhost:8080/show/denglu",
+    //     data:{UserName:$('#signin-username').val(), Password:$('#signin-password').val()},
+    //     success: function (user) {
+    //
+    //     }
+    // })
+
+    window.location.href = "http://localhost:8080/school";
+    // var name = $('#signin-username').val();
+    // setCookie("UserName",name);
 }

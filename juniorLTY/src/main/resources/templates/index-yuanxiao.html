@@ -142,7 +142,7 @@
     </div>
     <div class="panel-body">
         <div class="row">
-            <div class="col-lg-2" th:each="schoolData : ${schIndex}">
+            <div class="col-lg-3" th:each="schoolData : ${schIndex}">
                 <a th:href="@{'/show/school/' + ${schoolData.getSchoolID()}}" class="thumbnail">
                     <img th:src="@{'/assets/logo/' + ${schoolData.getSchoolName()} + '.png'}" th:alt="${schoolData.getSchoolName()}">
                     <!--<h4 th:text="${schoolData.getSchoolName()}">华中科技大学</h4>-->
@@ -155,7 +155,11 @@
 <script type="text/javascript" th:src="@{/assets/js/userManage.js}"></script>
 <script>
     $(window).load(function(){
-        $('#userIfo').text(getCookie("UserName"));
+
+        if(getCookie("UserName")){
+            $('#userIfo').text(getCookie("UserName"));
+        }
+
     });
 </script>
 </body>

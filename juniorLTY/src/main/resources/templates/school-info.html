@@ -119,12 +119,12 @@
                             </div>
                         </div>
                         <div class="panel-body" style="display: none">
-                            <p th:text="${teacherData.getSex()}"></p>
-                            <p th:text="${teacherData.getJobTitle()}"></p>
-                            <p th:text="${teacherData.getResearch()}"></p>
-                            <p th:text="${teacherData.getEmail()}"></p>
-                            <a th:href="${teacherData.getCV()}" th:text="${teacherData.getCV()}"></a>
-                            <p th:text="${teacherData.getIntroduction()}"></p>
+                            <h4 th:text="${teacherData.getSex()}"></h4>
+                            <h4 th:text="${teacherData.getJobTitle()}"></h4>
+                            <h5 th:text="${teacherData.getResearch()}"></h5>
+                            <h4 th:text="${teacherData.getEmail()}"></h4>
+                            <h4 th:href="${teacherData.getCV()}" th:text="${teacherData.getCV()}"></h4>
+                            <h5 th:text="${teacherData.getIntroduction()}"></h5>
                         </div>
                     </div>
                     </div>
@@ -149,7 +149,9 @@
 <script type="text/javascript" th:src="@{/assets/js/userManage.js}"></script>
 <script>
     $(window).load(function(){
-        $('#userIfo').text(getCookie("UserName"));
+        if(getCookie("UserName")){
+            $('#userIfo').text(getCookie("UserName"));
+        }
     });
 </script>
 </body>

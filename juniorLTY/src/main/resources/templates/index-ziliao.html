@@ -121,7 +121,9 @@
 <script type="text/javascript" th:src="@{/assets/js/userManage.js}"></script>
 <script>
     $(window).load(function(){
-        $('#userIfo').text(getCookie("UserName"));
+        if(getCookie("UserName")){
+            $('#userIfo').text(getCookie("UserName"));
+        }
     });
 </script>
 </body>
