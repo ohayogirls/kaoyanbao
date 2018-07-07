@@ -44,7 +44,7 @@ public class RegisterController {
        Map<String,Object> map= new HashMap<String, Object>();
        String password1 = userService.findByName(user.getUserName()).getPassword();
        //flag1表示是否存在username
-        // flag2表示password是否正确
+       // flag2表示password是否正确
        if(userService.findByName(user.getUserName()) != null){
            if( user.getPassword().equalsIgnoreCase(password1)){
                //登录成功，在LoginTable表中添加登录日志

@@ -17,16 +17,33 @@ function getCookie(key) {
     return false;
 }
 function userShow() {
-    // user = $.ajax({
-    //     type:"POST",
-    //     url:"http://localhost:8080/show/denglu",
-    //     data:{UserName:$('#signin-username').val(), Password:$('#signin-password').val()},
-    //     success: function (user) {
-    //
-    //     }
-    // })
-
-    window.location.href = "http://localhost:8080/school";
+    $.ajax({
+        type:"POST",
+        url:"http://localhost:8080/show/denglu",
+        data:{UserName:$('#signin-username').val(), Password:$('#signin-password').val()},
+        dataType:"text",
+        success: logSuccess
+    })
+    // window.location.href = "http://localhost:8080/school";
     // var name = $('#signin-username').val();
     // setCookie("UserName",name);
+}
+function logSuccess(map) {
+    var json = eval("("+map+")");
+    var isPassword = json.flag2;
+    var isName = json.flag1;
+    var UserName = json.user.userName;
+    if(isName){
+        if(isPassword){
+            setCookie("UserName",UserName);
+            window.location.href = "http://localhost:8080/show";
+        }
+        else {
+            window.location.href = "http://localhost:8080/show/denglu";
+            alert("密码错误");
+        }
+    }else {
+        window.location.href = "http://localhost:8080/show/denglu";
+        alert("账户不存在");
+    }
 }
