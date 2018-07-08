@@ -42,10 +42,10 @@ public class RegisterController {
     @PostMapping("/denglu")
     public Map<String,Object> Register(User user){
        Map<String,Object> map= new HashMap<String, Object>();
-       String password1 = userService.findByName(user.getUserName()).getPassword();
        //flag1表示是否存在username
        // flag2表示password是否正确
        if(userService.findByName(user.getUserName()) != null){
+           String password1 = userService.findByName(user.getUserName()).getPassword();
            if( user.getPassword().equalsIgnoreCase(password1)){
                //登录成功，在LoginTable表中添加登录日志
                LoginTable loginTable = new LoginTable();
@@ -63,12 +63,15 @@ public class RegisterController {
                //密码错误
                map.put("flag1",1);
                map.put("flag2",0);
+               map.put("user",userService.findByName(user.getUserName()));
                return map;
            }
        }
         else {
            //username不存在
            map.put("flag1",0);
+           map.put("flag2",0);
+           map.put("user",null);
            return map;
        }
     }

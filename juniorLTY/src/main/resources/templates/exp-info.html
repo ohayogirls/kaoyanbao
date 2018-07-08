@@ -79,8 +79,8 @@
         </div>
         <div class="col-lg-6 col-lg-offset-3">
             <div class="panel">
-                <div class="panel-body" >
-                    <p id="exp-comment-add-p">请<a th:href="@{'/show/denglu'}">登陆</a>后评论</p>
+                <div class="panel-body" id="exp-comment-add">
+                    <p id="exp-tishi">请<a th:href="@{'/show/denglu'}">登陆</a>后评论</p>
                 </div>
             </div>
         </div>
@@ -93,6 +93,14 @@
     $(window).load(function(){
         if(getCookie("UserName")){
             $('#userIfo').text(getCookie("UserName"));
+            // $('#exp-tishi').remove();
+            // var userid = getCookie("UserID");
+            // var actionStr = '/show/jingyan/'+userid+'/comment';
+            // $('#exp-comment-add').append($(" " +
+            //     "<form method='post' action= " + actionStr + ">" +
+            //         "<input tpye='text' name='content'>" +
+            //         "<button type='submit'>发表</button>" +
+            //     "</form>"));
         }
     });
 </script>
