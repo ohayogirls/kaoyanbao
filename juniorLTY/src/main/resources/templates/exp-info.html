@@ -93,14 +93,19 @@
     $(window).load(function(){
         if(getCookie("UserName")){
             $('#userIfo').text(getCookie("UserName"));
-            // $('#exp-tishi').remove();
-            // var userid = getCookie("UserID");
-            // var actionStr = '/show/jingyan/'+userid+'/comment';
-            // $('#exp-comment-add').append($(" " +
-            //     "<form method='post' action= " + actionStr + ">" +
-            //         "<input tpye='text' name='content'>" +
-            //         "<button type='submit'>发表</button>" +
-            //     "</form>"));
+            $('#exp-tishi').remove();
+            var expID =  location.href.split('/').pop();
+            var actionStr = '/show/jingyan/'+expID+'/comment';
+            var myDate = new Date();
+            var commentTime = myDate.toLocaleDateString();
+            $('#exp-comment-add').append($(" " +
+                "<form method='post' action= " + actionStr + ">" +
+                    "<input type='text' name='content'>" +
+                    "<input type='number' name='experience.ExpID' value="+expID+">"+
+                    "<input type='number' name='user.UserID' value="+getCookie('UserID')+">"+
+                    "<input type='text' name='time' value="+commentTime+">"+
+                    "<button type='submit'>发表</button>" +
+                "</form>"));
         }
     });
 </script>
