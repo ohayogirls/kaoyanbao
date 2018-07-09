@@ -9,7 +9,7 @@ public class Comment {
     @GeneratedValue
     private Integer id;
     private String  content;
-    private Timestamp time;
+    private String time;
     @ManyToOne
     private Experience experience;
     @OneToOne
@@ -47,11 +47,11 @@ public class Comment {
         this.user = user;
     }
 
-    public Timestamp getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(Timestamp time) {
+    public void setTime(String time) {
         this.time = time;
     }
 }

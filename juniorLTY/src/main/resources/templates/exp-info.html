@@ -74,7 +74,10 @@
     <div class="row">
         <div th:each="commentData : ${comment}" class="col-lg-6 col-lg-offset-3">
             <div class="panel">
-                <div class="page-header" th:text="${commentData.getUser().getUserName()}"></div>
+                <div class="page-header">
+                    <h4 th:text="${commentData.getUser().getUserName()}"></h4>
+                    <span th:text="${commentData.getTime()}"></span>
+                </div>
                 <div class="panel-body" th:text="${commentData.getContent()}"></div>
             </div>
         </div>
@@ -93,20 +96,20 @@
 <script>
     $(window).load(function(){
         var expData = $("#get-exp-content").html();
-        document.getElementById("exp-content-html").outerHTML = expData;
+        document.getElementById("exp-content-html").innerHTML = expData;
         if(getCookie("UserName")){
             $('#userIfo').text(getCookie("UserName"));
             $('#exp-tishi').remove();
             var expID =  location.href.split('/').pop();
             var actionStr = '/show/jingyan/'+expID+'/comment';
             var myDate = new Date();
-            var commentTime = myDate.toLocaleDateString();
+            var commentTime = myDate.toLocaleString();
             $('#exp-comment-add').append($(" " +
                 "<form method='post' action= " + actionStr + ">" +
                     "<input type='text' name='content'>" +
-                    "<input type='number' name='experience.ExpID' value="+expID+">"+
-                    "<input type='number' name='user.UserID' value="+getCookie('UserID')+">"+
-                    "<input type='text' name='time' value="+commentTime+">"+
+                    "<input type='number' name='experience.ExpID' value="+expID+" style='display:none;'>"+
+                    "<input type='number' name='user.UserID' value="+getCookie('UserID')+" style='display:none;'>"+
+                    "<input type='text' name='time' value="+commentTime+" style='display:none;'>"+
                     "<button type='submit'>发表</button>" +
                 "</form>"));
         }
