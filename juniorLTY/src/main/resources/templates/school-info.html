@@ -151,6 +151,13 @@
     $(window).load(function(){
         if(getCookie("UserName")){
             $('#userIfo').text(getCookie("UserName"));
+            $('#userIfo').removeAttr('href');
+            $('#userIfo').mouseup(function () {
+                removeCookie("UserName");
+                removeCookie("UserID");
+                $('#userIfo').text("登陆");
+                $('#userIfo').attr("href","/show/denglu");
+            })
         }
     });
 </script>

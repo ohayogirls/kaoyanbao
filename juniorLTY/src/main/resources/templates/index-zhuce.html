@@ -65,7 +65,8 @@
                                     <label for="signin-email" class="control-label">账户</label>
                                 </div>
                                 <div class="col-lg-8">
-                                    <input type="text" class="form-control" name="UserName" id="signin-email" placeholder="">
+                                    <input type="text" class="form-control" name="UserName" id="signin-email" required="required"
+                                           pattern="[0-9A-z]{6,10}" title="6-10位字母数字组合">
                                 </div>
                             </div>
                         </div>
@@ -75,7 +76,8 @@
                                     <label for="signin-password" class="control-label">密码</label>
                                 </div>
                                 <div class="col-lg-8">
-                                    <input type="text" class="form-control" name="Password" id="signin-password" placeholder="">
+                                    <input type="text" class="form-control" name="Password" id="signin-password" required="required"
+                                           pattern="[0-9A-z]{6,12}" title="6-12位字母数字组合">
                                 </div>
                             </div>
                         </div>

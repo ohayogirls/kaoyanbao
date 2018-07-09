@@ -55,15 +55,16 @@
 <div id="exp-content" class="container">
     <div class="row">
         <div class="col-lg-6 col-lg-offset-3">
-            <h1 th:text="${Exp.getTitle()}"></h1>
+            <h2 th:text="${Exp.getTitle()}"></h2>
             <h3 th:text="${Exp.getAuthor()}"></h3>
             <h4 th:text="${Exp.getTime()}"></h4>
         </div>
     </div>
     <div class="row">
         <div class="col-lg-6 col-lg-offset-3">
-            <p id="get-exp-content" th:text="${Exp.getText()}" style="display: none"></p>
-            <div id="exp-content-html"></div>
+            <div id="get-exp-content" th:text="${Exp.getText()}" style="display: none"></div>
+            <p id="exp-content-html"></p>
+            <h3 id="breakline">评论区</h3>
         </div>
     </div>
 </div>
@@ -75,10 +76,13 @@
         <div th:each="commentData : ${comment}" class="col-lg-6 col-lg-offset-3">
             <div class="panel">
                 <div class="page-header">
+                    <img th:src="@{/assets/img/user-header.png}" style="width: 40px">
                     <h4 th:text="${commentData.getUser().getUserName()}"></h4>
+                </div>
+                <div class="panel-body">
+                    <p th:text="${commentData.getContent()}"></p>
                     <span th:text="${commentData.getTime()}"></span>
                 </div>
-                <div class="panel-body" th:text="${commentData.getContent()}"></div>
             </div>
         </div>
         <div class="col-lg-6 col-lg-offset-3">
@@ -96,24 +100,42 @@
 <script>
     $(window).load(function(){
         var expData = $("#get-exp-content").html();
-        document.getElementById("exp-content-html").innerHTML = expData;
+        document.getElementById("exp-content-html").innerHTML = HTMLDecode(expData);
         if(getCookie("UserName")){
             $('#userIfo').text(getCookie("UserName"));
+            $('#userIfo').removeAttr('href');
+            $('#userIfo').mouseup(function () {
+                removeCookie("UserName");
+                removeCookie("UserID");
+                $('#userIfo').text("登陆");
+                $('#userIfo').attr("href","/show/denglu");
+            })
             $('#exp-tishi').remove();
             var expID =  location.href.split('/').pop();
             var actionStr = '/show/jingyan/'+expID+'/comment';
             var myDate = new Date();
-            var commentTime = myDate.toLocaleString();
+            var commentTime = myDate.toLocaleDateString() + myDate.toLocaleTimeString();
             $('#exp-comment-add').append($(" " +
                 "<form method='post' action= " + actionStr + ">" +
-                    "<input type='text' name='content'>" +
+                    "<div class='form-group'>"+
+                        "<input type='text' name='content' class='form-control' required='required'>" +
+                    "</div>"+
                     "<input type='number' name='experience.ExpID' value="+expID+" style='display:none;'>"+
                     "<input type='number' name='user.UserID' value="+getCookie('UserID')+" style='display:none;'>"+
-                    "<input type='text' name='time' value="+commentTime+" style='display:none;'>"+
-                    "<button type='submit'>发表</button>" +
+                    "<input type='text' name='time' value="+commentTime+" style='display:none'>"+
+                    "<button type='submit' class='btn btn-primary'>发表</button>" +
                 "</form>"));
         }
     });
+
+    //富文本标签转义函数
+    function HTMLDecode(text) {
+        var temp = document.createElement("div");
+        temp.innerHTML = text;
+        var output = temp.innerText || temp.textContent;
+        temp = null;
+        return output;
+    }
 </script>
 </body>
 
