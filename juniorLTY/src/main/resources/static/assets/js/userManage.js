@@ -17,7 +17,42 @@ function getCookie(key) {
     return false;
 }
 function userShow() {
-
-    setCookie("UserName","root");
-    $('#userIfo').text(getCookie("UserName"));
+    $.ajax({
+        type:"POST",
+        url:"http://localhost:8080/show/denglu",
+        data:{UserName:$('#signin-username').val(), Password:$('#signin-password').val()},
+        dataType:"text",
+        success: logSuccess
+    })
+    // window.location.href = "http://localhost:8080/school";
+    // var name = $('#signin-username').val();
+    // setCookie("UserName",name);
+}
+function logSuccess(map) {
+    var json = eval("("+map+")");
+    var isName = json.flag1;
+    if(isName){
+        var isPassword = json.flag2;
+        if(isPassword){
+            var UserName = json.user.userName;
+            var UserID = json.user.userID;
+            var isAdmin = json.user.administrator
+            setCookie("UserName",UserName);
+            setCookie("UserID",UserID);
+            if(isAdmin){
+                window.location.href = "http://localhost:8080/school";
+            }else {
+                window.location.href = "http://localhost:8080/show";
+            }
+        }
+        else {
+            alert("密码错误！");
+            window.location.href = "http://localhost:8080/show/denglu";
+            // $.alert("密码错误！","确定",function(){window.location.href = "http://localhost:8080/show/denglu";});
+        }
+    }else {
+        alert("账户不存在！");
+        window.location.href = "http://localhost:8080/show/denglu";
+        // $.alert("账户不存在！","确定",function(){window.location.href = "http://localhost:8080/show/denglu";});
+    }
 }

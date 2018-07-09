@@ -42,7 +42,7 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a th:href="@{'/show'}" class="hvr-bounce-to-top">主页<span class="sr-only">(current)</span></a></li>
                         <li><a th:href="@{'/show/yuanxiao/' + ${'北京'}}" class="hvr-bounce-to-top">院校资讯</a></li>
-                        <li><a th:href="@{'/show/ziliao/' + ${'政治'} + '/' + ${'真题'}}" class="hvr-bounce-to-top">资料分享</a></li>
+                        <li><a th:href="@{'/show/ziliao/' + ${'政治'} + '/' + ${'考研真题'}}" class="hvr-bounce-to-top">资料分享</a></li>
                         <li><a th:href="@{'/show/jingyan/' + ${'备考经验'}}" class="hvr-bounce-to-top">经验交流</a></li>
                         <li><a th:href="@{'/show/denglu'}" class="hvr-bounce-to-top" id="userIfo">登陆</a></li>
                     </ul>
@@ -109,7 +109,9 @@
                     $('body').removeClass('loading');
                 }
             });
-            userShow();
+            if(getCookie("UserName")){
+                $('#userIfo').text(getCookie("UserName"));
+            }
         });
     </script>
 </div>

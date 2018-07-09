@@ -41,9 +41,9 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a th:href="@{'/show'}" class="hvr-bounce-to-top">主页<span class="sr-only">(current)</span></a></li>
                     <li><a th:href="@{'/show/yuanxiao/' + ${'北京'}}" class="hvr-bounce-to-top">院校资讯</a></li>
-                    <li><a th:href="@{'/show/ziliao/' + ${'政治'} + '/' + ${'真题'}}" class="hvr-bounce-to-top">资料分享</a></li>
+                    <li><a th:href="@{'/show/ziliao/' + ${'政治'} + '/' + ${'考研真题'}}" class="hvr-bounce-to-top">资料分享</a></li>
                     <li><a th:href="@{'/show/jingyan/' + ${'备考经验'}}" class="hvr-bounce-to-top">经验交流</a></li>
-                    <li><a th:href="@{'/show/denglu'}" class="hvr-bounce-to-top">登陆</a></li>
+                    <li><a id="userIfo" th:href="@{'/show/denglu'}" class="hvr-bounce-to-top">登陆</a></li>
                 </ul>
                 <div class="clearfix"></div>
             </div><!-- /.navbar-collapse -->
@@ -73,18 +73,23 @@
     </div>
     <div class="panel-body">
         <div class="row" >
-            <div class="col-lg-4" th:each="expData : ${allExp}">
+            <div id="fyloading" class="col-lg-6" th:each="expData : ${allExp}">
                 <a th:text="${expData.getTitle()}" th:href="@{'/show/jingyan/info/' + ${expData.getExpID()}}"></a>
+                <span th:text="${expData.getTime()}" style="float: right"></span>
             </div>
         </div>
     </div>
 </div>
 <!--end-jingyan-panel-->
-</body>
+<script type="text/javascript" th:src="@{/assets/js/userManage.js}"></script>
 <script>
-    $(document).ready(function(){
-        // var nowhref = document.location.href.split('/');
-        // document.getElementById('panel-tag').innerHTML = nowhref.indexOf(nowhref.length-1);
+    $(window).load(function(){
+        if(getCookie("UserName")){
+            $('#userIfo').text(getCookie("UserName"));
+        }
     });
 </script>
+</body>
+
+
 </html>
