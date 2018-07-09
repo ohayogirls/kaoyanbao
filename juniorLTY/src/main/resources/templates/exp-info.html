@@ -62,7 +62,8 @@
     </div>
     <div class="row">
         <div class="col-lg-6 col-lg-offset-3">
-            <p th:text="${Exp.getText()}"></p>
+            <p id="get-exp-content" th:text="${Exp.getText()}" style="display: none"></p>
+            <div id="exp-content-html"></div>
         </div>
     </div>
 </div>
@@ -91,6 +92,8 @@
 <script type="text/javascript" th:src="@{/assets/js/userManage.js}"></script>
 <script>
     $(window).load(function(){
+        var expData = $("#get-exp-content").html();
+        document.getElementById("exp-content-html").outerHTML = expData;
         if(getCookie("UserName")){
             $('#userIfo').text(getCookie("UserName"));
             $('#exp-tishi').remove();
