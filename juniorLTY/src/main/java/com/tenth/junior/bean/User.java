@@ -7,6 +7,10 @@ import java.util.*;
 
 @Entity
 public class User {
+    /**用户的实体类
+     * @author Qu Zhao
+     */
+    //定义私有属性
     @Id
     @GeneratedValue
     private Integer UserID;
@@ -17,8 +21,7 @@ public class User {
     private Boolean IsAdministrator;
     private String  Phone;
 
-    //private ArrayList<LoginTable> logintableArray;
-
+    //getter and setter
     public Integer getUserID() {
         return UserID;
     }
@@ -75,16 +78,11 @@ public class User {
         Phone = phone;
     }
 
-    //public User(Integer UserID,String  UserName,String  Password) {
-    //    UserID = UserID;
-    //    UserName=UserName;
-     //   Password = Password;
-    //    logintableArray = new ArrayList<LoginTable>(3);
-    //}
+    //无参构造函数
     public User(){
-     //   logintableArray = new ArrayList<LoginTable>(3);
     }
 
+    //构造函数
     public User(User user) {
         UserID =user.getUserID();
         UserName = user.getUserName();
@@ -94,13 +92,5 @@ public class User {
         IsAdministrator = user.getAdministrator();
         Phone = user.getPhone();
     }
-    // public ArrayList getLoginTables(){
-   //     return logintableArray;
-   // }
-
-    //public void addLoginTableToUser(LoginTable aLoginTable){
-    //    logintableArray.add(aLoginTable);
-    //    aLoginTable.setUser(this);
-    //}
 
 }

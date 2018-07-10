@@ -7,6 +7,10 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class Teacher {
+    /**老师的实体类
+     * @author Xie Liang Cai
+     */
+    //定义私有属性
     @Id
     @GeneratedValue
     private Integer TeacherID;
@@ -21,15 +25,17 @@ public class Teacher {
     @ManyToOne
     private School school;
 
+    //无参构造函数
+    public Teacher() {
+    }
+
+    //getter and setter
     public School getSchool() {
         return school;
     }
 
     public void setSchool(School school) {
         this.school = school;
-    }
-
-    public Teacher() {
     }
 
     public Integer getTeacherID() {

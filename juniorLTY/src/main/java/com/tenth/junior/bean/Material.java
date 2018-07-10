@@ -6,6 +6,10 @@ import javax.persistence.Id;
 
 @Entity
 public class Material {
+    /**学习资料的实体类
+     * @author Li Bo Han
+     */
+    //定义私有属性
     @Id
     @GeneratedValue
     private Integer MaterialID;
@@ -14,6 +18,7 @@ public class Material {
     private String  Link;
     private String  Title;
 
+    //getter and setter
     public String getTitle() {
         return Title;
     }
@@ -54,6 +59,7 @@ public class Material {
         Link = link;
     }
 
+    //无参构造函数
     public Material() {
 
     }

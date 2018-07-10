@@ -19,6 +19,9 @@ import java.util.Optional;
 @Controller
 @RequestMapping("/show")
 public class RegisterController {
+    /**
+     * @author Qu Zhao
+     */
     @Autowired
     private UserService userService;
 

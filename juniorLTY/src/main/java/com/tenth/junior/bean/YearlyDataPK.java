@@ -7,6 +7,9 @@ import java.util.Objects;
 
 @Embeddable
 public class YearlyDataPK implements Serializable {
+    /**历年数据的主键类
+     * @author Liu Qi
+     */
     private Integer schoolid;
     private Integer Year;
 

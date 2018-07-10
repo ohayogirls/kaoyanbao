@@ -8,24 +8,22 @@ import java.util.Date;
 
 @Entity
 public class Experience {
+    /**经验的实体类
+     * @author Li Bo Han
+     */
+    //定义私有属性
     @Id
     @GeneratedValue
     private Integer ExpID;
     private String  Type;
     private String  Author;
-
-
-
     private String  Time;
     private String  Text;
-
-
-
     private String Title;
-    //private String SchoolID;
     @ManyToOne
     private School school;
 
+    //无参构造方法
     public Experience() {
     }
 

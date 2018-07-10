@@ -6,6 +6,10 @@ import javax.persistence.Id;
 
 @Entity
 public class School {
+    /**学校的实体类
+     * @author Xie Liang Cai
+     */
+    //定义私有属性
     @Id
     @GeneratedValue
     private Integer SchoolID;
@@ -14,7 +18,17 @@ public class School {
     private String  Province;
     private String  Outline;
     private String logo;
+    private String  CutTime;
+    private String  CatalogLink;
+    private String  ReferrenceBook;
+    private Boolean Is985;
+    private Boolean Is211;
 
+    //无参构造函数
+    public School() {
+    }
+
+    //getter和setter方法
     public String getLogo() {
         return logo;
     }
@@ -29,15 +43,6 @@ public class School {
 
     public void setCutTime(String cutTime) {
         CutTime = cutTime;
-    }
-
-    private String  CutTime;
-    private String  CatalogLink;
-    private String  ReferrenceBook;
-    private Boolean Is985;
-    private Boolean Is211;
-
-    public School() {
     }
 
     public Integer getSchoolID() {
