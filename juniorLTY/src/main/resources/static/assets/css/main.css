@@ -1756,3 +1756,7 @@ ul.activity-timeline > li {
     border: 1px solid #CCC; }
 
 /*# sourceMappingURL=main.css.map */
+
+.navbar-default .brand{
+  padding: 5px 50px;
+}

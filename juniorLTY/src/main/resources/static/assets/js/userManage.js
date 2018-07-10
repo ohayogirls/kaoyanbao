@@ -1,6 +1,6 @@
 
 function setCookie(key, value) {
-    document.cookie = key + '=' + value;
+    document.cookie = key + '=' + value + "; path=/show/";
 
 }
 function removeCookie(key) {
@@ -42,7 +42,8 @@ function logSuccess(map) {
             if(isAdmin){
                 window.location.href = "http://localhost:8080/school";
             }else {
-                window.location.href = "http://localhost:8080/show";
+                // window.location.href = "http://localhost:8080/show";
+                window.history.back(-1);
             }
         }
         else {

@@ -19,6 +19,8 @@
     <script th:src="@{/assets/js/bootstrap.js}"></script>
     <script type="text/javascript" th:src="@{/assets/js/move-top.js}"></script>
     <script type="text/javascript" th:src="@{/assets/js/easing.js}"></script>
+    <link rel="apple-touch-icon" sizes="76x76" th:href="@{/assets/img/apple-icon.png}">
+    <link rel="icon" type="image/png" sizes="96x96" th:href="@{/assets/img/favicon.png}">
 </head>
 
 <body>
@@ -123,6 +125,13 @@
     $(window).load(function(){
         if(getCookie("UserName")){
             $('#userIfo').text(getCookie("UserName"));
+            $('#userIfo').removeAttr('href');
+            $('#userIfo').mouseup(function () {
+                removeCookie("UserName");
+                removeCookie("UserID");
+                $('#userIfo').text("登陆");
+                $('#userIfo').attr("href","/show/denglu");
+            })
         }
     });
 </script>

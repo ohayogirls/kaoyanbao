@@ -171,10 +171,12 @@ public class HomepageController {
      * @return
      */
     @PostMapping("/jingyan/{id}/comment")
-    public String addComment(@PathVariable("id")String id, @Valid Comment comment, BindingResult bindingResult,Model model){
+
+    public String addComment(@PathVariable("id")String id, @Valid Comment comment, BindingResult bindingResult, Model model){
+        
 
         commentService.addComment(comment);
-        return "redirect:/jingyan/"+id;
+        return "redirect:/show/jingyan/info/"+id;
     }
     //
 }

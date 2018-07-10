@@ -19,6 +19,8 @@
     <script th:src="@{../../assets/js/bootstrap.js}"></script>
     <script type="text/javascript" th:src="@{../../assets/js/move-top.js}"></script>
     <script type="text/javascript" th:src="@{../../assets/js/easing.js}"></script>
+    <link rel="apple-touch-icon" sizes="76x76" th:href="@{/assets/img/apple-icon.png}">
+    <link rel="icon" type="image/png" sizes="96x96" th:href="@{/assets/img/favicon.png}">
 </head>
 
 <body>
@@ -73,7 +75,7 @@
     </div>
     <div class="panel-body">
         <div class="row" >
-            <div id="fyloading" class="col-lg-6" th:each="expData : ${allExp}">
+            <div class="col-lg-6" th:each="expData : ${allExp}">
                 <a th:text="${expData.getTitle()}" th:href="@{'/show/jingyan/info/' + ${expData.getExpID()}}"></a>
                 <span th:text="${expData.getTime()}" style="float: right"></span>
             </div>
@@ -86,7 +88,15 @@
     $(window).load(function(){
         if(getCookie("UserName")){
             $('#userIfo').text(getCookie("UserName"));
+            $('#userIfo').removeAttr('href');
+            $('#userIfo').mouseup(function () {
+                removeCookie("UserName");
+                removeCookie("UserID");
+                $('#userIfo').text("登陆");
+                $('#userIfo').attr("href","/show/denglu");
+            })
         }
+
     });
 </script>
 </body>
