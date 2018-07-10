@@ -4,6 +4,10 @@ import javax.persistence.*;
 
 @Entity
 public class YearlyData {
+    /**历年数据的实体类
+     * @author Liu Qi
+     */
+    //定义私有属性
     @EmbeddedId
     private YearlyDataPK pk =new YearlyDataPK();
 
@@ -13,6 +17,10 @@ public class YearlyData {
 
     private String schoolname;
 
+    //无参构造函数
+    public YearlyData(){}
+
+    //getter and setter
     public String getSchoolname() {
         return schoolname;
     }

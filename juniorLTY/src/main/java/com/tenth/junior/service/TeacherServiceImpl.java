@@ -70,7 +70,6 @@ public class TeacherServiceImpl implements TeacherService {
     }
 
     //查
-
     @Override
     public List<Teacher> findAllTeacher() {
         return repository.findAll();

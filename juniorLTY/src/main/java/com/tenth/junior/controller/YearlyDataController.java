@@ -16,6 +16,9 @@ import java.util.Optional;
 @Controller
 @RequestMapping("/yearlydata")
 public class YearlyDataController {
+    /**
+     * @Author Liu Qi
+     */
     @Autowired
     private YearlyDataService yearlyDataService;
     @Autowired
@@ -29,6 +32,11 @@ public class YearlyDataController {
         return "yearly-data";
     }
 
+    /**
+     * 增加历年数据的时候显示学校下拉框
+     * @param model
+     * @return
+     */
     @GetMapping("/add")
     public  String getaddpage(Model model) {
         List<School> schoolList = schoolService.findAllSchool();
@@ -36,12 +44,24 @@ public class YearlyDataController {
         return "add-yea";
 
     }
+
+    /**
+     * 增加
+     * @param yearlyData
+     * @return
+     */
     @PostMapping("/add")
     public String input(YearlyData yearlyData){
         yearlyDataService.addYearlyData(yearlyData);
         return "redirect:/yearlydata";
     }
 
+    /**
+     * 删除
+     * @param schoolid
+     * @param year
+     * @return
+     */
     @GetMapping("/delete/{school}/{year}")
     public String deleteData(@PathVariable("school") Integer schoolid,@PathVariable("year") Integer year){
         YearlyDataPK pk = new YearlyDataPK();
@@ -51,6 +71,13 @@ public class YearlyDataController {
         return "redirect:/yearlydata";
     }
 
+    /**
+     * 修改
+     * @param schoolid
+     * @param year
+     * @param model
+     * @return
+     */
     @GetMapping("/update/{school}/{year}")
     public String updatepage(@PathVariable("school") Integer schoolid,@PathVariable("year") Integer year,Model model){
         YearlyDataPK pk = new YearlyDataPK();
@@ -62,15 +89,17 @@ public class YearlyDataController {
         return "update-yea";
     }
 
+    /**
+     * 修改
+     * @param yearlyData
+     * @return
+     */
     @PostMapping("/update")
     public String updateData(YearlyData yearlyData){
         yearlyDataService.updateYearlyData(yearlyData);
         return "redirect:/yearlydata";
     }
 
-//    @PostMapping("/search")
-//    public String searchData(@RequestParam(""),Model model){
-//
-//    }
+
 
 }

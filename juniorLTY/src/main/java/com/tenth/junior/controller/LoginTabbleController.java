@@ -15,6 +15,9 @@ import java.util.Optional;
 @Controller
 @RequestMapping("/logintable")
 public class LoginTabbleController {
+    /**
+     * @author Qu Zhao
+     */
 
     @Autowired
     private LoginTableService loginTableService;
@@ -23,7 +26,7 @@ public class LoginTabbleController {
     private UserService userService;
     /**
      * 查看所有日志信息
-     * @param model
+     * @param model：数据库中所有日志信息
      * @return
      */
     @GetMapping
@@ -33,71 +36,9 @@ public class LoginTabbleController {
         return "login-table";
     }
 
-    /**
-     * 添加日志信息功能
-     * @param LogID
-     * @param IP
-     * @param Time
-     * @return
-     */
-    @PostMapping("/add")
-    public  String input(LoginTable loginTable){
-        Optional<User> user = userService.findByID(loginTable.getUser().getUserID()); ;
-        loginTable.setUser(user.get());
-        loginTableService.addLoginTable(loginTable);
-        return "redirect:/";
-    }
-
-    /**
-     * 显示添加页面
-     * @return
-     */
-    @GetMapping("/add")
-    public String addPage(Model model){
-        model.addAttribute("allUser",userService.getAllUser());
-        return "add-log";
-    }
-
-    //@GetMapping("/ks")
-    //public String ks(){
-    //   return "KSbaoM";
-    // }
 
 
 
-    //更新
-   /* @GetMapping("/update/{id}")
-    public String updatePage(@PathVariable("id") Integer id,Model model){
-        Optional<Student> student = studentService.findByID(id);
-        model.addAttribute("stu",student.get());
-        model.addAttribute("allGrade",gradeService.getAllGrade());
-        return "updatestu";
-    }
-
-    /**
-     * 修改学生信息
-     * @param stuID
-     * @param name
-     * @param password
-     * @param phone
-     * @return String
-
-    @PostMapping("/update")
-    public String updateData(Student student){
-        Optional<Grade> grade = gradeService.getGradeByID(student.getGrade().getGID()); ;
-        student.setGrade(grade.get());
-        studentService.addStudent(student);
-        return "redirect:/";
-    }
-
-    //查询
-    @PostMapping("/abc")
-    public String getStudentQuery(@RequestParam("name") String name,Model model){
-        List<Student> studentList = studentService.queryByStuName("%"+name+"%");
-        model.addAttribute(s:"stus",studentList);
-        return "index";
-    }
-    */
 }
 
 

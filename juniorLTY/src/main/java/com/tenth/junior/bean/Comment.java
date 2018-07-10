@@ -1,10 +1,16 @@
 package com.tenth.junior.bean;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
 
 @Entity
 public class Comment {
+    /**评论的实体类
+     * @author Liu Qi
+     * @version 1.0
+     */
+    //定义私有属性
     @Id
     @GeneratedValue
     private Integer id;
@@ -15,6 +21,12 @@ public class Comment {
     @OneToOne
     private  User user;
 
+    //无参构造方法
+    public Comment(){
+
+    }
+
+    //getter和setter
     public Integer getId() {
         return id;
     }

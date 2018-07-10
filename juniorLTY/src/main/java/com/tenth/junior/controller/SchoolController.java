@@ -12,6 +12,9 @@ import java.util.List;
 @Controller
 @RequestMapping(value = "/school")
 public class SchoolController {
+    /**
+     * @author Xie Liang Cai
+     */
 
     @Autowired
     private SchoolService schoolService;
